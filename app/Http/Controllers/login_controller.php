@@ -52,6 +52,7 @@ class login_controller extends Controller
 
         if(User::where('name', $request->name)->exists()){
             // $name = $request->name;
+            session(['name' => $request->name]);
             if(Auth::guard('web')->attempt(['department' => $request->department, 'name' => $request->name, 'password' => $request->password])){
                 // if(Auth::guard('user')->user()->email_verified_at == null){
                 //     Auth::guard('user')->logout();
@@ -59,6 +60,7 @@ class login_controller extends Controller
                 // }else{
                 //     return redirect()->route('index');
                 // }
+
                 return redirect()->route('dashboard');
                 // return $name;
                 // return view('dashboard', compact('name'));
