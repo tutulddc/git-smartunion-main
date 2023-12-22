@@ -31,19 +31,26 @@ class UserController extends Controller
     }
 
     function custom_register(Request $request){
-                $request->validate([
+        $user_id = random_int(100000, 900000)."-".Carbon::now()->format('d-m-y')."-".$request->division."-".$request->district;
+        // echo $user_id;
+        // die();
+        $request->validate([
             'name'=>'required',
             'department'=>'required',
             'password'=>'required',
+            'division'=>'required',
+            'district'=>'required',
         ]);
 
-        // print_r($request->all());
-        // echo "hi";
+
         User::insert([
+            'user_id'=> $user_id,
             'name'=> $request->name,
             'email'=> $request->email,
             'password'=> bcrypt($request->password),
             'department'=> $request->department,
+            'division_id'=> $request->division,
+            'district_id'=> $request->district,
             'created_at'=> Carbon::now(),
         ]);
         // echo "Data Inserted Successfully";
@@ -70,7 +77,7 @@ class UserController extends Controller
 
         $request->validate([
             'name' => 'required',
-            'email' => 'email:rfc,dns | required',
+            // 'email' => 'email:rfc,dns | required',
         ]);
 
         User::find(Auth::id())->update([
@@ -78,7 +85,7 @@ class UserController extends Controller
             'email'=> $request->email
         ]);
 
-        return back();
+        return back()->with('success', 'Name or Email Updated Successfully!2');
     }
 
 

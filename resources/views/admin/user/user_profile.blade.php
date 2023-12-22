@@ -6,6 +6,9 @@
         <div class="card-header">
             <h3>Update Profile Information</h3>
         </div>
+        @if (session('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
         <div class="card-body">
             <form action="{{route('user.profile.update')}}" method="POST">
                 @csrf

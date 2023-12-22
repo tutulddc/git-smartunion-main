@@ -1,73 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>স্মার্ট ইউনিয়ন মানাজমেন্ট সিস্টেম</title>
+    <title>Gymove - Fitness Bootstrap Admin Dashboard</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('backend') }}/images/favicon.png">
-	<link rel="stylesheet" href="{{ asset('backend') }}/vendor/chartist/css/chartist.min.css">
-    <link href="{{ asset('backend') }}/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
-	<link href="{{ asset('backend') }}/vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
     <link href="{{ asset('backend') }}/css/style.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 
+<body class="h-100">
+    <div class="authincation h-100">
+        <div class="container h-100">
+            <div class="row justify-content-center h-100 align-items-center">
+                <div class="col-md-6">
+                    <div class="authincation-content">
+                        <div class="row no-gutters">
+                            <div class="col-xl-12">
+                                <div class="auth-form bg-black rounded">
+                                    <h4 class="text-center mb-4 text-white">Sign in your account</h4>
 
-<body>
-        <div class="content-body">
-            <!-- row -->
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-lg-6">
-						<form class="form-horizontal" action="{{ route('admin.login.confirm') }}" method="POST">
-                            @csrf
-                            <div class="form-group">
-                                <input type="hidden" name="department" value="{{ $users_info->department }}">
+                                    <form  action="{{ route('admin.login.confirm') }}" method="POST">
+                                        {{-- @method('POST') --}}
+                                        @csrf
+                                        {{-- <div class="form-group">
+                                            <input type="hidden" name="user_type" value="{{ $users_info->user_type }}">
+                                        </div> --}}
+                                        <div class="form-group">
+                                            <input type="hidden" name="department" value="{{ $users_info->department }}">
+                                        </div>
+                                        <div class="form-group">
+                                            {{-- <span class="text-success"><h3>Welcome!! {{ $users_info->department }}</h3></span> --}}
+                                            <h4 class="text-center mb-4 text-danger">{{ $users_info->department }}</h4>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="mb-1 text-white"><strong>Name</strong></label>
+                                            <input type="text" name="name" class="form-control" >
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="mb-1 text-white"><strong>Password</strong></label>
+                                            <label class="mb-1 text-white"><strong>Password</strong></label>
+                                            <input type="password" name="password" class="form-control">
+                                        </div>
+                                        <div class="form-row d-flex justify-content-between mt-4 mb-2">
+                                            <div class="form-group">
+                                                <a class="text-white" href="page-forgot-password.html">Forgot Password?</a>
+                                            </div>
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn bg-white text-black btn-block">Sign Me In</button>
+                                        </div>
+                                    </form>
+                                    {{-- <div class="mt-3">
+                                        @if (session('exist'))
+                                            <div class="alert alert-danger">{{ session('exist') }}</div>
+                                        @endif
+                                    </div> --}}
+                                    <div class="new-account mt-3">
+                                        <p class="text-white">Don't have an account? <a class="text-white" href="{{ asset('backend') }}/page-register.html">Sign up</a></p>
+                                    </div>
+
+
+
+                                </div>
                             </div>
-						  {{-- <div class="form-group">
-							<label class="control-label col-sm-2" for="email">Email:</label>
-							<div class="col-sm-10">
-							  <input type="email" class="form-control" id="email" placeholder="Enter email">
-							</div>
-						  </div> --}}
-						  <div class="form-group">
-							<label class="control-label col-sm-2" for="email">Name:</label>
-							<div class="col-sm-10">
-                                <input type="text" name="name" class="form-control" >
-							</div>
-						  </div>
-						  <div class="form-group">
-							<label class="control-label col-sm-2" for="pwd">Password:</label>
-							<div class="col-sm-10">
-                                <input type="password" name="password" class="form-control">
-							</div>
-							<div class="col-sm-10">
-                                @if (session('exist'))
-                                    <div class="alert alert-danger">{{ session('exist') }}</div>
-                                 @endif
-							</div>
-						  </div>
-						  <div class="form-group">
-							<div class="col-sm-offset-2 col-sm-10">
-							  <div class="checkbox">
-								<label><input type="checkbox"> Remember me</label>
-							  </div>
-							</div>
-						  </div>
-						  <div class="form-group">
-							<div class="col-sm-offset-2 col-sm-10">
-							  <button type="submit" class="btn btn-default">Submit</button>
-							</div>
-						  </div>
-						</form>
-					</div>
-				</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-</body>
-
+    </div>
 
 
     <!--**********************************
@@ -76,63 +82,26 @@
     <!-- Required vendors -->
     <script src="{{ asset('backend') }}/vendor/global/global.min.js"></script>
 	<script src="{{ asset('backend') }}/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
-	<script src="{{ asset('backend') }}/vendor/chart.js/Chart.bundle.min.js"></script>
     <script src="{{ asset('backend') }}/js/custom.min.js"></script>
-	<script src="{{ asset('backend') }}/js/deznav-init.js"></script>
-	<script src="{{ asset('backend') }}/vendor/owl-carousel/owl.carousel.js"></script>
-
-	<!-- Chart piety plugin files -->
-    <script src="{{ asset('backend') }}/vendor/peity/jquery.peity.min.js"></script>
-
-	<!-- Apex Chart -->
-	<script src="{{ asset('backend') }}/vendor/apexchart/apexchart.js"></script>
-
-    //sweet alert
+    <script src="{{ asset('backend') }}/js/deznav-init.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-	<!-- Dashboard 1 -->
-	<script src="{{ asset('backend') }}/js/dashboard/dashboard-1.js"></script>
-	<script>
-		function carouselReview(){
-			/*  testimonial one function by = owl.carousel.js */
-			jQuery('.testimonial-one').owlCarousel({
-				loop:true,
-				autoplay:true,
-				margin:30,
-				nav:false,
-				dots: false,
-				left:true,
-				navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>', '<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
-				responsive:{
-					0:{
-						items:1
-					},
-					484:{
-						items:2
-					},
-					882:{
-						items:3
-					},
-					1200:{
-						items:2
-					},
 
-					1540:{
-						items:3
-					},
-					1740:{
-						items:4
-					}
-				}
-			})
-		}
-		jQuery(window).on('load',function(){
-			setTimeout(function(){
-				carouselReview();
-			}, 1000);
-		});
-	</script>
+
+
+@if (session('exist'))
+    <script>
+        Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: '{{ session('exist') }}',
+        showConfirmButton: false,
+        timer: 1500
+        })
+    </script>
+@endif
 
 
 </body>
+
 </html>
