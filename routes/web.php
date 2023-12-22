@@ -52,5 +52,6 @@ Route::post('/user/photo/update', [UserController::class, 'user_photo_update'])-
 Route::get('/user/list', [UserController::class, 'user_list'])->name('user.list');
 Route::get('/user/remove/{user_id}', [UserController::class, 'user_remove'])->name('user.remove');
 Route::post('/user/register/', [UserController::class, 'custom_register'])->name('custom.register');
+Route::POST('/getDistrict', [UserController::class, 'getDistrict']);
 
 

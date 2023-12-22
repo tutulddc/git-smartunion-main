@@ -89,6 +89,24 @@
                     <strong class="text-danger">{{$message}}</strong>
                 @enderror
                 <div class="mb-3">
+                    <label for="" class="form-label">Division</label>
+                    <select name="division" id="division" class="form-control">
+                        <option value="">Seclect Division</option>
+                        @foreach ($divisions as $division)
+                        <option value="{{ $division->id }}">{{ $division->bn_name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">District</label>
+                    <select name="district" id="district" class="form-control">
+                        <option value="">Seclect District</option>
+                        @foreach ($districts as $district)
+                        <option value="{{ $district->id }}">{{ $district->bn_name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="mb-3">
                     <input type="submit" class="btn btn-primary">
                 </div>
             </form>
@@ -123,6 +141,7 @@
         })
     </script>
 
+
     {{-- @if (session('delete'))
         <script>
 
@@ -137,4 +156,48 @@
 
         </script>
     @endif --}}
+    <script>
+        $('#division').change(function(){
+            var division_id = $(this).val();
+            // alert(division_id);
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+            type: 'POST',
+            url:'/getDistrict',
+            data:{'division_id': division_id},
+                success: function(data){
+                    $('#district').html(data);
+                }
+            });
+        })
+    </script>
+
+
+@endsection
+@section('footer_script')
+    <script>
+        // $('#division').change(function(){
+        //     var division_id = $(this).val();
+        //     alert(division_id);
+            // $.ajaxSetup({
+            //     headers: {
+            //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            //     }
+            // });
+
+            // $.ajax({
+            // type: 'POST',
+            // url:'/getDistrict',
+            // data:{'division_id': division_id},
+            //     success: function(data){
+            //         alert(data);
+            //     }
+            // });
+        })
+    </script>
 @endsection

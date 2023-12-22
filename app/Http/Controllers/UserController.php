@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\District;
+use App\Models\Division;
 use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -18,8 +20,14 @@ class UserController extends Controller
 {
     function user_list(){
         // $users = User::all();
+        $divisions = Division::all();
+        $districts = District::all();
         $users = User::where('id', '!=', Auth::id())->get();
-        return view('admin.user.user_list', compact('users'));
+        return view('admin.user.user_list',[
+            'users' => $users,
+            'divisions' => $divisions,
+            'districts' => $districts,
+        ]);
     }
 
     function custom_register(Request $request){
@@ -174,5 +182,17 @@ class UserController extends Controller
         }
 
    }
+
+
+   function getDistrict(Request $request){
+    // echo "hi";
+    $str = '<option value="">Select District</option>';
+    $districts = District::where('division_id', $request->division_id)->get();
+    foreach($districts as $district){
+        // $str = '<option value="'.$district->id.'">Select District</option>';
+        $str .= '<option value="'.$district->id.'">'.$district->bn_name.'</option>';
+    }
+    echo $str;
+}
 
 }

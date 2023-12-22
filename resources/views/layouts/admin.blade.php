@@ -62,6 +62,7 @@
 	<script src="{{ asset('backend') }}/vendor/owl-carousel/owl.carousel.js"></script>
 
 	<!-- Chart piety plugin files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/js/selectize.min.js"></script>
     <script src="{{ asset('backend') }}/vendor/peity/jquery.peity.min.js"></script>
 
 	<!-- Apex Chart -->
