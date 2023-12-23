@@ -6,6 +6,17 @@
                     <span class="nav-text">ড্যাশবোর্ড</span>
                 </a>
             </li>
+            <li>
+                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-381-television"></i>
+                    <span class="nav-text">খানার তথ্য</span>
+                </a>
+                <ul aria-expanded="false">
+                    {{-- <li><a href="{{ route('khana') }}">খানার তথ্য সংগ্রহ</a></li> --}}
+                    <li><a href="{{ route('khana') }}">খানার তথ্য সংগ্রহ</a></li>
+                    <li><a href="#">খানা তথ্যের তালিকা</a></li>
+                </ul>
+            </li>
 
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                 <i class="flaticon-381-internet"></i>
