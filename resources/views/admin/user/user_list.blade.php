@@ -1,7 +1,7 @@
 @extends("layouts.admin")
 
 @section("content")
-<div class="col-lg-8 m-auto">
+<div class="col-lg-7 m-auto">
     <div class="card">
         <div class="card-header">
             <h3>User List </h3>
@@ -49,7 +49,7 @@
         </div>
     </div>
 </div>
-<div class="col-lg-4">
+<div class="col-lg-5">
     <div class="card">
         <div class="card-header">
             <h3>Add New User </h3>
@@ -92,6 +92,7 @@
                     <label for="" class="form-label">Division</label>
                     <select name="division" id="division" class="form-control">
                         <option value="">Seclect Division</option>
+                        <option value="">All Division</option>
                         @foreach ($divisions as $division)
                         <option value="{{ $division->id }}">{{ $division->bn_name }}</option>
                         @endforeach
@@ -103,6 +104,24 @@
                         <option value="">Seclect District</option>
                         @foreach ($districts as $district)
                         <option value="{{ $district->id }}">{{ $district->bn_name ." ". $district->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">Upazila</label>
+                    <select name="upazila" id="upazila" class="form-control">
+                        <option value="">Seclect Upazila</option>
+                        @foreach ($upazilas as $upazila)
+                        <option value="{{ $upazila->id }}">{{ $upazila->bn_name ." ". $upazila->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">Union</label>
+                    <select name="union" id="union" class="form-control">
+                        <option value="">Seclect Union</option>
+                        @foreach ($unions as $union)
+                        <option value="{{ $union->id }}">{{ $union->bn_name ." ". $union->name }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -172,6 +191,47 @@
             data:{'division_id': division_id},
                 success: function(data){
                     $('#district').html(data);
+                }
+            });
+        })
+    </script>
+    <script>
+        $('#district').change(function(){
+            var district_id = $(this).val();
+            // alert(division_id);
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+            type: 'POST',
+            url:'/getUpazila',
+            data:{'district_id': district_id},
+                success: function(data){
+                    $('#upazila').html(data);
+                }
+            });
+        })
+    </script>
+    <script>
+        $('#upazila').change(function(){
+            var upazila_id = $(this).val();
+            // alert(upazila_id);
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+            type: 'POST',
+            url:'/getUnion',
+            data:{'upazila_id': upazila_id},
+                success: function(data){
+                    $('#union').html(data);
+                    // alert(data);
                 }
             });
         })

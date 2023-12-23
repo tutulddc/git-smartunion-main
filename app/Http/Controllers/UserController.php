@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\District;
 use App\Models\Division;
+use App\Models\Union;
+use App\Models\Upazila;
 use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -22,24 +24,29 @@ class UserController extends Controller
         // $users = User::all();
         $divisions = Division::all();
         $districts = District::all();
+        $upazilas = Upazila::all();
+        $unions = Union::all();
         $users = User::where('id', '!=', Auth::id())->get();
         return view('admin.user.user_list',[
             'users' => $users,
             'divisions' => $divisions,
             'districts' => $districts,
+            'upazilas' => $upazilas,
+            'unions' => $unions,
         ]);
     }
 
     function custom_register(Request $request){
-        $user_id = random_int(100000, 900000)."-".Carbon::now()->format('d-m-y')."-".$request->division."-".$request->district;
+        $user_id = Carbon::now()->format('dmy-his')."-".random_int(1000, 9000);
+        // $user_id = $request->division.$request->district.$request->upazila.$request->union.Carbon::now()->format('d-m-y')."-".random_int(1000, 9000);
         // echo $user_id;
         // die();
         $request->validate([
             'name'=>'required',
             'department'=>'required',
             'password'=>'required',
-            'division'=>'required',
-            'district'=>'required',
+            // 'division'=>'required',
+            // 'district'=>'required',
         ]);
 
 
@@ -51,6 +58,8 @@ class UserController extends Controller
             'department'=> $request->department,
             'division_id'=> $request->division,
             'district_id'=> $request->district,
+            'upazila_id'=> $request->upazila,
+            'union_id'=> $request->union,
             'created_at'=> Carbon::now(),
         ]);
         // echo "Data Inserted Successfully";
@@ -192,14 +201,34 @@ class UserController extends Controller
 
 
    function getDistrict(Request $request){
-    // echo "hi";
-    $str = '<option value="">Select District</option>';
-    $districts = District::where('division_id', $request->division_id)->get();
-    foreach($districts as $district){
-        // $str = '<option value="'.$district->id.'">Select District</option>';
-        $str .= '<option value="'.$district->id.'">'.$district->bn_name.'</option>';
+        // echo "hi";
+        $str = '<option value="">Select District</option>';
+        $str = '<option value="">All District</option>';
+        $districts = District::where('division_id', $request->division_id)->get();
+        foreach($districts as $district){
+            // $str = '<option value="'.$district->id.'">Select District</option>';
+            $str .= '<option value="'.$district->id.'">'.$district->bn_name.'</option>';
+        }
+        echo $str;
     }
-    echo $str;
-}
+   function getUpazila(Request $request){
+        $str = '<option value="">Select Upazila</option>';
+        $str = '<option value="">All Upazila</option>';
+        $upazilas = Upazila::where('district_id', $request->district_id)->get();
+        foreach($upazilas as $upazila){
+            $str .= '<option value="'.$upazila->id.'">'.$upazila->bn_name.'</option>';
+        }
+        echo $str;
+    }
+   function getUnion(Request $request){
+        $str = '<option value="">Select Union</option>';
+        $str = '<option value="">All Union</option>';
+        $unions = Union::where('upazilla_id', $request->upazila_id)->get();
+        foreach($unions as $union){
+            $str .= '<option value="'.$union->id.'">'.$union->bn_name.'</option>';
+        }
+        echo $str;
+
+    }
 
 }

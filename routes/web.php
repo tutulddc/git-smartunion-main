@@ -53,5 +53,7 @@ Route::get('/user/list', [UserController::class, 'user_list'])->name('user.list'
 Route::get('/user/remove/{user_id}', [UserController::class, 'user_remove'])->name('user.remove');
 Route::post('/user/register/', [UserController::class, 'custom_register'])->name('custom.register');
 Route::POST('/getDistrict', [UserController::class, 'getDistrict']);
+Route::POST('/getUpazila', [UserController::class, 'getUpazila']);
+Route::POST('/getUnion', [UserController::class, 'getUnion']);
 
 
