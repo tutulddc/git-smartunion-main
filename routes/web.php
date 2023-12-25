@@ -60,3 +60,5 @@ Route::POST('/getUnion', [UserController::class, 'getUnion']);
 // খানা ফরম / তথ্য কালেকশন  ফরম
 Route::get('khana/form/',[KhanaStoreController::class,'khana'])->name('khana');
 Route::post('khana/store',[KhanaStoreController::class,'khana_store'])->name('khana.store');
+Route::GET('/getPersonid', [KhanaStoreController::class, 'getPersonid']);
+Route::GET('/getPersonid1', [KhanaStoreController::class, 'getPersonid1']);

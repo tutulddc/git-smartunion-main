@@ -52,23 +52,52 @@
                                         @enderror
                                     </div>
                                     <div class="col-lg-2 col-12 col-sm-4">
-                                        <label for="khana_member_name">ব্যক্তির পরিচয়<span class="input_star">*</span></label>
-                                        <select name="khana_member_name" class=" form-control rounded" >
+                                        <label for="khana_person_type">খানা ব্যক্তির ধরন<span class="input_star">*</span></label>
+                                        <select name="khana_person_type" id="khana_person_type" class=" form-control rounded" >
                                             <option value="">সিলেক্ট করুন</option>
                                             <option value="1">পরিবারের সদস্য</option>
                                             <option value="2">পরিবার প্রধান</option>
                                         </select>
-                                        @error('khana_member_name')
+                                        @error('khana_person_type')
                                             <li class="text-danger small">{{ $message; }}</li>
                                         @enderror
                                     </div>
                                     <div class="col-lg-2 col-12 col-sm-4">
+                                        <label for="khana_relation">খানা প্রধানের সাথে সম্পর্ক<span class="input_star">*</span></label>
+                                        <select name="khana_relation" id="khana_relation" class=" form-control rounded" >
+                                            {{-- <option value="">সিলেক্ট করুন</option> --}}
+                                            {{-- <option value="0"> </option>
+                                            <option value="1">স্বামী</option>
+                                            <option value="2">স্ত্রী</option>
+                                            <option value="3">ছেলে</option>
+                                            <option value="4">মেয়ে</option>
+                                            <option value="5">ভাই</option>
+                                            <option value="6">বোন</option>
+                                            <option value="7">বাবা</option>
+                                            <option value="8">মা</option>
+                                            <option value="9">চাচা</option>
+                                            <option value="10">চাচি</option>
+                                            <option value="11">খালা</option>
+                                            <option value="12">খালু</option>
+                                            <option value="13">ফুফা</option>
+                                            <option value="14">ফুফু</option>
+                                            <option value="15">পোতা</option>
+                                            <option value="16">পুত্নি</option>
+                                            <option value="17">নাতি</option>
+                                            <option value="18">নাতনি</option>
+                                            <option value="19">অন্যান্য</option> --}}
+                                        </select>
+                                        @error('khana_relation')
+                                            <li class="text-danger small">{{ $message; }}</li>
+                                        @enderror
+                                    </div>
+                                    {{-- <div class="col-lg-2 col-12 col-sm-4">
                                         <label for="khana_relation">খানার সাথে সম্পর্ক<span class="input_star">*</span></label>
                                         <input type="text" name="khana_relation" value="" class=" form-control rounded" >
                                         @error('khana_relation')
                                             <li class="text-danger small">{{ $message; }}</li>
                                         @enderror
-                                    </div>
+                                    </div> --}}
                                     <div class="col-lg-2 col-12 col-sm-4">
                                         <label for="father_name">পিতার নাম:<span class="input_star">*</span></label>
                                         <input type="text" name="father_name" value="" class=" form-control rounded" >
@@ -236,8 +265,8 @@
                                         <input type="text" name="driving_lice" value="" class=" form-control rounded">
                                     </div>
                                     <div class="col-12 col-sm-4 col-lg-2">
-                                        <label for="freedom_fither">মুক্তি যোদ্ধা কি /না ?</label>
-                                        <select class=" form-control rounded" name="freedom_fither">
+                                        <label for="freedom_fighter">মুক্তি যোদ্ধা কি /না ?</label>
+                                        <select class=" form-control rounded" name="freedom_fighter">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
@@ -260,7 +289,7 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-12 col-sm-6 col-lg-3">
-                                        <label for="child_education">স্কুলপড়ুয়া (শিশু) কি / না ?:</label>
+                                        <label for="child_education">স্কুলপড়ুয়া শিশু আছে কি/না?:</label>
                                         <select name="child_education" class=" form-control rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
@@ -295,19 +324,19 @@
 
                                 <div class="row mb-6 ">
                                     <div class="col-12 col-sm-4 col-lg-3">
-                                        <label for="stipend_ammount">উপবৃ্ত্তির পরিমান:</label>
-                                        <input type="number" name="stipend_ammount" value="" class=" form-control rounded">
+                                        <label for="stipend_amount">উপবৃ্ত্তির পরিমান:</label>
+                                        <input type="number" name="stipend_amount" value="" class=" form-control rounded">
                                     </div>
                                     <div class="col-12 col-sm-4 col-lg-3">
-                                        <label for="droped_child">বিদ্যালয় হতে ঝরে পড়া শিশু কি/না?</label>
-                                        <select name="droppid_child" class=" form-control rounded">
+                                        <label for="dropped_child">বিদ্যালয় হতে ঝরে পড়া শিশু কি/না?</label>
+                                        <select name="dropped_child" class=" form-control rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-4 col-lg-3">
-                                        <label for="child_marrige">বাল্য বিবাহের ঝুকি সম্পন্ন শিশু কি/না?</label>
-                                        <select name="child_marrige" class=" form-control rounded">
+                                        <label for="child_marriage">বাল্য বিবাহের ঝুকি সম্পন্ন শিশু কি/না?</label>
+                                        <select name="child_marriage" class=" form-control rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
@@ -327,8 +356,8 @@
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
-                                        <label for="phy_diabled">শারিরীক ভাবে অক্ষম কি/না?</label>
-                                        <select name="phy_diabled" class=" form-control rounded">
+                                        <label for="phy_disabled">শারিরীক ভাবে অক্ষম কি/না?</label>
+                                        <select name="phy_disabled" class=" form-control rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
@@ -884,4 +913,48 @@
         </div>
 
     </div>
+
+@endsection
+@section('footer_script')
+<script>
+
+    $('#khana_person_id').change(function(){
+        // alert();
+
+
+        if ($(this).val()=== '2') {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+            type: 'GET',
+            url:'/getPersonid',
+                success: function(data){
+                    $('#khana_relation').html(data);
+                }
+            });
+
+        }
+        if ($(this).val()=== '1') {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+            type: 'GET',
+            url:'/getPersonid1',
+                success: function(data){
+                    $('#khana_relation').html(data);
+                }
+            });
+
+        }
+
+    })
+</script>
 @endsection

@@ -254,7 +254,7 @@ a {
                     <input type="hidden" name="department" value="{{ $user_info->department }}">
                 </div>
 
-                <div class="col-lg-3 flex">
+                <div class="col-lg-3 col-sm-6 col-12 flex">
                     <div class="card" style="width: 100%; margin-bottom:15px;">
                         <img src="{{ asset('uploads/user/house.jpg') }}" class="card-img-top" alt="...">
                         {{-- <img src="{{ asset('uploads/user') }}/{{ $user_info->logo }}" class="card-img-top" alt="..."> --}}

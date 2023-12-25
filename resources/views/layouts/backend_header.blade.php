@@ -19,7 +19,7 @@
 		.form-control{
 			/* border: 1px solid rgb(98, 83, 112)!important; */
 			border: 1px solid blueviolet!important;
-			height: 32px;
+			height: 35px;
 			border-radius: 0px ;
 			color:	black!important;
 		}
