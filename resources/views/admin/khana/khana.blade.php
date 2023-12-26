@@ -477,8 +477,8 @@
                                 <h4 class="card-title mt-3" style="text-align: center">অন্যান্য সুবিধার তথ্য</h4>
                                 <div class="row mb-3 ">
                                     <div class="col-12 col-sm-6 col-lg-3">
-                                        <label for="benifit_others">অন্যান্য সুবিধা পেয়েছেন কি না?</label>
-                                        <select name="benifit_others" class="form-control rounded">
+                                        <label for="oth_benefit_conf">অন্যান্য সুবিধা পেয়েছেন কি না?</label>
+                                        <select name="oth_benefit_conf" class="form-control rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
@@ -492,14 +492,14 @@
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                     <label for="grbenefit" >জিআর পেয়েছেন কি না?</label>
-                                        <select  name="grbenefit" class="form-control rounded">
+                                        <select  name="gr_benefit" class="form-control rounded">
                                         <option value="0">না</option>
                                         <option value="1">হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
-                                        <label for="sealing_benefit" >ঢেউটিন পেয়েছেন কি না?</label>
-                                        <select  name="sealing_benefit" class="form-control rounded">
+                                        <label for="tinbenefit" >ঢেউটিন পেয়েছেন কি না?</label>
+                                        <select  name="tin_benefit" class="form-control rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
@@ -545,15 +545,15 @@
                                 <h4 class="card-title" style="text-align: center">ঋণের তথ্য</h4>
                                 <div class="row mb-3">
                                     <div class="col-12 col-sm-6 col-lg-3">
-                                        <label for="lonee">ঋণ গ্রহন করেছেন কি না?:</label>
-                                        <select name="lonee" class="form-control rounded">
+                                        <label for="loan_conf">ঋণ গ্রহন করেছেন কি না?:</label>
+                                        <select name="loan_conf" class="form-control rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
-                                        <label for="lone_type" >ঋণের ধরণ:</label>
-                                        <select  name="lone_type" class="form-control rounded">
+                                        <label for="loan_type" >ঋণের ধরণ:</label>
+                                        <select  name="loan_type" class="form-control rounded">
                                             <option value="0"></option>
                                             <option value="1">ব্যবসা</option>
                                             <option value="2">কৃষি</option>
@@ -566,8 +566,8 @@
                                             </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
-                                        <label for="lone_dept">দপ্তরের নাম:</label>
-                                        <select name="lone_dept" class="form-control rounded">
+                                        <label for="loan_dept">দপ্তরের নাম:</label>
+                                        <select name="loan_dept" class="form-control rounded">
 
                                             <option value="1">উপজেলা আনসার ও ভিডিপি</option>
                                             <option value="2">উপজেলা ফায়ার সার্ভিস ও সিভিল ডিফেন্স</option>
@@ -605,19 +605,19 @@
                                             </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
-                                        <label for="lone_amount" >
+                                        <label for="loan_amount" >
                                             টাকার পরিমাণ::</label>
-                                       <input type="text" name="lone_amount"  class="form-control rounded">
+                                       <input type="text" name="loan_amount"  class="form-control rounded">
                                    </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-12 col-sm-6 col-lg-3">
-                                        <label for="lone_duration" >সময়কাল(মাস):</label>
-                                       <input type="text" name="lone_duration" placeholder="১ মাস-৬মাস/বছর" class="form-control rounded">
+                                        <label for="loan_duration" >সময়কাল(মাস):</label>
+                                       <input type="text" name="loan_duration" placeholder="১ মাস-৬মাস/বছর" class="form-control rounded">
                                    </div>
                                    <div class="col-12 col-sm-3">
-                                        <label for="lone_present" >ঋণের বতর্মান অবস্থা:</label>
-                                        <select  name="lone_present" class="form-control rounded">
+                                        <label for="loan_present_cond" >ঋণের বতর্মান অবস্থা:</label>
+                                        <select  name="loan_present_cond" class="form-control rounded">
                                                 <option value="0">স্থগিত</option>
                                                 <option value="1">চলমান</option>
                                                 <option value="2">পরিশোধিত</option>
@@ -629,8 +629,8 @@
                                 <h4 class="card-title" style="text-align: center">কৃষি তথ্য</h4>
                                 <div class="row mb-3">
                                     <div class="col-12 col-sm-6 col-lg-3">
-                                        <label for="farmer">কৃষক কি না?:</label>
-                                        <select name="farmer" class="form-control rounded">
+                                        <label for="farmer_conf">কৃষক কি না?:</label>
+                                        <select name="farmer_conf" class="form-control rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
@@ -712,8 +712,8 @@
                               <h4 class="card-title" style="text-align: center">পারিবারিক সকল তথ্য</h4>
                               <div class="row mb-3">
                                   <div class="col-12 col-sm-8 col-lg-4">
-                                      <label for="parmanent_address">স্থায়ী ঠিকানা (পাড়াসহ গ্রাম / মহল্লা):<span class="input_star"><span class="input_star">*</span></label>
-                                      <input type="text" name="parmanent_address"   class="form-control rounded" >
+                                      <label for="per_address">স্থায়ী ঠিকানা (পাড়াসহ গ্রাম / মহল্লা):<span class="input_star"><span class="input_star">*</span></label>
+                                      <input type="text" name="per_address"   class="form-control rounded" >
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="religion" >ধর্ম:<span class="input_star">*</span></label>
@@ -726,9 +726,9 @@
                                       </select>
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
-                                      <label for="proverty_margin">
+                                      <label for="poverty_margin">
                                           আর্থ সামাজিক অবস্থা:<span class="input_star">*</span></label>
-                                      <select  name="proverty_margin" class="form-control rounded" >
+                                      <select  name="poverty_margin" class="form-control rounded" >
                                           <option value="1">অতিদরিদ্র</option>
                                           <option value="2">দরিদ্র</option>
                                           <option value="3">নিম্ন মধ্যবিত্ত</option>
@@ -766,14 +766,14 @@
                                       <input type="number" name="fish_pond" placeholder="0"   class="form-control rounded">
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
-                                      <label for="fish_pond_size">মৎস ঘেরের আয়তন (শতাংশ):</label>
-                                      <input type="number" name="fish_pond_size" placeholder="১৬ শতাংশ"  class="form-control rounded">
+                                      <label for="fish_pond_area">মৎস ঘেরের আয়তন (শতাংশ):</label>
+                                      <input type="number" name="fish_pond_area" placeholder="১৬ শতাংশ"  class="form-control rounded">
                                   </div>
                               </div>
                               <div class="row mb-3">
                                   <div class="col-12 col-sm-6 col-lg-3">
-                                      <label for="domistic_animal" >গৃহ পালিত পশুর সংখ্যা:</label>
-                                      <input type="number" name="domistic_animal"   placeholder="0" class="form-control rounded">
+                                      <label for="domestic_animal" >গৃহ পালিত পশুর সংখ্যা:</label>
+                                      <input type="number" name="domestic_animal"   placeholder="0" class="form-control rounded">
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="electricity">বিদ্যুৎ ব্যবস্থা আছে কি/না?</label>
@@ -805,12 +805,12 @@
                                       <input type="number" name="motor_cycle"   placeholder="0" class="form-control rounded">
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
-                                      <label for="riksha_van" >ভ্যান / রিক্সার সংখ্যা:</label>
-                                      <input type="number" name="riksha_van"   placeholder="0" class="form-control rounded">
+                                      <label for="rickshaw_van" >ভ্যান / রিক্সার সংখ্যা:</label>
+                                      <input type="number" name="rickshaw_van"   placeholder="0" class="form-control rounded">
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
-                                      <label for="auto_riksha_van">অটো ভ্যান / রিক্সার সংখ্যা:</label>
-                                      <input type="number" name="auto_riksha_van"   placeholder="0" class="form-control rounded">
+                                      <label for="auto_van">অটো ভ্যান / রিক্সার সংখ্যা:</label>
+                                      <input type="number" name="auto_van"   placeholder="0" class="form-control rounded">
                                   </div>
                               </div>
 
@@ -828,8 +828,8 @@
                                       <input type="number" name="boat"   placeholder="0" class="form-control rounded">
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
-                                      <label for="three_whiler">বাস/মিনিবাস/ট্রাক/থ্রি হুইলার</label>
-                                      <input type="number" name="three_whiler"   placeholder="0" class="form-control rounded">
+                                      <label for="bus_three_wheeler">বাস/মিনিবাস/ট্রাক/থ্রি হুইলার</label>
+                                      <input type="number" name="bus_three_wheeler"   placeholder="0" class="form-control rounded">
                                   </div>
                               </div>
                           </div>
@@ -867,8 +867,8 @@
                                             </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
-                                        <label for="house_room">মোট কক্ষের সংখ্যা</label>
-                                        <input type="number" name="house_room"   placeholder="0" class="form-control rounded">
+                                        <label for="number_of_rooms">মোট কক্ষের সংখ্যা</label>
+                                        <input type="number" name="number_of_rooms"   placeholder="0" class="form-control rounded">
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="house_use_type" >বাড়ীর ব্যবহারের ধরন:</label>
@@ -885,8 +885,16 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-12 col-12 col-sm-6 col-lg-3">
-                                        <label for="three_whiler">ভুমির বার্ষিক ভাড়া মূল্য:<span class="land_yearly_rent"><span class="input_star">*</span></span></label>
-                                        <input type="number" name="land_yearly_rent"   placeholder="0" class="form-control rounded">
+                                        <label for="land_yearly_value">ভুমির বার্ষিক ভাড়া মূল্য:<span class="land_yearly_rent"><span class="input_star">*</span></span></label>
+                                        <input type="number" name="land_yearly_value"   placeholder="0" class="form-control rounded">
+                                    </div>
+                                    <div class="col-12 col-12 col-sm-6 col-lg-3">
+                                        <label for="yearly_tax">বার্ষিক কর (টাকা):<span class="land_yearly_rent"><span class="input_star">*</span></span></label>
+                                        <input type="number" name="yearly_tax"   placeholder="0" class="form-control rounded">
+                                    </div>
+                                    <div class="col-12 col-12 col-sm-6 col-lg-3">
+                                        <label for="final_tax">ফাইনাল ট্যাক্স:<span class="land_yearly_rent"><span class="input_star">*</span></span></label>
+                                        <input type="number" name="final_tax"   placeholder="0" class="form-control rounded">
                                     </div>
                                 </div>
                             </div>
@@ -957,4 +965,18 @@
 
     })
 </script>
+@endsection
+
+@section('footer_script')
+    {{-- @if (session('khana_success'))
+        <script>
+            Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: '{{ session('khana_success') }}',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        </script>
+    @endif --}}
 @endsection

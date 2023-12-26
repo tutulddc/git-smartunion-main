@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Benefit_info;
+use App\Models\Family_info;
+use App\Models\Farmer_info;
 use App\Models\Khana_personal_info;
+use App\Models\Loan_info;
+use App\Models\Other_benefit;
+use App\Models\Tax_holding;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,9 +27,12 @@ class KhanaStoreController extends Controller
         $upazila_id = Auth::user()->upazila_id;
         $union_id = Auth::user()->union_id;
         $khana_id = $division_id.$district_id.$upazila_id.$union_id.$request->ward_number.$request->holding_number;
-        $khana_person_unique_id = $request->khana_person_type.$request->ward_number.$request->holding_number."-".random_int(1000, 9000);
+        $khana_person_unique_id = $request->khana_person_type.$request->ward_number.$request->holding_number."-".random_int(100000, 900000);
 
         $benefit_info_unique_id = $request->khana_person_type.$request->ward_number.$request->holding_number."-".random_int(1000, 9000)."-".$request->benefit_type;
+        $oth_benefit_unique_id = $request->khana_person_type.$request->ward_number.$request->holding_number."-".random_int(10000, 90000);
+        $loan_unique_id = $request->loan_type.$request->loan_conf.$request->khana_person_type.$request->ward_number.$request->holding_number."-".random_int(10000, 90000);
+        $farmer_unique_id = $request->farmer_type.$request->farmer_conf.$request->khana_person_type.$request->ward_number.$request->holding_number."-".random_int(10000, 90000);
 
         $request->validate([
             'ward_number'=>'required',
@@ -107,7 +115,6 @@ class KhanaStoreController extends Controller
             'created_at'=>Carbon::Now(),
           ]);
         Benefit_info::insert([
-
             'benefit_info_unique_id'=>$benefit_info_unique_id,
             'khana_id'=>$khana_id,
             'union_id'=>$union_id,
@@ -124,6 +131,106 @@ class KhanaStoreController extends Controller
             'benefit_amount'=>$request->benefit_amount,
             'created_at'=>Carbon::Now(),
           ]);
+        Other_benefit::insert([
+            'oth_benefit_conf'=>$request->oth_benefit_conf,
+            'oth_benefit_unique_id'=>$oth_benefit_unique_id,
+            'union_id'=>$union_id,
+            'ward_number'=>$request->ward_number,
+            'holding_number'=>$request->holding_number,
+            'khana_id'=>$khana_id,
+            'khana_person_name'=>$request->khana_person_name,
+            'khana_person_unique_id'=>$khana_person_unique_id,
+            'khana_person_type'=>$request->khana_person_type,
+            'nid_number'=>$request->nid_number,
+            'housing'=>$request->housing,
+            'gr_benefit'=>$request->gr_benefit,
+            'tin_benefit'=>$request->tin_benefit,
+            'blanket_benefit'=>$request->blanket_benefit,
+            'tcb_benefit'=>$request->tcb_benefit,
+            'fifteentaka_benefit'=>$request->fifteentaka_benefit,
+            'thirtytaka_benefit'=>$request->thirtytaka_benefit,
+            'benefit_deserve'=>$request->benefit_deserve,
+            'created_at'=>Carbon::Now(),
+          ]);
+        Loan_info::insert([
+            'loan_conf'=>$request->loan_conf,
+            'loan_unique_id'=>$loan_unique_id,
+            'union_id'=>$union_id,
+            'ward_number'=>$request->ward_number,
+            'holding_number'=>$request->holding_number,
+            'khana_id'=>$khana_id,
+            'khana_person_name'=>$request->khana_person_name,
+            'khana_person_unique_id'=>$khana_person_unique_id,
+            'khana_person_type'=>$request->khana_person_type,
+            'nid_number'=>$request->nid_number,
+            'loan_type'=>$request->loan_type,
+            'loan_dept'=>$request->loan_dept,
+            'loan_amount'=>$request->loan_amount,
+            'loan_duration'=>$request->loan_duration,
+            'loan_present_cond'=>$request->loan_present_cond,
+            'created_at'=>Carbon::Now(),
+          ]);
+        Farmer_info::insert([
+            'farmer_conf'=>$request->farmer_conf,
+            'farmer_unique_id'=>$farmer_unique_id,
+            'union_id'=>$union_id,
+            'ward_number'=>$request->ward_number,
+            'holding_number'=>$request->holding_number,
+            'khana_id'=>$khana_id,
+            'khana_person_name'=>$request->khana_person_name,
+            'khana_person_unique_id'=>$khana_person_unique_id,
+            'khana_person_type'=>$request->khana_person_type,
+            'nid_number'=>$request->nid_number,
+            'farmer_type'=>$request->farmer_type,
+            'agro_land'=>$request->agro_land,
+            'non_agro_land'=>$request->non_agro_land,
+            'main_crop'=>$request->main_crop,
+            'farmer_status'=>$request->farmer_status,
+            'agro_dept_facility'=>$request->agro_dept_facility,
+            'created_at'=>Carbon::Now(),
+          ]);
+        Family_info::insert([
+            'khana_id'=>$khana_id,
+            'union_id'=>$union_id,
+            'ward_number'=>$request->ward_number,
+            'holding_number'=>$request->holding_number,
+            'per_address'=>$request->per_address,
+            'religion'=>$request->religion,
+            'poverty_margin'=>$request->poverty_margin,
+            'yearly_income'=>$request->yearly_income,
+            'sanitation'=>$request->sanitation,
+            'drinking_water'=>$request->drinking_water,
+            'fish_pond'=>$request->fish_pond,
+            'fish_pond_area'=>$request->fish_pond_area,
+            'domestic_animal'=>$request->domestic_animal,
+            'electricity'=>$request->electricity,
+            'race'=>$request->race,
+            'total_tenant'=>$request->total_tenant,
+            'immigrant'=>$request->immigrant,
+            'motor_cycle'=>$request->motor_cycle,
+            'rickshaw_van'=>$request->rickshaw_van,
+            'auto_van'=>$request->auto_van,
+            'cng_mahindra'=>$request->cng_mahindra,
+            'easy_bike'=>$request->easy_bike,
+            'boat'=>$request->boat,
+            'bus_three_wheeler'=>$request->bus_three_wheeler,
+            'created_at'=>Carbon::Now(),
+          ]);
+          Tax_holding::insert([
+            'khana_id'=>$khana_id,
+            'union_id'=>$union_id,
+            'ward_number'=>$request->ward_number,
+            'holding_number'=>$request->holding_number,
+            'house_category'=>$request->house_category,
+            'number_of_rooms'=>$request->number_of_rooms,
+            'house_use_type'=>$request->house_use_type,
+            'house_yearly_value'=>$request->house_yearly_value,
+            'land_yearly_value'=>$request->land_yearly_value,
+            'yearly_tax'=>$request->yearly_tax,
+            'final_tax'=>$request->final_tax,
+            'created_at'=>Carbon::Now(),
+          ]);
+        //   return back()->with('khana_success','Congratulations!! Data Inserted Successfully');
         return "Inserted Successfully";
         // echo "hi";
     }
