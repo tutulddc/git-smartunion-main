@@ -48,6 +48,8 @@ class KhanaStoreController extends Controller
             'father_name'=>'required',
             'mother_name'=>'required',
             'husb_wife_name'=>'required',
+            'khana_person_img'=>'required',
+            'khana_house_img'=>'required',
             'pres_address'=>'required',
             'dob'=>'required',
             'phone'=>'required',
@@ -134,6 +136,60 @@ class KhanaStoreController extends Controller
                     'created_at'=>Carbon::Now(),
                 ]);
             }
+        }else{
+            $khana_person_img = $request->khana_person_img;
+            $extension = $khana_person_img->extension();
+            $person_img_file_name = $khana_person_unique_id."." .$extension;
+            Image::make($khana_person_img)->save(public_path('uploads/khana/persons/'.$person_img_file_name));
+
+            $khana_house_img = $request->khana_house_img;
+            $extension = $khana_house_img->extension();
+            $khana_house_img_file_name = $khana_person_unique_id."." .$extension;
+            Image::make($khana_house_img)->save(public_path('uploads/khana/houses/'.$khana_house_img_file_name));
+
+                Khana_personal_info::insert([
+                    'division_id'=>$division_id,
+                    'district_id'=>$district_id,
+                    'upazila_id'=>$upazila_id,
+                    'union_id'=>$union_id,
+                    'ward_number'=>$request->ward_number,
+                    'khana_id'=>$khana_id,
+                    'holding_number'=>$request->holding_number,
+                    'khana_person_name'=>$request->khana_person_name,
+                    'khana_person_type'=>$request->khana_person_type,
+                    'khana_person_unique_id'=>$khana_person_unique_id,
+                    'khana_relation'=>$request->khana_relation,
+                    'father_name'=>$request->father_name,
+                    'mother_name'=>$request->mother_name,
+                    'husb_wife_name'=>$request->husb_wife_name,
+                    'khana_person_img'=>$person_img_file_name,
+                    'khana_house_img'=>$khana_house_img_file_name,
+                    'pres_address'=>$request->pres_address,
+                    'nid_number'=>$request->nid_number,
+                    'birth_number'=>$request->birth_number,
+                    'phone'=>$request->phone,
+                    'dob'=>$request->dob,
+                    'gender'=>$request->gender,
+                    'education'=>$request->education,
+                    'occupation'=>$request->occupation,
+                    'passport'=>$request->passport,
+                    'driving_lice'=>$request->driving_lice,
+                    'freedom_fighter'=>$request->freedom_fighter,
+                    'ff_number'=>$request->ff_number,
+                    'quater_house'=>$request->quater_house,
+                    'child_education'=>$request->child_education,
+                    'primary_stipend'=>$request->primary_stipend,
+                    'mid_stipend'=>$request->mid_stipend,
+                    'high_stipend'=>$request->high_stipend,
+                    'stipend_amount'=>$request->stipend_amount,
+                    'dropped_child'=>$request->dropped_child,
+                    'child_marriage'=>$request->child_marriage,
+                    'drag_affect'=>$request->drag_affect,
+                    'active_worker'=>$request->active_worker,
+                    'phy_disabled'=>$request->phy_disabled,
+                    'unemployed'=>$request->unemployed,
+                    'created_at'=>Carbon::Now(),
+                ]);
         }
 
 
