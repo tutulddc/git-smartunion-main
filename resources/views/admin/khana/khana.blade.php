@@ -9,6 +9,9 @@
             @if (session('khanaSuccess'))
                 <div class="alert alert-success">{{session('khanaSuccess')}}</div>
             @endif
+            @if (session('khana_prodhan'))
+                <div class="alert alert-danger">{{session('khana_prodhan')}}</div>
+            @endif
             <form action="{{ route('khana.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
