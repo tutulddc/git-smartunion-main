@@ -407,8 +407,8 @@
                                 <h4 class="card-title" style="text-align: center">ভাতার তথ্য</h4>
                                 <div class="row mb-3">
                                     <div class="col-12 col-sm-6 col-lg-3">
-                                        <label for="benifit_type">ভাতার ধরণ:</label>
-                                        <select name="benifit_type" class="form-control rounded">
+                                        <label for="benefit_type">ভাতার ধরণ:</label>
+                                        <select name="benefit_type" class="form-control rounded">
                                             <option value="1">মুক্তিযোদ্ধা</option>
                                             <option value="2">প্রতিবন্ধী</option>
                                             <option value="3">বিধবা</option>
@@ -420,15 +420,15 @@
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
-                                        <label for="holding_number">ভাতা পেয়েছেন কি না?:</label>
-                                        <select name="stipen_type" class="form-control rounded">
+                                        <label for="benefit_confirm">ভাতা পেয়েছেন কি না?:</label>
+                                        <select name="benefit_confirm" class="form-control rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
-                                        <label for="khana_person_name">দপ্তরের নাম:</label>
-                                        <select name="benifit_dept" class="form-control rounded">
+                                        <label for="benefit_dept">দপ্তরের নাম:</label>
+                                        <select name="benefit_dept" class="form-control rounded">
 
                                             <option value="1">উপজেলা আনসার ও ভিডিপি</option>
                                             <option value="2">উপজেলা ফায়ার সার্ভিস ও সিভিল ডিফেন্স</option>
@@ -466,8 +466,8 @@
                                             </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
-                                        <label for="benifit_ammount">ভাতার পরিমাণ:</label>
-                                        <input type="number" name="benifit_ammount" class="form-control rounded">
+                                        <label for="benefit_amount">ভাতার পরিমাণ:</label>
+                                        <input type="number" name="benefit_amount" class="form-control rounded">
                                     </div>
                                     {{-- @error('category_name')
                                         <li class="text-danger">{{ $message; }}</li>
@@ -918,7 +918,7 @@
 @section('footer_script')
 <script>
 
-    $('#khana_person_id').change(function(){
+    $('#khana_person_type').change(function(){
         // alert();
 
 

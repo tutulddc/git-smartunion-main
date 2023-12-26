@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Benefit_info;
 use App\Models\Khana_personal_info;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -16,6 +17,15 @@ class KhanaStoreController extends Controller
     }
 
     function khana_store(Request $request){
+        $division_id = Auth::user()->division_id;
+        $district_id = Auth::user()->district_id;
+        $upazila_id = Auth::user()->upazila_id;
+        $union_id = Auth::user()->union_id;
+        $khana_id = $division_id.$district_id.$upazila_id.$union_id.$request->ward_number.$request->holding_number;
+        $khana_person_unique_id = $request->khana_person_type.$request->ward_number.$request->holding_number."-".random_int(1000, 9000);
+
+        $benefit_info_unique_id = $request->khana_person_type.$request->ward_number.$request->holding_number."-".random_int(1000, 9000)."-".$request->benefit_type;
+
         $request->validate([
             'ward_number'=>'required',
             'holding_number'=>'required',
@@ -54,11 +64,16 @@ class KhanaStoreController extends Controller
         );
 
         Khana_personal_info::insert([
-            'khana_id'=>$khana_id,
+            'division_id'=>$division_id,
+            'district_id'=>$district_id,
+            'upazila_id'=>$upazila_id,
+            'union_id'=>$union_id,
             'ward_number'=>$request->ward_number,
+            'khana_id'=>$khana_id,
             'holding_number'=>$request->holding_number,
             'khana_person_name'=>$request->khana_person_name,
-            'khana_member_name'=>$request->khana_member_name,
+            'khana_person_type'=>$request->khana_person_type,
+            'khana_person_unique_id'=>$khana_person_unique_id,
             'khana_relation'=>$request->khana_relation,
             'father_name'=>$request->father_name,
             'mother_name'=>$request->mother_name,
@@ -68,30 +83,48 @@ class KhanaStoreController extends Controller
             'pres_address'=>$request->pres_address,
             'nid_number'=>$request->nid_number,
             'birth_number'=>$request->birth_number,
-            'phone'=>$request->birth_number,
+            'phone'=>$request->phone,
             'dob'=>$request->dob,
             'gender'=>$request->gender,
             'education'=>$request->education,
             'occupation'=>$request->occupation,
             'passport'=>$request->passport,
             'driving_lice'=>$request->driving_lice,
-            'freedom_fither'=>$request->freedom_fither,
+            'freedom_fighter'=>$request->freedom_fighter,
             'ff_number'=>$request->ff_number,
             'quater_house'=>$request->quater_house,
             'child_education'=>$request->child_education,
             'primary_stipend'=>$request->primary_stipend,
             'mid_stipend'=>$request->mid_stipend,
             'high_stipend'=>$request->high_stipend,
-            'stipend_ammount'=>$request->stipend_ammount,
-            'droppid_child'=>$request->droppid_child,
-            'child_marrige'=>$request->child_marrige,
+            'stipend_amount'=>$request->stipend_amount,
+            'dropped_child'=>$request->dropped_child,
+            'child_marriage'=>$request->child_marriage,
             'drag_affect'=>$request->drag_affect,
             'active_worker'=>$request->active_worker,
-            'phy_diabled'=>$request->phy_diabled,
-            'unemployed'=>$request->phy_diabled,
+            'phy_disabled'=>$request->phy_disabled,
+            'unemployed'=>$request->unemployed,
             'created_at'=>Carbon::Now(),
           ]);
-        return $request->all();
+        Benefit_info::insert([
+
+            'benefit_info_unique_id'=>$benefit_info_unique_id,
+            'khana_id'=>$khana_id,
+            'union_id'=>$union_id,
+            'ward_number'=>$request->ward_number,
+            'holding_number'=>$request->holding_number,
+            'khana_person_name'=>$request->khana_person_name,
+            'khana_person_unique_id'=>$khana_person_unique_id,
+            'khana_person_type'=>$request->khana_person_type,
+            'khana_relation'=>$request->khana_relation,
+            'nid_number'=>$request->nid_number,
+            'benefit_type'=>$request->benefit_type,
+            'benefit_confirm'=>$request->benefit_confirm,
+            'benefit_dept'=>$request->benefit_dept,
+            'benefit_amount'=>$request->benefit_amount,
+            'created_at'=>Carbon::Now(),
+          ]);
+        return "Inserted Successfully";
         // echo "hi";
     }
 

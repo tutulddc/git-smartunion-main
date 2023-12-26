@@ -53,7 +53,7 @@ return new class extends Migration
             $table->integer('active_worker')->nullable(); // Nullable integer column
             $table->integer('phy_disabled')->nullable(); // Nullable integer column
             $table->integer('unemployed')->nullable(); // Nullable integer column
-            $table->softDeletes(); // Soft delete column
+            // $table->softDeletes(); // Soft delete column
             $table->timestamps();
         });
     }
