@@ -6,7 +6,10 @@
             <h4>খানার তথ্য সংগ্রহ ফরম</h4>
         </div>
         <div class="card-body">
-            <form action="{{ route('khana.store') }}" method="POST">
+            @if (session('khanaSuccess'))
+                <div class="alert alert-success">{{session('khanaSuccess')}}</div>
+            @endif
+            <form action="{{ route('khana.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div id="accordion">

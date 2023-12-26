@@ -28,6 +28,8 @@ class KhanaStoreController extends Controller
         $union_id = Auth::user()->union_id;
         $khana_id = $division_id.$district_id.$upazila_id.$union_id.$request->ward_number.$request->holding_number;
         $khana_person_unique_id = $request->khana_person_type.$request->ward_number.$request->holding_number."-".random_int(100000, 900000);
+        // $khana_person_img_unique_no = $khana_person_unique_id;
+        // $khana_house_img_unique_no = $khana_person_unique_id;
 
         $benefit_info_unique_id = $request->khana_person_type.$request->ward_number.$request->holding_number."-".random_int(1000, 9000)."-".$request->benefit_type;
         $oth_benefit_unique_id = $request->khana_person_type.$request->ward_number.$request->holding_number."-".random_int(10000, 90000);
@@ -70,6 +72,16 @@ class KhanaStoreController extends Controller
             'occupation.required' => 'পেশা',
         ],
         );
+        $khana_person_img = $request->khana_person_img;
+        $extension = $khana_person_img->extension();
+        $person_img_file_name = $khana_person_unique_id."." .$extension;
+        Image::make($khana_person_img)->save(public_path('uploads/khana/persons/'.$person_img_file_name));
+
+        $khana_house_img = $request->khana_house_img;
+        $extension = $khana_house_img->extension();
+        $khana_house_img_file_name = $khana_person_unique_id."." .$extension;
+        Image::make($khana_house_img)->save(public_path('uploads/khana/houses/'.$khana_house_img_file_name));
+
 
         Khana_personal_info::insert([
             'division_id'=>$division_id,
@@ -86,8 +98,8 @@ class KhanaStoreController extends Controller
             'father_name'=>$request->father_name,
             'mother_name'=>$request->mother_name,
             'husb_wife_name'=>$request->husb_wife_name,
-            // 'khana_person_img'=>$khana_person_file_name,
-            // 'khana_house_img'=>$khana_house_file_name,
+            'khana_person_img'=>$person_img_file_name,
+            'khana_house_img'=>$khana_house_img_file_name,
             'pres_address'=>$request->pres_address,
             'nid_number'=>$request->nid_number,
             'birth_number'=>$request->birth_number,
@@ -231,7 +243,8 @@ class KhanaStoreController extends Controller
             'created_at'=>Carbon::Now(),
           ]);
         //   return back()->with('khana_success','Congratulations!! Data Inserted Successfully');
-        return "Inserted Successfully";
+          return back()->with('khanaSuccess','Data Inserted Successfully');
+        // return "Inserted Successfully";
         // echo "hi";
     }
 
