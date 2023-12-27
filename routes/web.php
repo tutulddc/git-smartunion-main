@@ -62,3 +62,9 @@ Route::get('khana/form/',[KhanaStoreController::class,'khana'])->name('khana');
 Route::post('khana/store',[KhanaStoreController::class,'khana_store'])->name('khana.store');
 Route::GET('/getPersonid', [KhanaStoreController::class, 'getPersonid']);
 Route::GET('/getPersonid1', [KhanaStoreController::class, 'getPersonid1']);
+
+Route::get('/khana/prodhan/list', [KhanaStoreController::class, 'khana_prodhan_list'])->name('khana.prodhan.list');
+
+
+
+

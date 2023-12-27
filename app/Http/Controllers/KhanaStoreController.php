@@ -315,79 +315,10 @@ class KhanaStoreController extends Controller
         // echo "hi";
     }
 
-    // function khana_store(Request $request){
-
-    //     $division_id = Auth::user()->division_id;
-    //     $district_id = Auth::user()->district_id;
-    //     $upazila_id = Auth::user()->upazila_id;
-    //     $union_id = Auth::user()->union_id;
-    //     $khana_id = $division_id.$district_id.$upazila_id.$union_id.$request->ward_number.$request->holding_number;
-    //     $khana_person_id = $division_id.$district_id.$upazila_id.$union_id.$request->ward_number.$request->holding_number."-".random_int(1000, 9000);
-
-    //     $request->validate([
-    //         'division_id'=>'required',
-    //         'district_id'=>'required',
-    //         'upazila_id'=>'required',
-    //         'ward_number'=>'required',
-    //         'holding_number'=>'required',
-    //         'khana_person_name' =>'required',
-    //         'khana_member_name' =>'required',
-    //         'khana_relation' =>'required',
-    //         'father_name' =>'required',
-    //         // 'khana_person_img' =>'required|file|max:300|mimes:jpg,bmp,png',
-    //         // 'khana_house_img' =>'required|file|max:300|mimes:jpg,bmp,png',
-    //         'pres_address'=>'required',
-    //         'phone'=>'required',
-    //         'dob'=>'required',
-    //         'gender'=>'required',
-    //         'education'=>'required',
-    //         'occupation'=>'required'
-    //       ],
-    //       [
-    //         'ward_number.required' => 'ওয়ার্ড নাম্বার লিখুন',
-    //         'holding_number.required' => 'হোল্ডিং নাম্বার লিখুন',
-    //         'khana_person_name.required' => 'খানা প্রধানের নাম',
-    //         'khana_member_name.required' => 'খানার সদস্য নাম',
-    //         'khana_relation.required' => 'খানা প্রধানের সাথে সম্পর্ক',
-    //         'father_name.required' => 'পিতার নাম লিখুন',
-    //         // 'khana_person_img.required' => 'খানা ব্যক্তির ছবি',
-    //         // 'khana_house_img.required' => 'খানা বাড়ির ছবি',
-    //         'pres_address.required' => 'বর্তমান ঠিকানা লিখুন',
-    //         'phone.required' => 'মোবাইল নাম্বার লিখুন',
-    //         'dob.required' => 'জন্ম তারিখ লিখুন',
-    //         'gender.required' => 'পুরুষ/মহিলা সিলেক্ট করুন',
-    //         'education.required' => 'শিক্ষকতা যোগ্যতা লিখুন',
-    //         'occupation.required' => 'পেশা সিলেক্ট করুন',
-    //       ]
-    //     );
-
-    //     // return $request->all();
-    //     // die();
-
-    //     // $user_id = $request->division.$request->district.$request->upazila.$request->union.Carbon::now()->format('d-m-y')."-".random_int(1000, 9000);
-    //     // echo $user_id;
-    //     // echo $division_id."<br>";
-    //     // echo $district_id."<br>";
-    //     // echo $upazila_id."<br>";
-    //     // echo $union_id."<br>";
-    //     // echo $request->ward_number."<br>";
-    //     // echo $request->holding_number."<br>-";
-    //     // echo random_int(1000, 9000);
-    //     // echo $khana_id ."<br>";
-    //     // echo $khana_person_id ."<br>";
-    //     return $request->khana_relation;
-    // }
-
 
 
     function getPersonid(){
-        // echo "hi";
         $str = '<option value="0">স্বীয়(self)</option>';
-        // $str = '<option value="">All District</option>';
-        // $districts = District::where('division_id', $request->division_id)->get();
-        // foreach($districts as $district){
-        //     $str .= '<option value="'.$district->id.'">'.$district->bn_name.'</option>';
-        // }
         echo $str;
     }
     function getPersonid1(){
@@ -412,15 +343,26 @@ class KhanaStoreController extends Controller
         echo  '<option value="16">পুত্নি</option>';
         echo  '<option value="17">নাতি</option>';
         echo  '<option value="18">নাতনি</option>' ;
+    }
 
-        // echo  '<option value="19">অন্যান্য</option>' ;
-        // $str2 = '<option value="">Select Please</option>';
-        // $str = '<option value="">All District</option>';
-        // $districts = District::where('division_id', $request->division_id)->get();
-        // foreach($districts as $district){
-        //     $str .= '<option value="'.$district->id.'">'.$district->bn_name.'</option>';
-        // }
-        // echo $str."<br>";
-        // echo $str2."<br>";
+    //---------------------------khan prodhan list-----------------------------------------
+    function khana_prodhan_list(){
+        // $users = User::all();
+        // $divisions = Division::all();
+        // $districts = District::all();
+        // $upazilas = Upazila::all();
+        // $unions = Union::all();
+        // $users = User::where('id', '!=', Auth::id())->get();
+        // return view('admin.user.user_list',[
+        //     'users' => $users,
+        //     'divisions' => $divisions,
+        //     'districts' => $districts,
+        //     'upazilas' => $upazilas,
+        //     'unions' => $unions,
+        // ]);
+        $khana_per_infos = Khana_personal_info::all();
+        return view('admin.khana.khana_prodhan_list',[
+            'khana_per_infos' => $khana_per_infos,
+        ]);
     }
 }

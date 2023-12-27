@@ -61,6 +61,17 @@
 	<script src="{{ asset('backend') }}/js/deznav-init.js"></script>
 	<script src="{{ asset('backend') }}/vendor/owl-carousel/owl.carousel.js"></script>
 
+        {{-- ------------for bootstrap data-table----------- --}}
+    <!-- Add jQuery -->
+    {{-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> --}}
+
+    <!-- Add DataTables JS -->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+
+
+
+
 	<!-- Chart piety plugin files -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/js/selectize.min.js"></script>
     <script src="{{ asset('backend') }}/vendor/peity/jquery.peity.min.js"></script>

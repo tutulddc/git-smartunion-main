@@ -14,7 +14,7 @@
                 <ul aria-expanded="false">
                     {{-- <li><a href="{{ route('khana') }}">খানার তথ্য সংগ্রহ</a></li> --}}
                     <li><a href="{{ route('khana') }}">খানার তথ্য সংগ্রহ</a></li>
-                    <li><a href="#">খানা তথ্যের তালিকা</a></li>
+                    <li><a href="{{ route('khana.prodhan.list') }}">খানা প্রধানের তালিকা</a></li>
                 </ul>
             </li>
 
