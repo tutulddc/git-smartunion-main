@@ -29,7 +29,7 @@
                                 <div class="row mb-3">
                                     <div class="col-12 col-sm-4 col-lg-2">
                                         <label for="ward_number">ওয়ার্ড নং</label>
-                                        <select name="ward_number" class=" form-control rounded" >
+                                        <select name="ward_number" class="  form-control form-control-new rounded" >
                                             <option value="1">ওয়ার্ড ১</option>
                                             <option value="2">ওয়ার্ড ২</option>
                                             <option value="3">ওয়ার্ড ৩</option>
@@ -45,21 +45,21 @@
                                     </div>
                                     <div class="col-lg-2 col-12 col-sm-4">
                                         <label for="holding_number">হোল্ডিং নং:<span class="input_star">*</span></label>
-                                        <input type="text" name="holding_number" value="" class=" form-control rounded" >
+                                        <input type="text" name="holding_number" value="" class="  form-control form-control-new rounded" >
                                         @error('holding_number')
                                             <li class="text-danger small">{{ $message; }}</li>
                                         @enderror
                                     </div>
                                     <div class="col-lg-2 col-12 col-sm-4">
                                         <label for="khana_person_name">ব্যক্তির নাম:<span class="input_star">*</span></label>
-                                        <input type="text" name="khana_person_name" value="" class=" form-control rounded" >
+                                        <input type="text" name="khana_person_name" value="" class="  form-control form-control-new rounded" >
                                         @error('khana_person_name')
                                             <li class="text-danger small">{{ $message; }}</li>
                                         @enderror
                                     </div>
                                     <div class="col-lg-2 col-12 col-sm-4">
                                         <label for="khana_person_type">খানা ব্যক্তির ধরন<span class="input_star">*</span></label>
-                                        <select name="khana_person_type" id="khana_person_type" class=" form-control rounded" >
+                                        <select name="khana_person_type" id="khana_person_type" class="  form-control form-control-new rounded" >
                                             <option value="">সিলেক্ট করুন</option>
                                             <option value="1">পরিবারের সদস্য</option>
                                             <option value="2">পরিবার প্রধান</option>
@@ -70,7 +70,7 @@
                                     </div>
                                     <div class="col-lg-2 col-12 col-sm-4">
                                         <label for="khana_relation">খানা প্রধানের সাথে সম্পর্ক<span class="input_star">*</span></label>
-                                        <select name="khana_relation" id="khana_relation" class=" form-control rounded" >
+                                        <select name="khana_relation" id="khana_relation" class="  form-control form-control-new rounded" >
                                             {{-- <option value="">সিলেক্ট করুন</option> --}}
                                             {{-- <option value="0"> </option>
                                             <option value="1">স্বামী</option>
@@ -99,14 +99,14 @@
                                     </div>
                                     {{-- <div class="col-lg-2 col-12 col-sm-4">
                                         <label for="khana_relation">খানার সাথে সম্পর্ক<span class="input_star">*</span></label>
-                                        <input type="text" name="khana_relation" value="" class=" form-control rounded" >
+                                        <input type="text" name="khana_relation" value="" class="  form-control form-control-new rounded" >
                                         @error('khana_relation')
                                             <li class="text-danger small">{{ $message; }}</li>
                                         @enderror
                                     </div> --}}
                                     <div class="col-lg-2 col-12 col-sm-4">
                                         <label for="father_name">পিতার নাম:<span class="input_star">*</span></label>
-                                        <input type="text" name="father_name" value="" class=" form-control rounded" >
+                                        <input type="text" name="father_name" value="" class="  form-control form-control-new rounded" >
                                         @error('father_name')
                                             <li class="text-danger small">{{ $message; }}</li>
                                         @enderror
@@ -116,15 +116,15 @@
                                 <div class="row mb-3">
                                     <div class="col-lg-2 col-12 col-sm-4">
                                         <label for="mother_name">মাতার নাম:</label>
-                                        <input type="text" name="mother_name" value="" class=" form-control rounded">
+                                        <input type="text" name="mother_name" value="" class="  form-control form-control-new rounded">
                                     </div>
                                     <div class="col-lg-2 col-12 col-sm-4">
                                         <label for="husb_wife_name">স্বামী/স্ত্রীর নাম:</label>
-                                        <input type="text" name="husb_wife_name" value="" class=" form-control rounded" >
+                                        <input type="text" name="husb_wife_name" value="" class="  form-control form-control-new rounded" >
                                     </div>
                                     <div class="col-lg-2 col-12 col-sm-4">
                                         <label for="khana_person_img">ব্যক্তির ছবি<span class="input_star">*</span></label>
-                                        <input type="file" name="khana_person_img" value="" class=" form-control rounded p-1" >
+                                        <input type="file" name="khana_person_img" value="" class="  form-control form-control-new rounded p-1" >
                                         @error('khana_person_img')
                                             <li class="text-danger small">{{ $message; }}</li>
                                         @enderror
@@ -132,14 +132,14 @@
 
                                     <div class="col-lg-2 col-12 col-sm-4">
                                         <label for="khana_house_img">বাড়ির ছবি<span class="input_star">*</span></label>
-                                        <input type="file" name="khana_house_img" value="" class=" form-control rounded p-1" >
+                                        <input type="file" name="khana_house_img" value="" class="  form-control form-control-new rounded p-1" >
                                         @error('khana_house_img')
                                             <li class="text-danger small">{{ $message; }}</li>
                                         @enderror
                                     </div>
                                     <div class="col-lg-4 col-sm-8">
                                         <label for="pres_address">বতর্মান ঠিকানা <span class="input_star">*</span></label>
-                                        <input type="text" name="pres_address" value="" class=" form-control rounded" >
+                                        <input type="text" name="pres_address" value="" class="  form-control form-control-new rounded" >
                                         @error('pres_address')
                                             <li class="text-danger small">{{ $message; }}</li>
                                         @enderror
@@ -150,15 +150,15 @@
                                 {{-- <div class="row mb-3">
                                     <div class="col-12 col-sm-4 col-lg-2">
                                         <label for="mother_name">মাতার নাম:</label>
-                                        <input type="text" name="mother_name" value="" class=" form-control rounded">
+                                        <input type="text" name="mother_name" value="" class="  form-control form-control-new rounded">
                                     </div>
                                     <div class="col-12 col-sm-4 col-lg-2">
                                         <label for="husb_wife_name">স্বামী/স্ত্রীর নাম:</label>
-                                        <input type="text" name="husb_wife_name" value="" class=" form-control rounded" >
+                                        <input type="text" name="husb_wife_name" value="" class="  form-control form-control-new rounded" >
                                     </div>
                                     <div class="col-12 col-sm-4 col-lg-2">
                                         <label for="khana_person_img">ব্যক্তির ছবি<span class="input_star">*</span></label>
-                                        <input type="file" name="khana_person_img" value="" class=" form-control rounded p-1" >
+                                        <input type="file" name="khana_person_img" value="" class="  form-control form-control-new rounded p-1" >
                                         @error('khana_person_img')
                                             <li class="text-danger small">{{ $message; }}</li>
                                         @enderror
@@ -166,14 +166,14 @@
 
                                     <div class="col-12 col-sm-4 col-lg-2">
                                         <label for="khana_house_img">বাড়ির ছবি<span class="input_star">*</span></label>
-                                        <input type="file" name="khana_house_img" value="" class=" form-control rounded p-1" >
+                                        <input type="file" name="khana_house_img" value="" class="  form-control form-control-new rounded p-1" >
                                         @error('khana_house_img')
                                             <li class="text-danger small">{{ $message; }}</li>
                                         @enderror
                                     </div>
                                     <div class="col-sm-8 col-lg-4">
                                         <label for="pres_address">বতর্মান ঠিকানা <span class="input_star">*</span></label>
-                                        <input type="text" name="pres_address" value="" class=" form-control rounded" >
+                                        <input type="text" name="pres_address" value="" class="  form-control form-control-new rounded" >
                                         @error('pres_address')
                                             <li class="text-danger small">{{ $message; }}</li>
                                         @enderror
@@ -183,32 +183,32 @@
                                 <div class="row mb-3">
                                     <div class="col-12 col-sm-4 col-lg-2">
                                         <label for="nid_number">এন.আই.ডি নং:</label>
-                                        <input type="number" name="nid_number" value="" class=" form-control rounded">
+                                        <input type="number" name="nid_number" value="" class="  form-control form-control-new rounded">
                                     </div>
                                     <div class="col-12 col-sm-4 col-lg-2">
                                         <label for="birth_number">জন্ম নিবন্ধন:</label>
-                                        <input type="number" name="birth_number" value="" class=" form-control rounded">
+                                        <input type="number" name="birth_number" value="" class="  form-control form-control-new rounded">
                                         @error('birth_number')
                                             <li class="text-danger small">{{ $message; }}</li>
                                         @enderror
                                     </div>
                                     <div class="col-12 col-sm-4 col-lg-2">
                                         <label for="phone">মোবাইল নং:<span class="input_star">*</span></label>
-                                        <input type="number" name="phone" value="" class=" form-control rounded" >
+                                        <input type="number" name="phone" value="" class="  form-control form-control-new rounded" >
                                         @error('phone')
                                             <li class="text-danger small">{{ $message; }}</li>
                                         @enderror
                                     </div>
                                     <div class="col-12 col-sm-4 col-lg-2">
                                         <label for="dob">জন্ম তারিখ:<span class="input_star">*</span></label>
-                                        <input type="date" name="dob" value="" class=" form-control rounded" >
+                                        <input type="date" name="dob" value="" class="  form-control form-control-new rounded" >
                                         @error('dob')
                                             <li class="text-danger small">{{ $message; }}</li>
                                         @enderror
                                     </div>
                                     <div class="col-12 col-sm-4 col-lg-2">
                                         <label for="gender" >লিঙ্গ:<span class="input_star">*</span></label>
-                                        <select name="gender" id="" class=" form-control rounded" >
+                                        <select name="gender" id="" class="  form-control form-control-new rounded" >
                                             <option value="">সিলেক্ট করুন</option>
                                             <option value="1">পুরুষ</option>
                                             <option value="2">নারী</option>
@@ -221,7 +221,7 @@
                                     </div>
                                     <div class="col-12 col-sm-4 col-lg-2">
                                         <label for="education">শিক্ষাগত যোগ্যতা:<span class="input_star">*</span></label>
-                                        <select name="education"  class=" form-control rounded" >
+                                        <select name="education"  class="  form-control form-control-new rounded" >
                                             <option value="">সিলেক্ট করুন</option>
                                             <option value="1">জে এস সি</option>
                                             <option value="2">এস এস সি</option>
@@ -243,7 +243,7 @@
                                 <div class="row mb-3">
                                     <div class="col-12 col-sm-4 col-lg-2">
                                         <label for="occupation">পেশা:<span class="input_star">*</span></label>
-                                        <select name="occupation" class=" form-control rounded" >
+                                        <select name="occupation" class="  form-control form-control-new rounded" >
                                             <option value="1">ক্ষুদ্র ব্যবসায়ী</option>
                                             <option value="2">ব্যবসায়ী</option>
                                             <option value="3">কৃষক</option>
@@ -264,26 +264,26 @@
                                     </div>
                                     <div class="col-12 col-sm-4 col-lg-2">
                                         <label for="passport">পাসপোট:</label>
-                                        <input type="text" name="passport" value="" class=" form-control rounded">
+                                        <input type="text" name="passport" value="" class="  form-control form-control-new rounded">
                                     </div>
                                     <div class="col-12 col-sm-4 col-lg-2">
                                         <label for="driving_lice">ড্রাইভিং লাইসেন্স:</label>
-                                        <input type="text" name="driving_lice" value="" class=" form-control rounded">
+                                        <input type="text" name="driving_lice" value="" class="  form-control form-control-new rounded">
                                     </div>
                                     <div class="col-12 col-sm-4 col-lg-2">
                                         <label for="freedom_fighter">মুক্তি যোদ্ধা কি /না ?</label>
-                                        <select class=" form-control rounded" name="freedom_fighter">
+                                        <select class="  form-control form-control-new rounded" name="freedom_fighter">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-4 col-lg-2">
                                         <label for="ff_number">এফ.এফ.নং:</label>
-                                        <input type="text" name="ff_number" value="" class=" form-control rounded">
+                                        <input type="text" name="ff_number" value="" class="  form-control form-control-new rounded">
                                     </div>
                                     <div class="col-12 col-sm-4 col-lg-2">
                                         <label for="quater_house">নিবাস পেয়েছেন কি / না ?</label>
-                                        <select class=" form-control rounded" name="quater_house">
+                                        <select class="  form-control form-control-new rounded" name="quater_house">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
@@ -296,28 +296,28 @@
                                 <div class="row mb-3">
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="child_education">স্কুলপড়ুয়া শিশু আছে কি/না?:</label>
-                                        <select name="child_education" class=" form-control rounded">
+                                        <select name="child_education" class="  form-control form-control-new rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="primary_stipend">প্রাথমিক উপবৃ্ত্তি পাই কি/না?</label>
-                                        <select name="primary_stipend" class=" form-control rounded">
+                                        <select name="primary_stipend" class="  form-control form-control-new rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="mid_stipend">মাধ্যমিক উপবৃ্ত্তি পাই কি/না?</label>
-                                        <select name="mid_stipend" class=" form-control rounded">
+                                        <select name="mid_stipend" class="  form-control form-control-new rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="high_stipend">উচ্চমাধ্যমিক উপবৃ্ত্তি পাই কি/না?</label>
-                                        <select name="high_stipend" class=" form-control rounded">
+                                        <select name="high_stipend" class="  form-control form-control-new rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
@@ -331,46 +331,46 @@
                                 <div class="row mb-6 ">
                                     <div class="col-12 col-sm-4 col-lg-3">
                                         <label for="stipend_amount">উপবৃ্ত্তির পরিমান:</label>
-                                        <input type="number" name="stipend_amount" value="" class=" form-control rounded">
+                                        <input type="number" name="stipend_amount" value="" class="  form-control form-control-new rounded">
                                     </div>
                                     <div class="col-12 col-sm-4 col-lg-3">
                                         <label for="dropped_child">বিদ্যালয় হতে ঝরে পড়া শিশু কি/না?</label>
-                                        <select name="dropped_child" class=" form-control rounded">
+                                        <select name="dropped_child" class="  form-control form-control-new rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-4 col-lg-3">
                                         <label for="child_marriage">বাল্য বিবাহের ঝুকি সম্পন্ন শিশু কি/না?</label>
-                                        <select name="child_marriage" class=" form-control rounded">
+                                        <select name="child_marriage" class="  form-control form-control-new rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-4 col-lg-3">
                                         <label for="drag_affect">মাদকাসক্ত কি/না?</label>
-                                        <select name="drag_affect" class=" form-control rounded">
+                                        <select name="drag_affect" class="  form-control form-control-new rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-4 col-lg-3">
                                         <label for="active_worker">কর্মক্ষম কি/না?</label>
-                                        <select name="active_worker" class=" form-control rounded">
+                                        <select name="active_worker" class="  form-control form-control-new rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="phy_disabled">শারিরীক ভাবে অক্ষম কি/না?</label>
-                                        <select name="phy_disabled" class=" form-control rounded">
+                                        <select name="phy_disabled" class="  form-control form-control-new rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="unemployed">বেকার কি/না?</label>
-                                        <select name="unemployed" class=" form-control rounded">
+                                        <select name="unemployed" class="  form-control form-control-new rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
@@ -383,14 +383,14 @@
                                 {{-- <div class="row mb-3">
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="phy_diabled">শরিরীক ভাবে অক্ষম কি/না?</label>
-                                        <select name="phy_diabled" class=" form-control rounded">
+                                        <select name="phy_diabled" class="  form-control form-control-new rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="unemployed">বেকার কি/না?</label>
-                                        <select name="unemployed" class=" form-control rounded">
+                                        <select name="unemployed" class="  form-control form-control-new rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
@@ -414,7 +414,7 @@
                                 <div class="row mb-3">
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="benefit_type">ভাতার ধরণ:</label>
-                                        <select name="benefit_type" class="form-control rounded">
+                                        <select name="benefit_type" class=" form-control form-control-new rounded">
                                             <option value="1">মুক্তিযোদ্ধা</option>
                                             <option value="2">প্রতিবন্ধী</option>
                                             <option value="3">বিধবা</option>
@@ -427,14 +427,14 @@
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="benefit_confirm">ভাতা পেয়েছেন কি না?:</label>
-                                        <select name="benefit_confirm" class="form-control rounded">
+                                        <select name="benefit_confirm" class=" form-control form-control-new rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="benefit_dept">দপ্তরের নাম:</label>
-                                        <select name="benefit_dept" class="form-control rounded">
+                                        <select name="benefit_dept" class=" form-control form-control-new rounded">
 
                                             <option value="1">উপজেলা আনসার ও ভিডিপি</option>
                                             <option value="2">উপজেলা ফায়ার সার্ভিস ও সিভিল ডিফেন্স</option>
@@ -473,7 +473,7 @@
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="benefit_amount">ভাতার পরিমাণ:</label>
-                                        <input type="number" name="benefit_amount" class="form-control rounded">
+                                        <input type="number" name="benefit_amount" class=" form-control form-control-new rounded">
                                     </div>
                                     {{-- @error('category_name')
                                         <li class="text-danger">{{ $message; }}</li>
@@ -484,63 +484,63 @@
                                 <div class="row mb-3 ">
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="oth_benefit_conf">অন্যান্য সুবিধা পেয়েছেন কি না?</label>
-                                        <select name="oth_benefit_conf" class="form-control rounded">
+                                        <select name="oth_benefit_conf" class=" form-control form-control-new rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="housing" >আশ্রয়ণ প্রকল্পের ঘর পেয়েছেন কি না?</label>
-                                        <select  name="housing" class="form-control rounded">
+                                        <select  name="housing" class=" form-control form-control-new rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                     <label for="grbenefit" >জিআর পেয়েছেন কি না?</label>
-                                        <select  name="gr_benefit" class="form-control rounded">
+                                        <select  name="gr_benefit" class=" form-control form-control-new rounded">
                                         <option value="0">না</option>
                                         <option value="1">হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="tinbenefit" >ঢেউটিন পেয়েছেন কি না?</label>
-                                        <select  name="tin_benefit" class="form-control rounded">
+                                        <select  name="tin_benefit" class=" form-control form-control-new rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3 mt-2">
                                          <label for="blanket_benefit" >কম্বোল পেয়েছেন কি না?</label>
-                                        <select name="blanket_benefit" class="form-control rounded">
+                                        <select name="blanket_benefit" class=" form-control form-control-new rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3 mt-2">
                                         <label for="tcb_benefit" >টিসিবি পেয়েছেন কি না?</label>
-                                       <select name="tcb_benefit" class="form-control rounded">
+                                       <select name="tcb_benefit" class=" form-control form-control-new rounded">
                                            <option value="0">না</option>
                                            <option value="1">হ্যাঁ</option>
                                        </select>
                                    </div>
                                    <div class="col-12 col-sm-6 col-lg-3 mt-2">
                                         <label for="fifteentaka_benefit" >১৫টাকার চাউল পেয়েছেন কি না?</label>
-                                        <select name="fifteentaka_benefit" class="form-control rounded">
+                                        <select name="fifteentaka_benefit" class=" form-control form-control-new rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3 mt-2">
                                         <label for="thirtytaka_benefit" >৩০টাকার চাউল পেয়েছেন কি না?</label>
-                                        <select name="thirtytaka_benefit" class="form-control rounded">
+                                        <select name="thirtytaka_benefit" class=" form-control form-control-new rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3 mt-2">
                                         <label for="benefit_deserve" >ভাতা পাওয়ার যোগ্য কি না?</label>
-                                        <select name="benefit_deserve" class="form-control rounded">
+                                        <select name="benefit_deserve" class=" form-control form-control-new rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
@@ -552,14 +552,14 @@
                                 <div class="row mb-3">
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="loan_conf">ঋণ গ্রহন করেছেন কি না?:</label>
-                                        <select name="loan_conf" class="form-control rounded">
+                                        <select name="loan_conf" class=" form-control form-control-new rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="loan_type" >ঋণের ধরণ:</label>
-                                        <select  name="loan_type" class="form-control rounded">
+                                        <select  name="loan_type" class=" form-control form-control-new rounded">
                                             <option value="0"></option>
                                             <option value="1">ব্যবসা</option>
                                             <option value="2">কৃষি</option>
@@ -573,7 +573,7 @@
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="loan_dept">দপ্তরের নাম:</label>
-                                        <select name="loan_dept" class="form-control rounded">
+                                        <select name="loan_dept" class=" form-control form-control-new rounded">
 
                                             <option value="1">উপজেলা আনসার ও ভিডিপি</option>
                                             <option value="2">উপজেলা ফায়ার সার্ভিস ও সিভিল ডিফেন্স</option>
@@ -613,17 +613,17 @@
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="loan_amount" >
                                             টাকার পরিমাণ::</label>
-                                       <input type="text" name="loan_amount"  class="form-control rounded">
+                                       <input type="text" name="loan_amount"  class=" form-control form-control-new rounded">
                                    </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="loan_duration" >সময়কাল(মাস):</label>
-                                       <input type="text" name="loan_duration" placeholder="১ মাস-৬মাস/বছর" class="form-control rounded">
+                                       <input type="text" name="loan_duration" placeholder="১ মাস-৬মাস/বছর" class=" form-control form-control-new rounded">
                                    </div>
                                    <div class="col-12 col-sm-3">
                                         <label for="loan_present_cond" >ঋণের বতর্মান অবস্থা:</label>
-                                        <select  name="loan_present_cond" class="form-control rounded">
+                                        <select  name="loan_present_cond" class=" form-control form-control-new rounded">
                                                 <option value="0">স্থগিত</option>
                                                 <option value="1">চলমান</option>
                                                 <option value="2">পরিশোধিত</option>
@@ -636,14 +636,14 @@
                                 <div class="row mb-3">
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="farmer_conf">কৃষক কি না?:</label>
-                                        <select name="farmer_conf" class="form-control rounded">
+                                        <select name="farmer_conf" class=" form-control form-control-new rounded">
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="farmer_type" >কৃষকের ধরণ:</label>
-                                        <select  name="farmer_type" class="form-control rounded">
+                                        <select  name="farmer_type" class=" form-control form-control-new rounded">
                                             <option value="1">প্রান্তিক</option>
                                             <option value="2">খুদ্র</option>
                                             <option value="3">ভূমিহীন</option>
@@ -652,23 +652,23 @@
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="agro_land">
                                             কৃষি জমির পরিমাণ (শতক):</label>
-                                        <input type="number" name="agro_land" placeholder="২ শতাংশ"  class="form-control rounded">
+                                        <input type="number" name="agro_land" placeholder="২ শতাংশ"  class=" form-control form-control-new rounded">
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="non_agro_land" >
                                             অকৃষি জমির পরিমাণ (শতক):</label>
-                                        <input type="number" name="non_agro_land"  placeholder="২ শতাংশ" class="form-control rounded">
+                                        <input type="number" name="non_agro_land"  placeholder="২ শতাংশ" class=" form-control form-control-new rounded">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="main_crop" >প্রধান ফসলের নাম:</label>
-                                        <input type="text" name="main_crop" placeholder="ধান/গম ইত্যাদি" class="form-control rounded">
+                                        <input type="text" name="main_crop" placeholder="ধান/গম ইত্যাদি" class=" form-control form-control-new rounded">
                                     </div>
 
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="farmer_status">কৃষকের অবস্থা:</label>
-                                        <select name="farmer_status" class="form-control rounded">
+                                        <select name="farmer_status" class=" form-control form-control-new rounded">
                                             <option value="0">নিম্ন</option>
                                             <option value="1">উত্তম</option>
                                             <option value="2">মধ্যম</option>
@@ -676,7 +676,7 @@
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="agro_dept_facility" >কৃষি দপ্তরের প্রাপ্ত সুবিধা:</label>
-                                        <input type="number" name="agro_dept_facility" placeholder="যেমন বীজ/সার গ্রহন"  class="form-control rounded">
+                                        <input type="number" name="agro_dept_facility" placeholder="যেমন বীজ/সার গ্রহন"  class=" form-control form-control-new rounded">
                                     </div>
                                 </div>
                                 {{-- কৃষকের তথ্য end--}}
@@ -684,12 +684,12 @@
                                 {{-- <div class="row mb-3">
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="main_crop" >প্রধান ফসলের নাম:</label>
-                                        <input type="text" name="main_crop" placeholder="ধান/গম িইত্যাদি" class="form-control rounded">
+                                        <input type="text" name="main_crop" placeholder="ধান/গম িইত্যাদি" class=" form-control form-control-new rounded">
                                     </div>
 
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="farmer_status">কৃষকের অবস্থা:</label>
-                                        <select name="farmer_status" class="form-control rounded">
+                                        <select name="farmer_status" class=" form-control form-control-new rounded">
                                             <option value="0">নিম্ন</option>
                                             <option value="1">উত্তম</option>
                                             <option value="2">মধ্যম</option>
@@ -697,7 +697,7 @@
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="agro_dept_facility" >কৃষি দপ্তরের প্রাপ্ত সুবিধা:</label>
-                                        <input type="number" name="agro_dept_facility" placeholder="যেমন বীজ/সার গ্রহন"  class="form-control rounded">
+                                        <input type="number" name="agro_dept_facility" placeholder="যেমন বীজ/সার গ্রহন"  class=" form-control form-control-new rounded">
                                     </div>
                                 </div> --}}
                                 {{-- কৃষকের তথ্য end--}}
@@ -719,11 +719,11 @@
                               <div class="row mb-3">
                                   <div class="col-12 col-sm-8 col-lg-4">
                                       <label for="per_address">স্থায়ী ঠিকানা (পাড়াসহ গ্রাম / মহল্লা):<span class="input_star"><span class="input_star">*</span></label>
-                                      <input type="text" name="per_address"   class="form-control rounded" >
+                                      <input type="text" name="per_address"   class=" form-control form-control-new rounded" >
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="religion" >ধর্ম:<span class="input_star">*</span></label>
-                                      <select  name="religion" class="form-control rounded" >
+                                      <select  name="religion" class=" form-control form-control-new rounded" >
                                           <option value="1">মুসলিম</option>
                                           <option value="2">হিন্দু</option>
                                           <option value="3">খ্রিষ্টান</option>
@@ -734,7 +734,7 @@
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="poverty_margin">
                                           আর্থ সামাজিক অবস্থা:<span class="input_star">*</span></label>
-                                      <select  name="poverty_margin" class="form-control rounded" >
+                                      <select  name="poverty_margin" class=" form-control form-control-new rounded" >
                                           <option value="1">অতিদরিদ্র</option>
                                           <option value="2">দরিদ্র</option>
                                           <option value="3">নিম্ন মধ্যবিত্ত</option>
@@ -745,13 +745,13 @@
                                   <div class="col-12 col-sm-4 col-lg-2">
                                       <label for="yearly_income" >
                                           বার্ষিক আয়(টাকাই):<span class="input_star">*</span></label>
-                                      <input type="number" name="yearly_income"  placeholder="২০০০০ টাকা" class="form-control rounded" >
+                                      <input type="number" name="yearly_income"  placeholder="২০০০০ টাকা" class=" form-control form-control-new rounded" >
                                   </div>
                               </div>
                               <div class="row mb-3">
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="sanitation" >ল্যাট্রিন ব্যবস্থা:<span class="input_star">*</span></label>
-                                      <select name="sanitation" class="form-control rounded" >
+                                      <select name="sanitation" class=" form-control form-control-new rounded" >
                                           <option value="0">ল্যাট্রিন নাই</option>
                                           <option value="1">পাকা ল্যাট্রিন</option>
                                           <option value="2">রিং স্লাভ</option>
@@ -760,7 +760,7 @@
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="drinking_water">সুপেয় পানির ব্যবস্থা:</label>
-                                      <select  name="drinking_water" class="form-control rounded">
+                                      <select  name="drinking_water" class=" form-control form-control-new rounded">
                                           <option value="1">নলকূপ সরকারী</option>
                                           <option value="2">সুপেয় পানির ট্যাংক</option>
                                           <option value="3">নলকূপ ব্যক্তিগত</option>
@@ -769,73 +769,73 @@
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="fish_pond" >মৎস ঘেরের সংখ্যা:</label>
-                                      <input type="number" name="fish_pond" placeholder="0"   class="form-control rounded">
+                                      <input type="number" name="fish_pond" placeholder="0"   class=" form-control form-control-new rounded">
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="fish_pond_area">মৎস ঘেরের আয়তন (শতাংশ):</label>
-                                      <input type="number" name="fish_pond_area" placeholder="১৬ শতাংশ"  class="form-control rounded">
+                                      <input type="number" name="fish_pond_area" placeholder="১৬ শতাংশ"  class=" form-control form-control-new rounded">
                                   </div>
                               </div>
                               <div class="row mb-3">
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="domestic_animal" >গৃহ পালিত পশুর সংখ্যা:</label>
-                                      <input type="number" name="domestic_animal"   placeholder="0" class="form-control rounded">
+                                      <input type="number" name="domestic_animal"   placeholder="0" class=" form-control form-control-new rounded">
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="electricity">বিদ্যুৎ ব্যবস্থা আছে কি/না?</label>
-                                      <select  name="electricity" class="form-control rounded">
+                                      <select  name="electricity" class=" form-control form-control-new rounded">
                                           <option value="0">না</option>
                                           <option value="1">হ্যাঁ</option>
                                       </select>
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="race" >ক্ষুদ্র নৃ-গোষ্ঠী কি/না?</label>
-                                      <select  name="race" class="form-control rounded">
+                                      <select  name="race" class=" form-control form-control-new rounded">
                                           <option value="0">না</option>
                                           <option value="1">হ্যাঁ</option>
                                       </select>
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="immigrant">প্রবাসীর সংখ্যা:</label>
-                                      <input type="number" name="immigrant"  placeholder="0"  class="form-control rounded">
+                                      <input type="number" name="immigrant"  placeholder="0"  class=" form-control form-control-new rounded">
                                   </div>
                               </div>
 
                               <div class="row mb-3">
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="total_tenant" >ভাড়াটিয়ার সংখ্যা:</label>
-                                      <input type="number" name="total_tenant"   placeholder="0" class="form-control rounded">
+                                      <input type="number" name="total_tenant"   placeholder="0" class=" form-control form-control-new rounded">
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="motor_cycle">মটর বাইকের সংখ্যা:</label>
-                                      <input type="number" name="motor_cycle"   placeholder="0" class="form-control rounded">
+                                      <input type="number" name="motor_cycle"   placeholder="0" class=" form-control form-control-new rounded">
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="rickshaw_van" >ভ্যান / রিক্সার সংখ্যা:</label>
-                                      <input type="number" name="rickshaw_van"   placeholder="0" class="form-control rounded">
+                                      <input type="number" name="rickshaw_van"   placeholder="0" class=" form-control form-control-new rounded">
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="auto_van">অটো ভ্যান / রিক্সার সংখ্যা:</label>
-                                      <input type="number" name="auto_van"   placeholder="0" class="form-control rounded">
+                                      <input type="number" name="auto_van"   placeholder="0" class=" form-control form-control-new rounded">
                                   </div>
                               </div>
 
                               <div class="row mb-3">
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="cng_mahindra" >সিএনজি / মাহেন্দ্রের সংখ্যা:</label>
-                                      <input type="number" name="cng_mahindra"   placeholder="0" class="form-control rounded">
+                                      <input type="number" name="cng_mahindra"   placeholder="0" class=" form-control form-control-new rounded">
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="easy_bike">ইজিবাইকের সংখ্যা:</label>
-                                      <input type="number" name="easy_bike"   placeholder="0" class="form-control rounded">
+                                      <input type="number" name="easy_bike"   placeholder="0" class=" form-control form-control-new rounded">
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="boat" >ট্রলারের সংখ্যা:</label>
-                                      <input type="number" name="boat"   placeholder="0" class="form-control rounded">
+                                      <input type="number" name="boat"   placeholder="0" class=" form-control form-control-new rounded">
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="bus_three_wheeler">বাস/মিনিবাস/ট্রাক/থ্রি হুইলার</label>
-                                      <input type="number" name="bus_three_wheeler"   placeholder="0" class="form-control rounded">
+                                      <input type="number" name="bus_three_wheeler"   placeholder="0" class=" form-control form-control-new rounded">
                                   </div>
                               </div>
                           </div>
@@ -856,7 +856,7 @@
                                 <div class="row mb-3">
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="house_category" >বাড়ির ধরন:<span class="input_star">*</span></label>
-                                        <select class="form-control rounded" name="house_category">
+                                        <select class=" form-control form-control-new rounded" name="house_category">
                                             <option value="1">পাকা ১তলা</option>
                                             <option value="2">পাকা ২তলা</option>
                                             <option value="3">পাকা ৩তলা</option>
@@ -874,11 +874,11 @@
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="number_of_rooms">মোট কক্ষের সংখ্যা</label>
-                                        <input type="number" name="number_of_rooms"   placeholder="0" class="form-control rounded">
+                                        <input type="number" name="number_of_rooms"   placeholder="0" class=" form-control form-control-new rounded">
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="house_use_type" >বাড়ীর ব্যবহারের ধরন:</label>
-                                        <select class="form-control rounded" name="house_use_type">
+                                        <select class=" form-control form-control-new rounded" name="house_use_type">
                                             <option value="1">মালিক নিজে থাকেন</option>
                                             <option value="2">ভাড়া দেওয়া</option>
                                             <option value="3">উভয়</option>
@@ -886,21 +886,21 @@
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="house_yearly_value">গৃহের বার্ষিক মূল্য:<span class="input_star">*</span></label>
-                                        <input type="number" name="house_yearly_value"   placeholder="0" class="form-control rounded">
+                                        <input type="number" name="house_yearly_value"   placeholder="0" class=" form-control form-control-new rounded">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-12 col-12 col-sm-6 col-lg-3">
                                         <label for="land_yearly_value">ভুমির বার্ষিক ভাড়া মূল্য:<span class="land_yearly_rent"><span class="input_star">*</span></span></label>
-                                        <input type="number" name="land_yearly_value"   placeholder="0" class="form-control rounded">
+                                        <input type="number" name="land_yearly_value"   placeholder="0" class=" form-control form-control-new rounded">
                                     </div>
                                     <div class="col-12 col-12 col-sm-6 col-lg-3">
                                         <label for="yearly_tax">বার্ষিক কর (টাকা):<span class="land_yearly_rent"><span class="input_star">*</span></span></label>
-                                        <input type="number" name="yearly_tax"   placeholder="0" class="form-control rounded">
+                                        <input type="number" name="yearly_tax"   placeholder="0" class=" form-control form-control-new rounded">
                                     </div>
                                     <div class="col-12 col-12 col-sm-6 col-lg-3">
                                         <label for="final_tax">ফাইনাল ট্যাক্স:<span class="land_yearly_rent"><span class="input_star">*</span></span></label>
-                                        <input type="number" name="final_tax"   placeholder="0" class="form-control rounded">
+                                        <input type="number" name="final_tax"   placeholder="0" class=" form-control form-control-new rounded">
                                     </div>
                                 </div>
                             </div>

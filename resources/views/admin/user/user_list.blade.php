@@ -1,7 +1,7 @@
 @extends("layouts.admin")
 
 @section("content")
-<div class="col-lg-7 m-auto">
+<div class="col-lg-8 m-auto">
     <div class="card">
         <div class="card-header">
             <h3>User List </h3>
@@ -49,7 +49,7 @@
         </div>
     </div>
 </div>
-<div class="col-lg-5">
+<div class="col-lg-4">
     <div class="card">
         <div class="card-header">
             <h3>Add New User </h3>
@@ -61,8 +61,8 @@
             <form action="{{ route('custom.register') }}" method="POST">
                 @csrf
                 <div class="mb-3">
-                    <label for="name" class="form_label">User Name</label>
-                    <input type="text" name="name" id="name" class="form-control">
+                    {{-- <label for="name" class="form_label">User Name</label> --}}
+                    <input type="text" name="name" id="name" class="form-control rounded" placeholder="User Name">
                 </div>
                 @error('name')
                     <strong class="text-danger">{{$message}}</strong>
@@ -70,7 +70,7 @@
                 <div class="mb-3">
                     {{-- <label for="email" class="form_label">Email</label>
                     <input type="email" name="email" id="email" class="form-control"> --}}
-                    <select name="department" id=""  class="form-control" >
+                    <select name="department" id=""  class="form-control rounded" >
                         <option value=""  class="form-control">Select Department</option>
                         <option value="Upazila_Parishad"  class="form-control">Upazilla Parishad</option>
                         <option value="Union_Parishad"  class="form-control">Union Parishad</option>
@@ -82,15 +82,15 @@
                     <strong class="text-danger">{{$message}}</strong>
                 @enderror
                 <div class="mb-3">
-                    <label for="password" class="form_label">Password</label>
-                    <input type="password" name="password" id="password" class="form-control">
+                    {{-- <label for="password" class="form_label">Password</label> --}}
+                    <input type="password" name="password" id="password" class="form-control rounded" placeholder="Password">
                 </div>
                 @error('password')
                     <strong class="text-danger">{{$message}}</strong>
                 @enderror
                 <div class="mb-3">
-                    <label for="" class="form-label">Division</label>
-                    <select name="division" id="division" class="form-control">
+                    {{-- <label for="" class="form-label">Division</label> --}}
+                    <select name="division" id="division" class="form-control rounded">
                         <option value="">Seclect Division</option>
                         <option value="">All Division</option>
                         @foreach ($divisions as $division)
@@ -99,8 +99,8 @@
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label for="" class="form-label">District</label>
-                    <select name="district" id="district" class="form-control">
+                    {{-- <label for="" class="form-label">District</label> --}}
+                    <select name="district" id="district" class="form-control rounded">
                         <option value="">Seclect District</option>
                         @foreach ($districts as $district)
                         <option value="{{ $district->id }}">{{ $district->bn_name ." ". $district->name }}</option>
@@ -108,8 +108,8 @@
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label for="" class="form-label">Upazila</label>
-                    <select name="upazila" id="upazila" class="form-control">
+                    {{-- <label for="" class="form-label">Upazila</label> --}}
+                    <select name="upazila" id="upazila" class="form-control rounded">
                         <option value="">Seclect Upazila</option>
                         @foreach ($upazilas as $upazila)
                         <option value="{{ $upazila->id }}">{{ $upazila->bn_name ." ". $upazila->name }}</option>
@@ -117,8 +117,8 @@
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label for="" class="form-label">Union</label>
-                    <select name="union" id="union" class="form-control">
+                    {{-- <label for="" class="form-label">Union</label> --}}
+                    <select name="union" id="union" class="form-control rounded">
                         <option value="">Seclect Union</option>
                         @foreach ($unions as $union)
                         <option value="{{ $union->id }}">{{ $union->bn_name ." ". $union->name }}</option>

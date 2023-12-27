@@ -80,7 +80,7 @@ class KhanaStoreController extends Controller
 
         if(Khana_personal_info::where('khana_id',$khana_id)->where('khana_person_type',2)->exists()){
             if($request->khana_person_type == 2){
-             return back()->with('khana_prodhan', 'Khana prodhan already existed');
+             return back()->with('khana_prodhan', 'খানাপ্রধান একজন আছেন ইতোমধ্যে। একটি খানার খানাপ্রধান একজনই হবে।');
             }else{
             $khana_person_img = $request->khana_person_img;
             $extension = $khana_person_img->extension();

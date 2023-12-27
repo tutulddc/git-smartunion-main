@@ -405,28 +405,60 @@ a {
 </div>
 <div class="row multi-columns-row post-columns">
 
-<div class="col-sm-6 col-md-4 col-lg-4">
+{{-- <div class="col-sm-6 col-md-4 col-lg-4">
 <div class="post mb-20">
-<div class="post-thumbnail"><a href="#"><iframe scrolling="no" marginheight="0" marginwidth="0" type="text/html" src="{{asset('frontend')}}/images/SL_61.mp4" width="356" height="200" frameborder="0"></iframe></a></div>
+<div class="post-thumbnail"><a href="#"><iframe id="welcome-page-videos" scrolling="no" marginheight="0" marginwidth="0" type="text/html" src="{{asset('frontend')}}/images/SL_61.mp4" width="356" height="200" frameborder="0"></iframe></a></div>
 <div class="post-header font-alt">
 </div>
 </div>
+</div> --}}
+
+{{-- <div class="col-sm-6 col-md-4 col-lg-4">
+<div class="post mb-20">
+<div class="post-thumbnail"><a href="#"><iframe id="welcome-page-videos" scrolling="no" marginheight="0" marginwidth="0" type="text/html" src="{{asset('frontend')}}/images/SL_6.mp4" width="356" height="200" frameborder="0"></iframe></a></div>
+<div class="post-header font-alt">
 </div>
+</div>
+</div> --}}
 
 <div class="col-sm-6 col-md-4 col-lg-4">
-<div class="post mb-20">
-<div class="post-thumbnail"><a href="#"><iframe scrolling="no" marginheight="0" marginwidth="0" type="text/html" src="{{asset('frontend')}}/images/SL_6.mp4" width="356" height="200" frameborder="0"></iframe></a></div>
-<div class="post-header font-alt">
+    <div class="post-thumbnail">
+        <a href="#">
+            <video width="356" height="200" controls>
+                <source src="{{asset('frontend')}}/images/SL_62.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </a>
+    </div>
+    <div class="post-header font-alt">
+        <!-- Other content in the post header -->
+    </div>
 </div>
-</div>
-</div>
-
 <div class="col-sm-6 col-md-4 col-lg-4">
-<div class="post mb-20">
-<div class="post-thumbnail"><a href="#"><iframe scrolling="no" marginheight="0" marginwidth="0" type="text/html" src="{{asset('frontend')}}/images/SL_6.mp4" width="356" height="200" frameborder="0"></iframe></a></div>
-<div class="post-header font-alt">
+    <div class="post-thumbnail">
+        <a href="#">
+            <video width="356" height="200" controls>
+                <source src="{{asset('frontend')}}/images/SL_6.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </a>
+    </div>
+    <div class="post-header font-alt">
+        <!-- Other content in the post header -->
+    </div>
 </div>
-</div>
+<div class="col-sm-6 col-md-4 col-lg-4">
+    <div class="post-thumbnail">
+        <a href="#">
+            <video width="356" height="200" controls>
+                <source src="{{asset('frontend')}}/images/SL_61.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </a>
+    </div>
+    <div class="post-header font-alt">
+        <!-- Other content in the post header -->
+    </div>
 </div>
 </div>
 </div>
@@ -592,5 +624,10 @@ function Admin() {
     window.location.href = "{{URL::to('loginpanel')}}"
 }
 </script>
+<script type="text/javascript">
+    var video = document.getElementById('welcome-page-videos');
+    video.pause();
+</script>
 </body>
 </html>
+
