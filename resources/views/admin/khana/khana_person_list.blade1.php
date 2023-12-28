@@ -65,11 +65,16 @@
 @section('footer_script')
 
     <script>
+
         $(document).ready(function() {
-            $('#khanaPersonList').DataTable({
-                "paging": true // Enable pagination
-            });
+            $('#your-datatable').DataTable();
         });
+
+        // $(document).ready(function() {
+        //     $('#khanaPersonList').DataTable({
+        //         "paging": true
+        //     });
+        // });
     </script>
     {{-- <script>
         $('.del_btn').click(function(){

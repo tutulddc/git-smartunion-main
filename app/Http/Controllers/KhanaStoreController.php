@@ -353,7 +353,8 @@ class KhanaStoreController extends Controller
         ]);
     }
     function khana_persons_list($khana_id){
-        $khana_per_infos = Khana_personal_info::where('khana_id', $khana_id)->get();
+        // $khana_per_infos = Khana_personal_info::where('khana_id', $khana_id)->get();
+        $khana_per_infos = Khana_personal_info::where('khana_id', $khana_id)->paginate(2);
             return view('admin.khana.abc',[
             'khana_per_infos' => $khana_per_infos,
         ]);

@@ -8,7 +8,7 @@
         </div>
         <div class="card-body">
             {{-- <table class="table table-bordered"> --}}
-            <table id="khanaProdhanList" class="table table-striped table-bordered" style="width:100%">
+            <table id="dataTables" class="table table-striped table-bordered dataTables" style="width:100%">
                 <tr><td class="text-center" colspan="12">ই-খানা তথ্য - হোল্ডিং (ওয়াড নং -১)</td></tr>
                 <tr>
                     <td>sl</td>
@@ -42,7 +42,7 @@
                             {{-- <a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a> --}}
                             <button data-link="" class="btn btn-danger shadow btn-xs sharp del_btn"><i class="fa fa-trash"></i></button>
                             &nbsp; &nbsp;
-                            <a  title="view" href="{{ route('khana.persons.list',$khana_per_info->khana_id) }}" class="btn btn-info shadow btn-xs sharp"><i class="fa fa-eye"></i></a>
+                            <a  title="খানা সদস্যদের তালিকা" href="{{ route('khana.persons.list',$khana_per_info->khana_id) }}" class="btn btn-info shadow btn-xs sharp"><i class="fa fa-eye"></i></a>
                             &nbsp;
                             {{-- <button title="খানার অন্য সদস্যসমূহ" data-link="{{ route('khana.persons.list') }}" class="btn btn-info shadow btn-xs sharp"><i class="fa fa-eye"></i></button> --}}
                             {{-- <button title="খানার অন্য সদস্যসমূহ" data-link="{{ route('khana.persons.list',$khana_per_info->khana_id) }}" class="btn btn-info shadow btn-xs sharp"><i class="fa fa-eye"></i></button> --}}
@@ -66,7 +66,7 @@
 
     <script>
         $(document).ready(function() {
-            $('#khanaProdhanList').DataTable({
+            $('.dataTables').DataTable({
                 "paging": true // Enable pagination
             });
         });
