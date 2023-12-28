@@ -16,6 +16,7 @@
                     <td>নাম</td>
                     <td>পিতা/স্বামী</td>
                     <td>ঠিকানা</td>
+                    <td>মোবাইল নং</td>
                     <td>ছবি</td>
                     <td>Action</td>
                 </tr>
@@ -27,6 +28,7 @@
                     <td>{{ $khana_per_info->khana_person_name }}</td>
                     <td>{{ $khana_per_info->father_name }}</td>
                     <td>{{ $khana_per_info->pres_address }}</td>
+                    <td>{{ $khana_per_info->phone }}</td>
                     <td>
                         @if ($khana_per_info->khana_person_img == null)
                         <img width="70" src="{{ Avatar::create($khana_per_info->khana_person_name)->toBase64() }}" />
@@ -40,8 +42,8 @@
 
                         <div class="d-flex">
                             {{-- <a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a> --}}
-                            <button data-link="" class="btn btn-danger shadow btn-xs sharp del_btn"><i class="fa fa-trash"></i></button>
-                            &nbsp; &nbsp;
+                            {{-- <button data-link="" class="btn btn-danger shadow btn-xs sharp del_btn"><i class="fa fa-trash"></i></button>
+                            &nbsp; &nbsp; --}}
                             <a  title="খানা সদস্যদের তালিকা" href="{{ route('khana.persons.list',$khana_per_info->khana_id) }}" class="btn btn-info shadow btn-xs sharp"><i class="fa fa-eye"></i></a>
                             &nbsp;
                             {{-- <button title="খানার অন্য সদস্যসমূহ" data-link="{{ route('khana.persons.list') }}" class="btn btn-info shadow btn-xs sharp"><i class="fa fa-eye"></i></button> --}}
@@ -65,11 +67,18 @@
 @section('footer_script')
 
     <script>
+        // $(document).ready(function() {
+        //     $('.dataTables').DataTable({
+        //         "paging": true // Enable pagination
+        //         "searching": true // Enable search bar
+        //     });
+        // });
+
+
         $(document).ready(function() {
-            $('.dataTables').DataTable({
-                "paging": true // Enable pagination
-            });
+            $('.dataTables').DataTable();
         });
+
     </script>
     {{-- <script>
         $('.del_btn').click(function(){

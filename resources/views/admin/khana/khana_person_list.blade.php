@@ -36,7 +36,12 @@
 
 
             </td>
-            <td>Action</td>
+            <td>
+                <button data-link="" class="btn btn-danger shadow btn-xs sharp del_btn"><i class="fa fa-trash"></i></button>
+                &nbsp; &nbsp;
+                <a  title="খানা সদস্যের তথ্য হালনাগাদ" href="{{ route('khana.person.edit',$khana_per_info->id) }}" class="btn btn-info shadow btn-xs sharp"><i class="fa fa-pencil"></i></a>
+                &nbsp;
+            </td>
         </tr>
             {{-- <h1>{{ $khana_per_info->khana_person_name}}</h1> --}}
         @endforeach

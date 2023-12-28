@@ -353,9 +353,9 @@ class KhanaStoreController extends Controller
         ]);
     }
     function khana_persons_list($khana_id){
-        // $khana_per_infos = Khana_personal_info::where('khana_id', $khana_id)->get();
-        $khana_per_infos = Khana_personal_info::where('khana_id', $khana_id)->paginate(2);
-            return view('admin.khana.abc',[
+        $khana_per_infos = Khana_personal_info::where('khana_id', $khana_id)->get();
+        // $khana_per_infos = Khana_personal_info::where('khana_id', $khana_id)->paginate(2);
+            return view('admin.khana.khana_person_list',[
             'khana_per_infos' => $khana_per_infos,
         ]);
         // $khana_wise_persons = Khana_personal_info::where('khana_id', $khana_id)->get();
@@ -368,4 +368,17 @@ class KhanaStoreController extends Controller
         // print_r($khana_wise_persons);
         // print_r($khana_per_infos);
     }
+    function khana_person_edit($id){
+        // $khana_per_infos = Khana_personal_info::where('khana_id', $khana_id)->get();
+        // $khana_per_infos = Khana_personal_info::where('khana_id', $khana_id)->paginate(2);
+        // return view('admin.khana.khana_person_list',[
+        //     'khana_per_infos' => $khana_per_infos,
+        // ]);
+        // $khana_per_infos = Khana_personal_info::where('id', $id)->get();
+
+        echo $id;
+
+    }
+
+
 }

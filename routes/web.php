@@ -66,6 +66,7 @@ Route::GET('/getPersonid1', [KhanaStoreController::class, 'getPersonid1']);
 Route::get('/khana/prodhan/list', [KhanaStoreController::class, 'khana_prodhan_list'])->name('khana.prodhan.list');
 // Route::get('/khana/persons/list', [KhanaStoreController::class, 'khana_persons_list'])->name('khana.persons.list');
 Route::get('/khana/persons/list/{khana_id}', [KhanaStoreController::class, 'khana_persons_list'])->name('khana.persons.list');
+Route::get('/khana/person/edit/{id}', [KhanaStoreController::class, 'khana_person_edit'])->name('khana.person.edit');
 
 
 
