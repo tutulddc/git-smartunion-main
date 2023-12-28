@@ -4,11 +4,11 @@
 <div class="col-lg-12 m-auto">
     <div class="card">
         <div class="card-header">
-            <h3>খানাপ্রধানের তালিকা </h3>
+            <h3>খানা মেম্বারদের তালিকা </h3>
         </div>
         <div class="card-body">
             {{-- <table class="table table-bordered"> --}}
-            <table id="khanaProdhanList" class="table table-striped table-bordered" style="width:100%">
+            <table id="khanaPersonList" class="table table-striped table-bordered" style="width:100%">
                 <tr><td class="text-center" colspan="12">ই-খানা তথ্য - হোল্ডিং (ওয়াড নং -১)</td></tr>
                 <tr>
                     <td>sl</td>
@@ -19,19 +19,19 @@
                     <td>ছবি</td>
                     <td>Action</td>
                 </tr>
-                @foreach ( $khana_per_infos as $key=>$khana_per_info )
+                @foreach ( $khana_wise_persons as $key=>$khana_wise_person )
 
                 <tr>
                     <td>{{ $key++ }}</td>
-                    <td>{{ $khana_per_info->holding_number }}</td>
-                    <td>{{ $khana_per_info->khana_person_name }}</td>
-                    <td>{{ $khana_per_info->father_name }}</td>
-                    <td>{{ $khana_per_info->pres_address }}</td>
+                    <td>{{ $khana_wise_person->holding_number }}</td>
+                    <td>{{ $khana_wise_person->khana_person_name }}</td>
+                    <td>{{ $khana_wise_person->father_name }}</td>
+                    <td>{{ $khana_wise_person->pres_address }}</td>
                     <td>
-                        @if ($khana_per_info->khana_person_img == null)
-                        <img width="70" src="{{ Avatar::create($khana_per_info->khana_person_name)->toBase64() }}" />
+                        @if ($khana_wise_person->khana_person_img == null)
+                        <img width="70" src="{{ Avatar::create($khana_wise_person->khana_person_name)->toBase64() }}" />
                         @else
-                            <img width="70" src="{{asset('uploads/khana/persons')}}/{{ $khana_per_info->khana_person_img }}" alt="">
+                            <img width="70" src="{{asset('uploads/khana/persons')}}/{{ $khana_wise_person->khana_person_img }}" alt="">
                         @endif
 
 
@@ -42,7 +42,7 @@
                             {{-- <a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a> --}}
                             <button data-link="" class="btn btn-danger shadow btn-xs sharp del_btn"><i class="fa fa-trash"></i></button>
                             &nbsp; &nbsp;
-                            <a  title="view" href="{{ route('khana.persons.list',$khana_per_info->khana_id) }}" class="btn btn-info shadow btn-xs sharp"><i class="fa fa-eye"></i></a>
+                            <a  title="view" href="{{ route('khana.persons.list',$khana_wise_person->khana_id) }}" class="btn btn-info shadow btn-xs sharp"><i class="fa fa-eye"></i></a>
                             &nbsp;
                             {{-- <button title="খানার অন্য সদস্যসমূহ" data-link="{{ route('khana.persons.list') }}" class="btn btn-info shadow btn-xs sharp"><i class="fa fa-eye"></i></button> --}}
                             {{-- <button title="খানার অন্য সদস্যসমূহ" data-link="{{ route('khana.persons.list',$khana_per_info->khana_id) }}" class="btn btn-info shadow btn-xs sharp"><i class="fa fa-eye"></i></button> --}}
@@ -66,7 +66,7 @@
 
     <script>
         $(document).ready(function() {
-            $('#khanaProdhanList').DataTable({
+            $('#khanaPersonList').DataTable({
                 "paging": true // Enable pagination
             });
         });

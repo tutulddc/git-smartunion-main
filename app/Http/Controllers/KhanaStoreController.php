@@ -347,22 +347,24 @@ class KhanaStoreController extends Controller
 
     //---------------------------khan prodhan list-----------------------------------------
     function khana_prodhan_list(){
-        // $users = User::all();
-        // $divisions = Division::all();
-        // $districts = District::all();
-        // $upazilas = Upazila::all();
-        // $unions = Union::all();
-        // $users = User::where('id', '!=', Auth::id())->get();
-        // return view('admin.user.user_list',[
-        //     'users' => $users,
-        //     'divisions' => $divisions,
-        //     'districts' => $districts,
-        //     'upazilas' => $upazilas,
-        //     'unions' => $unions,
-        // ]);
-        $khana_per_infos = Khana_personal_info::all();
+        $khana_per_infos = Khana_personal_info::where('khana_person_type', 2)->get();
         return view('admin.khana.khana_prodhan_list',[
             'khana_per_infos' => $khana_per_infos,
         ]);
+    }
+    function khana_persons_list($khana_id){
+        $khana_per_infos = Khana_personal_info::where('khana_id', $khana_id)->get();
+            return view('admin.khana.abc',[
+            'khana_per_infos' => $khana_per_infos,
+        ]);
+        // $khana_wise_persons = Khana_personal_info::where('khana_id', $khana_id)->get();
+        // return view('admin.khana.khana_person_list',[
+        //     'khana_wise_persons' => $khana_wise_persons,
+        // ]);
+        // return view('admin.khana.khana_person_list',[
+        //     'khana_wise_persons' => $khana_wise_persons,
+        // ]);
+        // print_r($khana_wise_persons);
+        // print_r($khana_per_infos);
     }
 }
