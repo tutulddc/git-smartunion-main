@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Khana_personal_info extends Model
 {
+
     use HasFactory;
+
+    protected $guarded = ['id'];
 }
