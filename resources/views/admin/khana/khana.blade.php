@@ -3,7 +3,7 @@
 @section('content')
     <div class="col-lg-12 col-sm-12 m-auto">
         <div class="card-header">
-            <h4>খানার তথ্য সংগ্রহ ফরম</h4>
+            <h4>খানার তথ্য সংগ্রহ ফরম সমূহ</h4>
         </div>
         <div class="card-body">
             @if (session('khanaSuccess'))
