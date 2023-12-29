@@ -318,7 +318,7 @@ class KhanaStoreController extends Controller
 
 
     function getPersonid(){
-        $str = '<option value="0">স্বীয়(self)</option>';
+        $str = '<option value="">স্বীয়(self)</option>';
         echo $str;
     }
     function getPersonid1(){
@@ -368,17 +368,38 @@ class KhanaStoreController extends Controller
         // print_r($khana_wise_persons);
         // print_r($khana_per_infos);
     }
-    function khana_person_edit($id){
-        // $khana_per_infos = Khana_personal_info::where('khana_id', $khana_id)->get();
-        // $khana_per_infos = Khana_personal_info::where('khana_id', $khana_id)->paginate(2);
-        // return view('admin.khana.khana_person_list',[
-        //     'khana_per_infos' => $khana_per_infos,
-        // ]);
-        // $khana_per_infos = Khana_personal_info::where('id', $id)->get();
+    function khana_person_edit($unique_id){
 
-        echo $id;
+        // return  Khana_personal_info::where('khana_person_unique_id', $unique_id)->first()->khana_id;
 
+        $khana_per_infos = Khana_personal_info::where('khana_person_unique_id', $unique_id)->get();
+        $person_info =  Khana_personal_info::where('khana_person_unique_id', $unique_id)->first();
+        $khana_id = $person_info->khana_id;
+
+        $khana_benefit_infos = Benefit_info::where('khana_person_unique_id', $unique_id)->get();
+        $khana_oth_benefit_infos = Other_benefit::where('khana_person_unique_id', $unique_id)->get();
+        $khana_farmer_infos = Farmer_info::where('khana_person_unique_id', $unique_id)->get();
+        $khana_family_infos = Family_info::where('khana_id', $khana_id)->get();
+        $khana_holding_tax_infos = Tax_holding::where('khana_id', $khana_id)->get();
+
+
+        return view('admin.khana.khana_person_edit',[
+            'khana_per_infos' =>$khana_per_infos,
+            'person_info' =>$person_info,
+            'khana_benefit_infos' =>$khana_benefit_infos,
+            'khana_oth_benefit_infos' =>$khana_oth_benefit_infos,
+            'khana_farmer_infos' =>$khana_farmer_infos,
+            'khana_family_infos' =>$khana_family_infos,
+            'khana_holding_tax_infos' =>$khana_holding_tax_infos,
+        ]);
+
+        // return $khana_holding_tax_infos;
     }
+
+
+
+
+
 
 
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KhanaStoreController;
+use App\Http\Controllers\KhanaUpdateController;
 use App\Http\Controllers\reports;
 
 /*
@@ -66,7 +67,11 @@ Route::GET('/getPersonid1', [KhanaStoreController::class, 'getPersonid1']);
 Route::get('/khana/prodhan/list', [KhanaStoreController::class, 'khana_prodhan_list'])->name('khana.prodhan.list');
 // Route::get('/khana/persons/list', [KhanaStoreController::class, 'khana_persons_list'])->name('khana.persons.list');
 Route::get('/khana/persons/list/{khana_id}', [KhanaStoreController::class, 'khana_persons_list'])->name('khana.persons.list');
-Route::get('/khana/person/edit/{id}', [KhanaStoreController::class, 'khana_person_edit'])->name('khana.person.edit');
+Route::get('/khana/person/edit/{unique_id}', [KhanaStoreController::class, 'khana_person_edit'])->name('khana.person.edit');
+
+
+// খানা ফরম / তথ্য হালনাগাদ
+Route::post('/khana/personal/info/update/{unique_id}', [KhanaUpdateController::class, 'khana_personal_info_update'])->name('khana.personal.info.update');
 
 
 
