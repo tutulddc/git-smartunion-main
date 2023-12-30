@@ -146,6 +146,10 @@
                                     </div>
 
                                 </div>
+                                <div class="col-12 col-sm-4 col-lg-2">
+                                    <label for="mother_name">মাতার নাম:</label>
+                                    <input type="text" name="mother_name" value="" class="  form-control form-control-new rounded">
+                                </div>
 
                                 {{-- <div class="row mb-3">
                                     <div class="col-12 col-sm-4 col-lg-2">
