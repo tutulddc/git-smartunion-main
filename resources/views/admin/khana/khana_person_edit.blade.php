@@ -499,24 +499,24 @@
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
-                                    <label for="grbenefit" >জিআর পেয়েছেন কি না?</label>
+                                    <label for="gr_benefit" >জিআর পেয়েছেন কি না?</label>
                                         <select  name="gr_benefit" class=" form-control form-control-new rounded">
-                                            <option value="0" {{ old('grbenefit', $oth_benefit_info->grbenefit) == 0 ? 'selected' : '' }}>না</option>
-                                            <option value="1" {{ old('grbenefit', $oth_benefit_info->grbenefit) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
+                                            <option value="0" {{ old('gr_benefit', $oth_benefit_info->gr_benefit) == 0 ? 'selected' : '' }}>না</option>
+                                            <option value="1" {{ old('gr_benefit', $oth_benefit_info->gr_benefit) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
-                                        <label for="tinbenefit" >ঢেউটিন পেয়েছেন কি না?</label>
+                                        <label for="tin_benefit" >ঢেউটিন পেয়েছেন কি না?</label>
                                         <select  name="tin_benefit" class=" form-control form-control-new rounded">
-                                            <option value="0" {{ old('tinbenefit', $oth_benefit_info->tinbenefit) == 0 ? 'selected' : '' }}>না</option>
-                                            <option value="1" {{ old('tinbenefit', $oth_benefit_info->tinbenefit) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
+                                            <option value="0" {{ old('tin_benefit', $oth_benefit_info->tin_benefit) == 0 ? 'selected' : '' }}>না</option>
+                                            <option value="1" {{ old('tin_benefit', $oth_benefit_info->tin_benefit) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3 mt-2">
                                          <label for="blanket_benefit" >কম্বোল পেয়েছেন কি না?</label>
                                         <select name="blanket_benefit" class=" form-control form-control-new rounded">
-                                            <option value="0" {{ old('unemployed', $oth_benefit_info->unemployed) == 0 ? 'selected' : '' }}>না</option>
-                                            <option value="1" {{ old('unemployed', $oth_benefit_info->unemployed) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
+                                            <option value="0" {{ old('blanket_benefit', $oth_benefit_info->blanket_benefit) == 0 ? 'selected' : '' }}>না</option>
+                                            <option value="1" {{ old('blanket_benefit', $oth_benefit_info->blanket_benefit) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3 mt-2">
@@ -626,9 +626,9 @@
                                         <label for="loan_present_cond" >ঋণের বতর্মান অবস্থা:</label>
                                         <select  name="loan_present_cond" class=" form-control form-control-new rounded">
                                             <option value="0" {{ old('loan_present_cond', $loan_info->loan_present_cond) == 0 ? 'selected' : '' }}>স্থগিত</option>
-                                            <option value="1" {{ old('loan_present_cond', $loan_info->loan_present_cond) == 1 ? 'selected' : '' }}>স্থগিত</option>
-                                            <option value="2" {{ old('loan_present_cond', $loan_info->loan_present_cond) == 2 ? 'selected' : '' }}>স্থগিত</option>
-                                            <option value="3" {{ old('loan_present_cond', $loan_info->loan_present_cond) == 3 ? 'selected' : '' }}>স্থগিত</option>
+                                            <option value="1" {{ old('loan_present_cond', $loan_info->loan_present_cond) == 1 ? 'selected' : '' }}>চলমান</option>
+                                            <option value="2" {{ old('loan_present_cond', $loan_info->loan_present_cond) == 2 ? 'selected' : '' }}>পরিশোধিত</option>
+                                            <option value="3" {{ old('loan_present_cond', $loan_info->loan_present_cond) == 3 ? 'selected' : '' }}>অপরিশোধিত</option>
                                         </select>
                                     </div>
                                 </div>

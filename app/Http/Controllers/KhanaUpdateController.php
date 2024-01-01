@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Benefit_info;
+use App\Models\Farmer_info;
 use App\Models\Khana_personal_info;
+use App\Models\Loan_info;
+use App\Models\Other_benefit;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
@@ -141,22 +144,47 @@ class KhanaUpdateController extends Controller
 
     function khana_benefit_info_update(Request $request, $unique_id){
         Benefit_info::where('khana_person_unique_id', $unique_id)->first()->update([
-            // 'benefit_info_unique_id'=>$benefit_info_unique_id,
-            // 'khana_id'=>$khana_id,
-            // 'union_id'=>$union_id,
-            // 'ward_number'=>$request->ward_number,
-            // 'holding_number'=>$request->holding_number,
             'khana_person_name'=>$request->khana_person_name,
-            // 'khana_person_unique_id'=>$khana_person_unique_id,
-            // 'khana_person_type'=>$request->khana_person_type,
-            // 'khana_relation'=>$request->khana_relation,
-            // 'nid_number'=>$request->nid_number,
             'benefit_type'=>$request->benefit_type,
             'benefit_confirm'=>$request->benefit_confirm,
             'benefit_dept'=>$request->benefit_dept,
             'benefit_amount'=>$request->benefit_amount,
             'updated_at'=>Carbon::Now(),
           ]);
+        Other_benefit::where('khana_person_unique_id', $unique_id)->first()->update([
+            'oth_benefit_conf'=>$request->oth_benefit_conf,
+            'housing'=>$request->housing,
+            'gr_benefit'=>$request->gr_benefit,
+            'tin_benefit'=>$request->tin_benefit,
+            'blanket_benefit'=>$request->blanket_benefit,
+            'tcb_benefit'=>$request->tcb_benefit,
+            'fifteentaka_benefit'=>$request->fifteentaka_benefit,
+            'thirtytaka_benefit'=>$request->thirtytaka_benefit,
+            'benefit_deserve'=>$request->benefit_deserve,
+            'updated_at'=>Carbon::Now(),
+          ]);
+        Loan_info::where('khana_person_unique_id', $unique_id)->first()->update([
+            'loan_conf'=>$request->loan_conf,
+            'khana_person_name'=>$request->khana_person_name,
+            'loan_type'=>$request->loan_type,
+            'loan_dept'=>$request->loan_dept,
+            'loan_amount'=>$request->loan_amount,
+            'loan_duration'=>$request->loan_duration,
+            'loan_present_cond'=>$request->loan_present_cond,
+            'updated_at'=>Carbon::Now(),
+          ]);
+        Farmer_info::where('khana_person_unique_id', $unique_id)->first()->update([
+            'farmer_conf'=>$request->farmer_conf,
+            'khana_person_name'=>$request->khana_person_name,
+            'farmer_type'=>$request->farmer_type,
+            'agro_land'=>$request->agro_land,
+            'non_agro_land'=>$request->non_agro_land,
+            'main_crop'=>$request->main_crop,
+            'farmer_status'=>$request->farmer_status,
+            'agro_dept_facility'=>$request->agro_dept_facility,
+            'updated_at'=>Carbon::Now(),
+          ]);
           return back()->with('khanaSuccess','Data Updated Successfully');
+
     }
 }
