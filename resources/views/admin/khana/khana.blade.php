@@ -69,10 +69,9 @@
                                         @enderror
                                     </div>
                                     <div class="col-lg-2 col-12 col-sm-4">
-                                        <label for="khana_relation">খানা প্রধানের সাথে সম্পর্ক<span class="input_star">*</span></label>
-                                        <select name="khana_relation" id="khana_relation" class="  form-control form-control-new rounded" >
-                                            {{-- <option value="">সিলেক্ট করুন</option> --}}
-                                            {{-- <option value="0"> </option>
+                                        <label for="khana_relation">খানার সাথে সম্পর্ক<span class="input_star">*</span></label>
+                                        <select name="khana_relation" id="khana_relation" class="form-control form-control-new rounded" >
+                                            <option value="">সিলেক্ট করুন</option>
                                             <option value="1">স্বামী</option>
                                             <option value="2">স্ত্রী</option>
                                             <option value="3">ছেলে</option>
@@ -91,11 +90,11 @@
                                             <option value="16">পুত্নি</option>
                                             <option value="17">নাতি</option>
                                             <option value="18">নাতনি</option>
-                                            <option value="19">অন্যান্য</option> --}}
-                                        </select>
+                                            <option value="0">অন্যান্য</option>
                                         @error('khana_relation')
                                             <li class="text-danger small">{{ $message; }}</li>
                                         @enderror
+                                        </select>
                                     </div>
                                     {{-- <div class="col-lg-2 col-12 col-sm-4">
                                         <label for="khana_relation">খানার সাথে সম্পর্ক<span class="input_star">*</span></label>
@@ -146,11 +145,6 @@
                                     </div>
 
                                 </div>
-                                <div class="col-12 col-sm-4 col-lg-2">
-                                    <label for="mother_name">মাতার নাম:</label>
-                                    <input type="text" name="mother_name" value="" class="  form-control form-control-new rounded">
-                                </div>
-
                                 {{-- <div class="row mb-3">
                                     <div class="col-12 col-sm-4 col-lg-2">
                                         <label for="mother_name">মাতার নাম:</label>
