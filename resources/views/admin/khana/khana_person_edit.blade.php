@@ -90,6 +90,26 @@
                                     <div class="col-lg-2 col-12 col-sm-4">
                                         <label for="khana_relation">খানা প্রধানের সাথে সম্পর্ক<span class="input_star">*</span></label>
                                         <select name="khana_relation" id="khana_relation" class="  form-control form-control-new rounded" >
+                                            <option value="" {{ old('khana_relation', $person_info->khana_relation) == null ? 'selected' : '' }}>স্বীয় (Self)</option>
+                                            <option value="1" {{ old('khana_relation', $person_info->khana_relation) == 1 ? 'selected' : '' }}>স্বামী</option>
+                                            <option value="2" {{ old('khana_relation', $person_info->khana_relation) == 2 ? 'selected' : '' }}>স্ত্রী</option>
+                                            <option value="3" {{ old('khana_relation', $person_info->khana_relation) == 3 ? 'selected' : '' }}>ছেলে</option>
+                                            <option value="4" {{ old('khana_relation', $person_info->khana_relation) == 4 ? 'selected' : '' }}>মেয়ে</option>
+                                            <option value="5" {{ old('khana_relation', $person_info->khana_relation) == 5 ? 'selected' : '' }}>ভাই</option>
+                                            <option value="6" {{ old('khana_relation', $person_info->khana_relation) == 6 ? 'selected' : '' }}>বোন</option>
+                                            <option value="7" {{ old('khana_relation', $person_info->khana_relation) == 7 ? 'selected' : '' }}>বাবা</option>
+                                            <option value="8" {{ old('khana_relation', $person_info->khana_relation) == 8 ? 'selected' : '' }}>মা</option>
+                                            <option value="9" {{ old('khana_relation', $person_info->khana_relation) == 9 ? 'selected' : '' }}>চাচা</option>
+                                            <option value="10" {{ old('khana_relation', $person_info->khana_relation) == 10 ? 'selected' : '' }}>চাচি</option>
+                                            <option value="11" {{ old('khana_relation', $person_info->khana_relation) == 11 ? 'selected' : '' }}>খালা</option>
+                                            <option value="12" {{ old('khana_relation', $person_info->khana_relation) == 12 ? 'selected' : '' }}>খালু</option>
+                                            <option value="13" {{ old('khana_relation', $person_info->khana_relation) == 13 ? 'selected' : '' }}>ফুফা</option>
+                                            <option value="14" {{ old('khana_relation', $person_info->khana_relation) == 14 ? 'selected' : '' }}>ফুফু</option>
+                                            <option value="15" {{ old('khana_relation', $person_info->khana_relation) == 15 ? 'selected' : '' }}>পোতা</option>
+                                            <option value="16" {{ old('khana_relation', $person_info->khana_relation) == 16 ? 'selected' : '' }}>পুত্নি</option>
+                                            <option value="17" {{ old('khana_relation', $person_info->khana_relation) == 17 ? 'selected' : '' }}>নাতি</option>
+                                            <option value="18" {{ old('khana_relation', $person_info->khana_relation) == 18 ? 'selected' : '' }}>নাতনি</option>
+
 
                                         </select>
                                         @error('khana_relation')
@@ -121,17 +141,36 @@
                                         <label for="husb_wife_name">স্বামী/স্ত্রীর নাম:</label>
                                         <input type="text" name="husb_wife_name"  value="{{ $person_info->husb_wife_name }}" class="  form-control form-control-new rounded" >
                                     </div>
-                                    <div class="col-lg-2 col-12 col-sm-4">
+                                    {{-- <div class="col-lg-2 col-12 col-sm-4">
                                         <label for="khana_person_img">ব্যক্তির ছবি<span class="input_star">*</span></label>
                                         <input type="file" name="khana_person_img" onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])" value="{{ $person_info->husb_wife_name }}" value="{{ $person_info->khana_person_img }}" class="  form-control form-control-new rounded p-1" >
                                         @error('khana_person_img')
                                             <li class="text-danger small">{{ $message; }}</li>
                                         @enderror
+                                    </div> --}}
+                                    <div class="col-lg-2 col-12 col-sm-4">
+                                        <label for="khana_person_img">ব্যক্তির ছবি<span class="input_star">*</span></label>
+                                        <input type="file" name="khana_person_img" value="{{ $person_info->khana_person_img }}" class="  form-control form-control-new rounded p-1" >
+                                        @error('khana_person_img')
+                                            <li class="text-danger small">{{ $message; }}</li>
+                                        @enderror
                                     </div>
+                                    {{-- <div class="col-lg-2 col-12 col-sm-4">
+                                        <label for="khana_person_img">ব্যক্তির ছবি<span class="input_star">*</span></label>
+                                        @if($person_info->khana_person_img)
+                                            <img src="{{ asset('uploads/khana/persons/' . $person_info->khana_person_img) }}" alt="Person Image" class="img-fluid">
+                                        @endif
+                                        <input type="file" name="khana_person_img" class="form-control form-control-new rounded p-1">
+                                        @error('khana_person_img')
+                                            <li class="text-danger small">{{ $message }}</li>
+                                        @enderror
+                                    </div> --}}
+
+
 
                                     <div class="col-lg-2 col-12 col-sm-4">
                                         <label for="khana_house_img">বাড়ির ছবি<span class="input_star">*</span></label>
-                                        <input type="file" name="khana_house_img" onchange="document.getElementById('blah1').src = window.URL.createObjectURL(this.files[0])" value="{{ $person_info->khana_house_img }}" class="  form-control form-control-new rounded p-1" >
+                                        <input type="file" name="khana_house_img" value="{{ $person_info->khana_house_img }}" onchange="document.getElementById('blah1').src = window.URL.createObjectURL(this.files[0])" value="{{ $person_info->khana_house_img }}" class="  form-control form-control-new rounded p-1" >
                                         @error('khana_house_img')
                                             <li class="text-danger small">{{ $message; }}</li>
                                         @enderror
@@ -379,65 +418,64 @@
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="benefit_type">ভাতার ধরণ:</label>
                                         <select name="benefit_type" class=" form-control form-control-new rounded">
-                                            <option value="1">মুক্তিযোদ্ধা</option>
-                                            <option value="2">প্রতিবন্ধী</option>
-                                            <option value="3">বিধবা</option>
-                                            <option value="4">বয়স্ক</option>
-                                            <option value="5">ভি ডব্লিউ ডি</option>
-                                            <option value="6">মাতৃত্বকালীন</option>
-                                            <option value="6">ভিক্ষুখ</option>
-                                            <option value="0">অন্যান্য</option>
+                                            <option value="1" {{ old('benefit_type', $benefit_info->benefit_type) == 1 ? 'selected' : '' }}>মুক্তিযোদ্ধা</option>
+                                            <option value="2" {{ old('benefit_type', $benefit_info->benefit_type) == 2 ? 'selected' : '' }}>প্রতিবন্ধী</option>
+                                            <option value="3" {{ old('benefit_type', $benefit_info->benefit_type) == 3 ? 'selected' : '' }}>বিধবা</option>
+                                            <option value="4" {{ old('benefit_type', $benefit_info->benefit_type) == 4 ? 'selected' : '' }}>বয়স্ক</option>
+                                            <option value="5" {{ old('benefit_type', $benefit_info->benefit_type) == 5 ? 'selected' : '' }}>ভি ডব্লিউ ডি</option>
+                                            <option value="6" {{ old('benefit_type', $benefit_info->benefit_type) == 6 ? 'selected' : '' }}>মাতৃত্বকালীন</option>
+                                            <option value="7" {{ old('benefit_type', $benefit_info->benefit_type) == 7 ? 'selected' : '' }}>ভিক্ষুখ</option>
+                                            <option value="0" {{ old('benefit_type', $benefit_info->benefit_type) == 0 ? 'selected' : '' }}>অন্যান্য</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="benefit_confirm">ভাতা পেয়েছেন কি না?:</label>
                                         <select name="benefit_confirm" class=" form-control form-control-new rounded">
-                                            <option value="0">না</option>
-                                            <option value="1">হ্যাঁ</option>
+                                            <option value="0" {{ old('benefit_confirm', $benefit_info->benefit_confirm) == 0 ? 'selected' : '' }}>না</option>
+                                            <option value="1" {{ old('benefit_confirm', $benefit_info->benefit_confirm) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="benefit_dept">দপ্তরের নাম:</label>
                                         <select name="benefit_dept" class=" form-control form-control-new rounded">
-
-                                            <option value="1">উপজেলা আনসার ও ভিডিপি</option>
-                                            <option value="2">উপজেলা ফায়ার সার্ভিস ও সিভিল ডিফেন্স</option>
-                                            <option value="3">উপজেলা স্বাস্থ্য কমপ্লেক্স </option>
-                                            <option value="4">উপজেলা পরিবার পরিকল্পনা অফিস </option>
-                                            <option value="5">উপজেলা হাসপাতাল স্বাস্থ্য কেন্দ্ </option>
-                                            <option value="6">উপজেলা কৃষি দপ্তর</option>
-                                            <option value="7">উপজেলা মৎস দপ্তর </option>
-                                            <option value="8">উপজেলা খাদ্য নিয়ন্ত্রকের কার্যালয় </option>
-                                            <option value="9">উপজেলা প্রাণী সম্পদ অফিস </option>
-                                            <option value="10">উপজেলা সার পরিবেশকের কার্যালয় </option>
-                                            <option value="11">উপজেলা ভূমি অফিস </option>
-                                            <option value="12">উপজেলা সাব রেজিস্ট্রার অফিস </option>
-                                            <option value="13">উপজেলা সেটেলমেন্ট অফিস </option>
-                                            <option value="14">তথ্য ও যোগাযোগ প্রযুক্তি অধিদপ্তর </option>
-                                            <option value="15">উপজেলা জনস্বাস্থ্য প্রকৌশল </option>
-                                            <option value="16">উপজেলা সমাজসেবা কার্যালয় </option>
-                                            <option value="17">উপজেলা মহিলা বিষয়ক অধিদপ্তর </option>
-                                            <option value="18">উপজেলা যুব উন্নয়ন অধিদপ্তর </option>
-                                            <option value="19">উপজেলা সমবায় অফিস </option>
-                                            <option value="20">উপজেলা বিআরডিবি অফিস </option>
-                                            <option value="21">একটি বাড়ি একটি খামার ও পল্লী সঞ্চয় ব্যাংক </option>
-                                            <option value="22">উপজেলা এসএফডিএফ কার্যালয় </option>
-                                            <option value="23">উপজেলা মাধ্যমিক শিক্ষা অফিস </option>
-                                            <option value="24">উপজেলা নির্বাহী অফিসারের কার্যালয় </option>
-                                            <option value="25">উপজেলা প্রকৌশলীর কার্যালয়</option>
-                                            <option value="26">উপজেলা নির্বাচন অফিস </option>
-                                            <option value="27">উপজেলা পল্লী সঞ্চয় ব্যাংক </option>
-                                            <option value="28">উপজেলা হিসাব রক্ষণ অফিস</option>
-                                            <option value="29">উপজেলা তথ্য কেন্দ্</option>
-                                            <option value="30">উপজেলা রিসোর্স সেন্টার </option>
-                                            <option value="31">উপজেলা প্রকল্প বাস্তবায়ন কর্মকর্তার অফিস </option>
-                                            <option value="32">উপজেলা ডাকঘর </option>
-                                            <option value="0">অন্যান্য</option>
+                                            <option value="1" {{ old('benefit_dept', $benefit_info->benefit_dept) == 1 ? 'selected' : '' }}>উপজেলা আনসার ও ভিডিপি</option>
+                                            <option value="2" {{ old('benefit_dept', $benefit_info->benefit_dept) == 2 ? 'selected' : '' }}>উপজেলা ফায়ার সার্ভিস ও সিভিল ডিফেন্স</option>
+                                            <option value="3" {{ old('benefit_dept', $benefit_info->benefit_dept) == 3 ? 'selected' : '' }}>উপজেলা স্বাস্থ্য কমপ্লেক্স</option>
+                                            <option value="4" {{ old('benefit_dept', $benefit_info->benefit_dept) == 4 ? 'selected' : '' }}>উপজেলা পরিবার পরিকল্পনা অফিস</option>
+                                            <option value="5" {{ old('benefit_dept', $benefit_info->benefit_dept) == 5 ? 'selected' : '' }}>উপজেলা হাসপাতাল স্বাস্থ্য কেন্দ্র</option>
+                                            <option value="6" {{ old('benefit_dept', $benefit_info->benefit_dept) == 6 ? 'selected' : '' }}>উপজেলা কৃষি দপ্তর</option>
+                                            <option value="7" {{ old('benefit_dept', $benefit_info->benefit_dept) == 7 ? 'selected' : '' }}>উপজেলা মৎস দপ্তর</option>
+                                            <option value="8" {{ old('benefit_dept', $benefit_info->benefit_dept) == 8 ? 'selected' : '' }}>উপজেলা খাদ্য নিয়ন্ত্রকের কার্যালয়</option>
+                                            <option value="9" {{ old('benefit_dept', $benefit_info->benefit_dept) == 9 ? 'selected' : '' }}>উপজেলা প্রাণী সম্পদ অফিস</option>
+                                            <option value="10" {{ old('benefit_dept', $benefit_info->benefit_dept) == 10 ? 'selected' : '' }}>উপজেলা সার পরিবেশকের কার্যালয়</option>
+                                            <option value="11" {{ old('benefit_dept', $benefit_info->benefit_dept) == 11 ? 'selected' : '' }}>উপজেলা ভূমি অফিস</option>
+                                            <option value="12" {{ old('benefit_dept', $benefit_info->benefit_dept) == 12 ? 'selected' : '' }}>উপজেলা সাব রেজিস্ট্রার অফিস</option>
+                                            <option value="13" {{ old('benefit_dept', $benefit_info->benefit_dept) == 13 ? 'selected' : '' }}>উপজেলা সেটেলমেন্ট অফিস</option>
+                                            <option value="14" {{ old('benefit_dept', $benefit_info->benefit_dept) == 14 ? 'selected' : '' }}>তথ্য ও যোগাযোগ প্রযুক্তি অধিদপ্তর</option>
+                                            <option value="15" {{ old('benefit_dept', $benefit_info->benefit_dept) == 15 ? 'selected' : '' }}>উপজেলা জনস্বাস্থ্য প্রকৌশল</option>
+                                            <option value="16" {{ old('benefit_dept', $benefit_info->benefit_dept) == 16 ? 'selected' : '' }}>উপজেলা সমাজসেবা কার্যালয়</option>
+                                            <option value="17" {{ old('benefit_dept', $benefit_info->benefit_dept) == 17 ? 'selected' : '' }}>উপজেলা মহিলা বিষয়ক অধিদপ্তর</option>
+                                            <option value="18" {{ old('benefit_dept', $benefit_info->benefit_dept) == 18 ? 'selected' : '' }}>উপজেলা যুব উন্নয়ন অধিদপ্তর</option>
+                                            <option value="19" {{ old('benefit_dept', $benefit_info->benefit_dept) == 19 ? 'selected' : '' }}>উপজেলা সমবায় অফিস</option>
+                                            <option value="20" {{ old('benefit_dept', $benefit_info->benefit_dept) == 20 ? 'selected' : '' }}>উপজেলা বিআরডিবি অফিস </option>
+                                            <option value="21" {{ old('benefit_dept', $benefit_info->benefit_dept) == 21 ? 'selected' : '' }}>একটি বাড়ি একটি খামার ও পল্লী সঞ্চয় ব্যাংক</option>
+                                            <option value="22" {{ old('benefit_dept', $benefit_info->benefit_dept) == 22 ? 'selected' : '' }}>উপজেলা এসএফডিএফ কার্যালয়</option>
+                                            <option value="23" {{ old('benefit_dept', $benefit_info->benefit_dept) == 23 ? 'selected' : '' }}>উপজেলা মাধ্যমিক শিক্ষা অফিস</option>
+                                            <option value="24" {{ old('benefit_dept', $benefit_info->benefit_dept) == 24 ? 'selected' : '' }}>উপজেলা নির্বাহী অফিসারের কার্যালয়</option>
+                                            <option value="25" {{ old('benefit_dept', $benefit_info->benefit_dept) == 25 ? 'selected' : '' }}>উপজেলা প্রকৌশলীর কার্যালয়</option>
+                                            <option value="26" {{ old('benefit_dept', $benefit_info->benefit_dept) == 26 ? 'selected' : '' }}>উপজেলা নির্বাচন অফিস</option>
+                                            <option value="27" {{ old('benefit_dept', $benefit_info->benefit_dept) == 27 ? 'selected' : '' }}>উপজেলা পল্লী সঞ্চয় ব্যাংক </option>
+                                            <option value="28" {{ old('benefit_dept', $benefit_info->benefit_dept) == 28 ? 'selected' : '' }}>উপজেলা হিসাব রক্ষণ অফিস</option>
+                                            <option value="29" {{ old('benefit_dept', $benefit_info->benefit_dept) == 29 ? 'selected' : '' }}>উপজেলা তথ্য কেন্দ্</option>
+                                            <option value="30" {{ old('benefit_dept', $benefit_info->benefit_dept) == 30 ? 'selected' : '' }}>উপজেলা রিসোর্স সেন্টার</option>
+                                            <option value="31" {{ old('benefit_dept', $benefit_info->benefit_dept) == 31 ? 'selected' : '' }}>উপজেলা প্রকল্প বাস্তবায়ন কর্মকর্তার অফিস </option>
+                                            <option value="32" {{ old('benefit_dept', $benefit_info->benefit_dept) == 32 ? 'selected' : '' }}>উপজেলা ডাকঘর</option>
+                                            <option value="0" {{ old('benefit_dept', $benefit_info->benefit_dept) == 0 ? 'selected' : '' }}>অন্যান্য</option>
                                             </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="benefit_amount">ভাতার পরিমাণ:</label>
-                                        <input type="number" name="benefit_amount" class=" form-control form-control-new rounded">
+                                        <input type="number" name="benefit_amount" value="{{ $benefit_info->benefit_amount }}" class=" form-control form-control-new rounded">
                                     </div>
                                     {{-- @error('category_name')
                                         <li class="text-danger">{{ $message; }}</li>
@@ -449,64 +487,64 @@
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="oth_benefit_conf">অন্যান্য সুবিধা পেয়েছেন কি না?</label>
                                         <select name="oth_benefit_conf" class=" form-control form-control-new rounded">
-                                            <option value="0">না</option>
-                                            <option value="1">হ্যাঁ</option>
+                                            <option value="0" {{ old('oth_benefit_conf',$oth_benefit_info->oth_benefit_conf) == 0 ? 'selected' : '' }}>না</option>
+                                            <option value="1" {{ old('oth_benefit_conf', $oth_benefit_info->oth_benefit_conf) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="housing" >আশ্রয়ণ প্রকল্পের ঘর পেয়েছেন কি না?</label>
                                         <select  name="housing" class=" form-control form-control-new rounded">
-                                            <option value="0">না</option>
-                                            <option value="1">হ্যাঁ</option>
+                                            <option value="0" {{ old('housing', $oth_benefit_info->housing) == 0 ? 'selected' : '' }}>না</option>
+                                            <option value="1" {{ old('housing', $oth_benefit_info->housing) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                     <label for="grbenefit" >জিআর পেয়েছেন কি না?</label>
                                         <select  name="gr_benefit" class=" form-control form-control-new rounded">
-                                        <option value="0">না</option>
-                                        <option value="1">হ্যাঁ</option>
+                                            <option value="0" {{ old('grbenefit', $oth_benefit_info->grbenefit) == 0 ? 'selected' : '' }}>না</option>
+                                            <option value="1" {{ old('grbenefit', $oth_benefit_info->grbenefit) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="tinbenefit" >ঢেউটিন পেয়েছেন কি না?</label>
                                         <select  name="tin_benefit" class=" form-control form-control-new rounded">
-                                            <option value="0">না</option>
-                                            <option value="1">হ্যাঁ</option>
+                                            <option value="0" {{ old('tinbenefit', $oth_benefit_info->tinbenefit) == 0 ? 'selected' : '' }}>না</option>
+                                            <option value="1" {{ old('tinbenefit', $oth_benefit_info->tinbenefit) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3 mt-2">
                                          <label for="blanket_benefit" >কম্বোল পেয়েছেন কি না?</label>
                                         <select name="blanket_benefit" class=" form-control form-control-new rounded">
-                                            <option value="0">না</option>
-                                            <option value="1">হ্যাঁ</option>
+                                            <option value="0" {{ old('unemployed', $oth_benefit_info->unemployed) == 0 ? 'selected' : '' }}>না</option>
+                                            <option value="1" {{ old('unemployed', $oth_benefit_info->unemployed) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3 mt-2">
                                         <label for="tcb_benefit" >টিসিবি পেয়েছেন কি না?</label>
                                        <select name="tcb_benefit" class=" form-control form-control-new rounded">
-                                           <option value="0">না</option>
-                                           <option value="1">হ্যাঁ</option>
+                                        <option value="0" {{ old('tcb_benefit', $oth_benefit_info->tcb_benefit) == 0 ? 'selected' : '' }}>না</option>
+                                        <option value="1" {{ old('tcb_benefit', $oth_benefit_info->tcb_benefit) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
                                        </select>
                                    </div>
                                    <div class="col-12 col-sm-6 col-lg-3 mt-2">
                                         <label for="fifteentaka_benefit" >১৫টাকার চাউল পেয়েছেন কি না?</label>
                                         <select name="fifteentaka_benefit" class=" form-control form-control-new rounded">
-                                            <option value="0">না</option>
-                                            <option value="1">হ্যাঁ</option>
+                                            <option value="0" {{ old('fifteentaka_benefit', $oth_benefit_info->fifteentaka_benefit) == 0 ? 'selected' : '' }}>না</option>
+                                            <option value="1" {{ old('fifteentaka_benefit', $oth_benefit_info->fifteentaka_benefit) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3 mt-2">
                                         <label for="thirtytaka_benefit" >৩০টাকার চাউল পেয়েছেন কি না?</label>
                                         <select name="thirtytaka_benefit" class=" form-control form-control-new rounded">
-                                            <option value="0">না</option>
-                                            <option value="1">হ্যাঁ</option>
+                                            <option value="0" {{ old('thirtytaka_benefit', $oth_benefit_info->thirtytaka_benefit) == 0 ? 'selected' : '' }}>না</option>
+                                            <option value="1" {{ old('thirtytaka_benefit', $oth_benefit_info->thirtytaka_benefit) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3 mt-2">
                                         <label for="benefit_deserve" >ভাতা পাওয়ার যোগ্য কি না?</label>
                                         <select name="benefit_deserve" class=" form-control form-control-new rounded">
-                                            <option value="0">না</option>
-                                            <option value="1">হ্যাঁ</option>
+                                            <option value="0" {{ old('benefit_deserve', $oth_benefit_info->benefit_deserve) == 0 ? 'selected' : '' }}>না</option>
+                                            <option value="1" {{ old('benefit_deserve', $oth_benefit_info->benefit_deserve) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
                                         </select>
                                     </div>
 
@@ -517,81 +555,80 @@
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="loan_conf">ঋণ গ্রহন করেছেন কি না?:</label>
                                         <select name="loan_conf" class=" form-control form-control-new rounded">
-                                            <option value="0">না</option>
-                                            <option value="1">হ্যাঁ</option>
+                                            <option value="0" {{ old('loan_conf', $loan_info->loan_conf) == 0 ? 'selected' : '' }}>না</option>
+                                            <option value="1" {{ old('loan_conf', $loan_info->loan_conf) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="loan_type" >ঋণের ধরণ:</label>
                                         <select  name="loan_type" class=" form-control form-control-new rounded">
-                                            <option value="0"></option>
-                                            <option value="1">ব্যবসা</option>
-                                            <option value="2">কৃষি</option>
-                                            <option value="3">শিক্ষা</option>
-                                            <option value="4">গবাদীপশুপালন</option>
-                                            <option value="5">কম্পিউটার প্রশিক্ষন</option>
-                                            <option value="7">ফ্রীল্যাসিং প্রশিক্ষন</option>
-                                            <option value="8">বিদেশ গমন</option>
-                                            <option value="0">অন্যান্য</option>
+                                            <option value="1" {{ old('loan_type', $loan_info->loan_type) == 1 ? 'selected' : '' }}>ব্যবসা</option>
+                                            <option value="2" {{ old('loan_type', $loan_info->loan_type) == 2 ? 'selected' : '' }}>কৃষি</option>
+                                            <option value="3" {{ old('loan_type', $loan_info->loan_type) == 3 ? 'selected' : '' }}>শিক্ষা</option>
+                                            <option value="4" {{ old('loan_type', $loan_info->loan_type) == 4 ? 'selected' : '' }}>গবাদীপশুপালন</option>
+                                            <option value="5" {{ old('loan_type', $loan_info->loan_type) == 5 ? 'selected' : '' }}>কম্পিউটার প্রশিক্ষন</option>
+                                            <option value="6" {{ old('loan_type', $loan_info->loan_type) == 6 ? 'selected' : '' }}>ফ্রীল্যাসিং প্রশিক্ষন</option>
+                                            <option value="7" {{ old('loan_type', $loan_info->loan_type) == 7 ? 'selected' : '' }}>বিদেশ গমন</option>
+                                            <option value="0" {{ old('loan_type', $loan_info->loan_type) == 0 ? 'selected' : '' }}>অন্যান্য</option>
+
                                             </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="loan_dept">দপ্তরের নাম:</label>
                                         <select name="loan_dept" class=" form-control form-control-new rounded">
-
-                                            <option value="1">উপজেলা আনসার ও ভিডিপি</option>
-                                            <option value="2">উপজেলা ফায়ার সার্ভিস ও সিভিল ডিফেন্স</option>
-                                            <option value="3">উপজেলা স্বাস্থ্য কমপ্লেক্স </option>
-                                            <option value="4">উপজেলা পরিবার পরিকল্পনা অফিস </option>
-                                            <option value="5">উপজেলা হাসপাতাল স্বাস্থ্য কেন্দ্ </option>
-                                            <option value="6">উপজেলা কৃষি দপ্তর</option>
-                                            <option value="7">উপজেলা মৎস দপ্তর </option>
-                                            <option value="8">উপজেলা খাদ্য নিয়ন্ত্রকের কার্যালয় </option>
-                                            <option value="9">উপজেলা প্রাণী সম্পদ অফিস </option>
-                                            <option value="10">উপজেলা সার পরিবেশকের কার্যালয় </option>
-                                            <option value="11">উপজেলা ভূমি অফিস </option>
-                                            <option value="12">উপজেলা সাব রেজিস্ট্রার অফিস </option>
-                                            <option value="13">উপজেলা সেটেলমেন্ট অফিস </option>
-                                            <option value="14">তথ্য ও যোগাযোগ প্রযুক্তি অধিদপ্তর </option>
-                                            <option value="15">উপজেলা জনস্বাস্থ্য প্রকৌশল </option>
-                                            <option value="16">উপজেলা সমাজসেবা কার্যালয় </option>
-                                            <option value="17">উপজেলা মহিলা বিষয়ক অধিদপ্তর </option>
-                                            <option value="18">উপজেলা যুব উন্নয়ন অধিদপ্তর </option>
-                                            <option value="19">উপজেলা সমবায় অফিস </option>
-                                            <option value="20">উপজেলা বিআরডিবি অফিস </option>
-                                            <option value="21">একটি বাড়ি একটি খামার ও পল্লী সঞ্চয় ব্যাংক </option>
-                                            <option value="22">উপজেলা এসএফডিএফ কার্যালয় </option>
-                                            <option value="23">উপজেলা মাধ্যমিক শিক্ষা অফিস </option>
-                                            <option value="24">উপজেলা নির্বাহী অফিসারের কার্যালয় </option>
-                                            <option value="25">উপজেলা প্রকৌশলীর কার্যালয়</option>
-                                            <option value="26">উপজেলা নির্বাচন অফিস </option>
-                                            <option value="27">উপজেলা পল্লী সঞ্চয় ব্যাংক </option>
-                                            <option value="28">উপজেলা হিসাব রক্ষণ অফিস</option>
-                                            <option value="29">উপজেলা তথ্য কেন্দ্</option>
-                                            <option value="30">উপজেলা রিসোর্স সেন্টার </option>
-                                            <option value="31">উপজেলা প্রকল্প বাস্তবায়ন কর্মকর্তার অফিস </option>
-                                            <option value="32">উপজেলা ডাকঘর </option>
-                                            <option value="0">অন্যান্য</option>
+                                            <option value="1" {{ old('loan_dept', $loan_info->loan_dept) == 1 ? 'selected' : '' }}>উপজেলা আনসার ও ভিডিপি</option>
+                                            <option value="2" {{ old('loan_dept', $loan_info->loan_dept) == 2 ? 'selected' : '' }}>উপজেলা ফায়ার সার্ভিস ও সিভিল ডিফেন্স</option>
+                                            <option value="3" {{ old('loan_dept', $loan_info->loan_dept) == 3 ? 'selected' : '' }}>উপজেলা স্বাস্থ্য কমপ্লেক্স</option>
+                                            <option value="4" {{ old('loan_dept', $loan_info->loan_dept) == 4 ? 'selected' : '' }}>উপজেলা পরিবার পরিকল্পনা অফিস</option>
+                                            <option value="5" {{ old('loan_dept', $loan_info->loan_dept) == 5 ? 'selected' : '' }}>উপজেলা হাসপাতাল স্বাস্থ্য কেন্দ্র</option>
+                                            <option value="6" {{ old('loan_dept', $loan_info->loan_dept) == 6 ? 'selected' : '' }}>উপজেলা কৃষি দপ্তর</option>
+                                            <option value="7" {{ old('loan_dept', $loan_info->loan_dept) == 7 ? 'selected' : '' }}>উপজেলা মৎস দপ্তর</option>
+                                            <option value="8" {{ old('loan_dept', $loan_info->loan_dept) == 8 ? 'selected' : '' }}>উপজেলা খাদ্য নিয়ন্ত্রকের কার্যালয়</option>
+                                            <option value="9" {{ old('loan_dept', $loan_info->loan_dept) == 9 ? 'selected' : '' }}>উপজেলা প্রাণী সম্পদ অফিস</option>
+                                            <option value="10" {{ old('loan_dept', $loan_info->loan_dept) == 10 ? 'selected' : '' }}>উপজেলা সার পরিবেশকের কার্যালয়</option>
+                                            <option value="11" {{ old('loan_dept', $loan_info->loan_dept) == 11 ? 'selected' : '' }}>উপজেলা ভূমি অফিস</option>
+                                            <option value="12" {{ old('loan_dept', $loan_info->loan_dept) == 12 ? 'selected' : '' }}>উপজেলা সাব রেজিস্ট্রার অফিস</option>
+                                            <option value="13" {{ old('loan_dept', $loan_info->loan_dept) == 13 ? 'selected' : '' }}>উপজেলা সেটেলমেন্ট অফিস</option>
+                                            <option value="14" {{ old('loan_dept', $loan_info->loan_dept) == 14 ? 'selected' : '' }}>তথ্য ও যোগাযোগ প্রযুক্তি অধিদপ্তর</option>
+                                            <option value="15" {{ old('loan_dept', $loan_info->loan_dept) == 15 ? 'selected' : '' }}>উপজেলা জনস্বাস্থ্য প্রকৌশল</option>
+                                            <option value="16" {{ old('loan_dept', $loan_info->loan_dept) == 16 ? 'selected' : '' }}>উপজেলা সমাজসেবা কার্যালয়</option>
+                                            <option value="17" {{ old('loan_dept', $loan_info->loan_dept) == 17 ? 'selected' : '' }}>উপজেলা মহিলা বিষয়ক অধিদপ্তর</option>
+                                            <option value="18" {{ old('loan_dept', $loan_info->loan_dept) == 18 ? 'selected' : '' }}>উপজেলা যুব উন্নয়ন অধিদপ্তর</option>
+                                            <option value="19" {{ old('loan_dept', $loan_info->loan_dept) == 19 ? 'selected' : '' }}>উপজেলা সমবায় অফিস</option>
+                                            <option value="20" {{ old('loan_dept', $loan_info->loan_dept) == 20 ? 'selected' : '' }}>উপজেলা বিআরডিবি অফিস </option>
+                                            <option value="21" {{ old('loan_dept', $loan_info->loan_dept) == 21 ? 'selected' : '' }}>একটি বাড়ি একটি খামার ও পল্লী সঞ্চয় ব্যাংক</option>
+                                            <option value="22" {{ old('loan_dept', $loan_info->loan_dept) == 22 ? 'selected' : '' }}>উপজেলা এসএফডিএফ কার্যালয়</option>
+                                            <option value="23" {{ old('loan_dept', $loan_info->loan_dept) == 23 ? 'selected' : '' }}>উপজেলা মাধ্যমিক শিক্ষা অফিস</option>
+                                            <option value="24" {{ old('loan_dept', $loan_info->loan_dept) == 24 ? 'selected' : '' }}>উপজেলা নির্বাহী অফিসারের কার্যালয়</option>
+                                            <option value="25" {{ old('loan_dept', $loan_info->loan_dept) == 25 ? 'selected' : '' }}>উপজেলা প্রকৌশলীর কার্যালয়</option>
+                                            <option value="26" {{ old('loan_dept', $loan_info->loan_dept) == 26 ? 'selected' : '' }}>উপজেলা নির্বাচন অফিস</option>
+                                            <option value="27" {{ old('loan_dept', $loan_info->loan_dept) == 27 ? 'selected' : '' }}>উপজেলা পল্লী সঞ্চয় ব্যাংক </option>
+                                            <option value="28" {{ old('loan_dept', $loan_info->loan_dept) == 28 ? 'selected' : '' }}>উপজেলা হিসাব রক্ষণ অফিস</option>
+                                            <option value="29" {{ old('loan_dept', $loan_info->loan_dept) == 29 ? 'selected' : '' }}>উপজেলা তথ্য কেন্দ্</option>
+                                            <option value="30" {{ old('loan_dept', $loan_info->loan_dept) == 30 ? 'selected' : '' }}>উপজেলা রিসোর্স সেন্টার</option>
+                                            <option value="31" {{ old('loan_dept', $loan_info->loan_dept) == 31 ? 'selected' : '' }}>উপজেলা প্রকল্প বাস্তবায়ন কর্মকর্তার অফিস </option>
+                                            <option value="32" {{ old('loan_dept', $loan_info->loan_dept) == 32 ? 'selected' : '' }}>উপজেলা ডাকঘর</option>
+                                            <option value="0" {{ old('loan_dept', $loan_info->loan_dept) == 0 ? 'selected' : '' }}>অন্যান্য</option>
                                             </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="loan_amount" >
                                             টাকার পরিমাণ::</label>
-                                       <input type="text" name="loan_amount"  class=" form-control form-control-new rounded">
+                                       <input type="text" name="loan_amount"  value="{{ $loan_info->loan_amount }}" class=" form-control form-control-new rounded">
                                    </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="loan_duration" >সময়কাল(মাস):</label>
-                                       <input type="text" name="loan_duration" placeholder="১ মাস-৬মাস/বছর" class=" form-control form-control-new rounded">
+                                       <input type="text" name="loan_duration" placeholder="১ মাস-৬মাস/বছর" value="{{ $loan_info->loan_duration }}" class=" form-control form-control-new rounded">
                                    </div>
                                    <div class="col-12 col-sm-3">
                                         <label for="loan_present_cond" >ঋণের বতর্মান অবস্থা:</label>
                                         <select  name="loan_present_cond" class=" form-control form-control-new rounded">
-                                                <option value="0">স্থগিত</option>
-                                                <option value="1">চলমান</option>
-                                                <option value="2">পরিশোধিত</option>
-                                                <option value="3">অপরিশোধিত</option>
+                                            <option value="0" {{ old('loan_present_cond', $loan_info->loan_present_cond) == 0 ? 'selected' : '' }}>স্থগিত</option>
+                                            <option value="1" {{ old('loan_present_cond', $loan_info->loan_present_cond) == 1 ? 'selected' : '' }}>স্থগিত</option>
+                                            <option value="2" {{ old('loan_present_cond', $loan_info->loan_present_cond) == 2 ? 'selected' : '' }}>স্থগিত</option>
+                                            <option value="3" {{ old('loan_present_cond', $loan_info->loan_present_cond) == 3 ? 'selected' : '' }}>স্থগিত</option>
                                         </select>
                                     </div>
                                 </div>
@@ -601,6 +638,8 @@
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="farmer_conf">কৃষক কি না?:</label>
                                         <select name="farmer_conf" class=" form-control form-control-new rounded">
+                                            <option value="0" {{ old('unemployed', $person_info->unemployed) == 0 ? 'selected' : '' }}>না</option>
+                                            <option value="1" {{ old('unemployed', $person_info->unemployed) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
                                             <option value="0">না</option>
                                             <option value="1">হ্যাঁ</option>
                                         </select>
@@ -608,6 +647,8 @@
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="farmer_type" >কৃষকের ধরণ:</label>
                                         <select  name="farmer_type" class=" form-control form-control-new rounded">
+                                            <option value="0" {{ old('unemployed', $person_info->unemployed) == 0 ? 'selected' : '' }}>না</option>
+                                            <option value="1" {{ old('unemployed', $person_info->unemployed) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
                                             <option value="1">প্রান্তিক</option>
                                             <option value="2">খুদ্র</option>
                                             <option value="3">ভূমিহীন</option>
@@ -633,6 +674,8 @@
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="farmer_status">কৃষকের অবস্থা:</label>
                                         <select name="farmer_status" class=" form-control form-control-new rounded">
+                                            <option value="0" {{ old('unemployed', $person_info->unemployed) == 0 ? 'selected' : '' }}>না</option>
+                                            <option value="1" {{ old('unemployed', $person_info->unemployed) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
                                             <option value="0">নিম্ন</option>
                                             <option value="1">উত্তম</option>
                                             <option value="2">মধ্যম</option>
@@ -642,6 +685,9 @@
                                         <label for="agro_dept_facility" >কৃষি দপ্তরের প্রাপ্ত সুবিধা:</label>
                                         <input type="number" name="agro_dept_facility" placeholder="যেমন বীজ/সার গ্রহন"  class=" form-control form-control-new rounded">
                                     </div>
+                                </div>
+                                <div class="my-5 w-100 col-lg-12 col-sm-6 col-12 text-center">
+                                    <button type="submit"  class="btn btn-secondary w-60" formaction="{{ route('khana.benefit.info.update', $person_info->khana_person_unique_id) }}">হালনাগাদ করুন (ভাতাসমূহের তথ্য)</button>
                                 </div>
                                 {{-- কৃষকের তথ্য end--}}
 
