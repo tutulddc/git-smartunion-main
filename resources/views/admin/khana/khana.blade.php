@@ -705,7 +705,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card">
+                    {{-- <div class="card card-family-info"> --}}
+                        <div class="card card-family-info" id="family-info" style="{{ old('khana_person_type') == 1 ? 'display: none;' : '' }}">
                         <div class="card-header" id="headingThree">
                           <h5 class="mb-0">
                             <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -713,7 +714,8 @@
                             </a>
                           </h5>
                         </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div id="collapseThree" class="collapse family-info" aria-labelledby="headingThree" data-parent="#accordion">
+                        {{-- <div id="collapseThree" class="collapse {{ old('khana_person_type') == 2 ? 'show' : '' }}" aria-labelledby="headingThree" data-parent="#accordion"> --}}
                           <div class="card-body">
                               <h4 class="card-title" style="text-align: center">পারিবারিক সকল তথ্য</h4>
                               <div class="row mb-3">
@@ -842,7 +844,8 @@
                         </div>
                       </div>
                        {{-- end of   (৩)পারিবারিক তথ্য --}}
-                       <div class="card">
+                       {{-- <div class="card"> --}}
+                       <div class="card card-tax-info" id="tax-info" style="{{ old('khana_person_type') == 1 ? 'display: none;' : '' }}">
                         <div class="card-header" id="headingThree">
                           <h5 class="mb-0">
                             <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapseThree">
@@ -971,6 +974,24 @@
 
     })
 </script>
+    <script>
+        // Add an event listener to the select element
+        document.getElementById('khana_person_type').addEventListener('change', function() {
+            // Get the selected value
+            var selectedValue = this.value;
+
+            // Get the family-info element
+            var familyInfo = document.getElementById('family-info');
+            var taxInfo = document.getElementById('tax-info');
+
+            // Update the display style based on the selected value
+            familyInfo.style.display = selectedValue == 1 ? 'none' : 'block';
+            taxInfo.style.display = selectedValue == 1 ? 'none' : 'block';
+        });
+
+        // Trigger the change event on page load to apply initial styling
+        document.getElementById('khana_person_type').dispatchEvent(new Event('change'));
+    </script>
 @endsection
 
 @section('footer_script')
