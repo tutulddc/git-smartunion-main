@@ -381,7 +381,10 @@ class KhanaStoreController extends Controller
 
         $khana_oth_benefit_infos = Other_benefit::where('khana_person_unique_id', $unique_id)->get();
         $oth_benefit_info = Other_benefit::where('khana_person_unique_id', $unique_id)->first();
+
         $khana_farmer_infos = Farmer_info::where('khana_person_unique_id', $unique_id)->get();
+        $farmer_info = Farmer_info::where('khana_person_unique_id', $unique_id)->first();
+
         $khana_family_infos = Family_info::where('khana_id', $khana_id)->get();
         $khana_holding_tax_infos = Tax_holding::where('khana_id', $khana_id)->get();
 
@@ -399,6 +402,8 @@ class KhanaStoreController extends Controller
             'loan_info' =>$loan_info,
 
             'khana_farmer_infos' =>$khana_farmer_infos,
+            'farmer_info' =>$farmer_info,
+
             'khana_family_infos' =>$khana_family_infos,
             'khana_holding_tax_infos' =>$khana_holding_tax_infos,
         ]);

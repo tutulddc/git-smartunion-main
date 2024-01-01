@@ -499,24 +499,24 @@
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
-                                    <label for="grbenefit" >জিআর পেয়েছেন কি না?</label>
+                                    <label for="gr_benefit" >জিআর পেয়েছেন কি না?</label>
                                         <select  name="gr_benefit" class=" form-control form-control-new rounded">
-                                            <option value="0" {{ old('grbenefit', $oth_benefit_info->grbenefit) == 0 ? 'selected' : '' }}>না</option>
-                                            <option value="1" {{ old('grbenefit', $oth_benefit_info->grbenefit) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
+                                            <option value="0" {{ old('gr_benefit', $oth_benefit_info->gr_benefit) == 0 ? 'selected' : '' }}>না</option>
+                                            <option value="1" {{ old('gr_benefit', $oth_benefit_info->gr_benefit) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
-                                        <label for="tinbenefit" >ঢেউটিন পেয়েছেন কি না?</label>
+                                        <label for="tin_benefit" >ঢেউটিন পেয়েছেন কি না?</label>
                                         <select  name="tin_benefit" class=" form-control form-control-new rounded">
-                                            <option value="0" {{ old('tinbenefit', $oth_benefit_info->tinbenefit) == 0 ? 'selected' : '' }}>না</option>
-                                            <option value="1" {{ old('tinbenefit', $oth_benefit_info->tinbenefit) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
+                                            <option value="0" {{ old('tin_benefit', $oth_benefit_info->tin_benefit) == 0 ? 'selected' : '' }}>না</option>
+                                            <option value="1" {{ old('tin_benefit', $oth_benefit_info->tin_benefit) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3 mt-2">
                                          <label for="blanket_benefit" >কম্বোল পেয়েছেন কি না?</label>
                                         <select name="blanket_benefit" class=" form-control form-control-new rounded">
-                                            <option value="0" {{ old('unemployed', $oth_benefit_info->unemployed) == 0 ? 'selected' : '' }}>না</option>
-                                            <option value="1" {{ old('unemployed', $oth_benefit_info->unemployed) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
+                                            <option value="0" {{ old('blanket_benefit', $oth_benefit_info->blanket_benefit) == 0 ? 'selected' : '' }}>না</option>
+                                            <option value="1" {{ old('blanket_benefit', $oth_benefit_info->blanket_benefit) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3 mt-2">
@@ -626,9 +626,9 @@
                                         <label for="loan_present_cond" >ঋণের বতর্মান অবস্থা:</label>
                                         <select  name="loan_present_cond" class=" form-control form-control-new rounded">
                                             <option value="0" {{ old('loan_present_cond', $loan_info->loan_present_cond) == 0 ? 'selected' : '' }}>স্থগিত</option>
-                                            <option value="1" {{ old('loan_present_cond', $loan_info->loan_present_cond) == 1 ? 'selected' : '' }}>স্থগিত</option>
-                                            <option value="2" {{ old('loan_present_cond', $loan_info->loan_present_cond) == 2 ? 'selected' : '' }}>স্থগিত</option>
-                                            <option value="3" {{ old('loan_present_cond', $loan_info->loan_present_cond) == 3 ? 'selected' : '' }}>স্থগিত</option>
+                                            <option value="1" {{ old('loan_present_cond', $loan_info->loan_present_cond) == 1 ? 'selected' : '' }}>চলমান</option>
+                                            <option value="2" {{ old('loan_present_cond', $loan_info->loan_present_cond) == 2 ? 'selected' : '' }}>পরিশোধিত</option>
+                                            <option value="3" {{ old('loan_present_cond', $loan_info->loan_present_cond) == 3 ? 'selected' : '' }}>অপরিশোধিত</option>
                                         </select>
                                     </div>
                                 </div>
@@ -638,52 +638,46 @@
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="farmer_conf">কৃষক কি না?:</label>
                                         <select name="farmer_conf" class=" form-control form-control-new rounded">
-                                            <option value="0" {{ old('unemployed', $person_info->unemployed) == 0 ? 'selected' : '' }}>না</option>
-                                            <option value="1" {{ old('unemployed', $person_info->unemployed) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
-                                            <option value="0">না</option>
-                                            <option value="1">হ্যাঁ</option>
+                                            <option value="0" {{ old('farmer_conf', $farmer_info->farmer_conf) == 0 ? 'selected' : '' }}>না</option>
+                                            <option value="1" {{ old('farmer_conf', $farmer_info->farmer_conf) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="farmer_type" >কৃষকের ধরণ:</label>
                                         <select  name="farmer_type" class=" form-control form-control-new rounded">
-                                            <option value="0" {{ old('unemployed', $person_info->unemployed) == 0 ? 'selected' : '' }}>না</option>
-                                            <option value="1" {{ old('unemployed', $person_info->unemployed) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
-                                            <option value="1">প্রান্তিক</option>
-                                            <option value="2">খুদ্র</option>
-                                            <option value="3">ভূমিহীন</option>
-                                            </select>
+                                            <option value="1" {{ old('farmer_type', $farmer_info->farmer_type) == 1 ? 'selected' : '' }}>প্রান্তিক</option>
+                                            <option value="2" {{ old('farmer_type', $farmer_info->farmer_type) == 2 ? 'selected' : '' }}>খুদ্র</option>
+                                            <option value="3" {{ old('farmer_type', $farmer_info->farmer_type) == 3 ? 'selected' : '' }}>ভূমিহীন</option>
+                                        </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="agro_land">
                                             কৃষি জমির পরিমাণ (শতক):</label>
-                                        <input type="number" name="agro_land" placeholder="২ শতাংশ"  class=" form-control form-control-new rounded">
+                                        <input type="number" name="agro_land" placeholder="২ শতাংশ" value="{{ $farmer_info->agro_land }}" class=" form-control form-control-new rounded">
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="non_agro_land" >
                                             অকৃষি জমির পরিমাণ (শতক):</label>
-                                        <input type="number" name="non_agro_land"  placeholder="২ শতাংশ" class=" form-control form-control-new rounded">
+                                        <input type="number" name="non_agro_land" value="{{ $farmer_info->non_agro_land }}" placeholder="২ শতাংশ" class=" form-control form-control-new rounded">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="main_crop" >প্রধান ফসলের নাম:</label>
-                                        <input type="text" name="main_crop" placeholder="ধান/গম ইত্যাদি" class=" form-control form-control-new rounded">
+                                        <input type="text" name="main_crop" placeholder="ধান/গম ইত্যাদি" value="{{ $farmer_info->main_crop }}" class=" form-control form-control-new rounded">
                                     </div>
 
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="farmer_status">কৃষকের অবস্থা:</label>
                                         <select name="farmer_status" class=" form-control form-control-new rounded">
-                                            <option value="0" {{ old('unemployed', $person_info->unemployed) == 0 ? 'selected' : '' }}>না</option>
-                                            <option value="1" {{ old('unemployed', $person_info->unemployed) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
-                                            <option value="0">নিম্ন</option>
-                                            <option value="1">উত্তম</option>
-                                            <option value="2">মধ্যম</option>
+                                            <option value="1" {{ old('farmer_status', $farmer_info->farmer_status) == 1 ? 'selected' : '' }}>নিম্ন</option>
+                                            <option value="2" {{ old('farmer_status', $farmer_info->farmer_status) == 2 ? 'selected' : '' }}>উত্তম</option>
+                                            <option value="3" {{ old('farmer_status', $farmer_info->farmer_status) == 3 ? 'selected' : '' }}>মধ্যম</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="agro_dept_facility" >কৃষি দপ্তরের প্রাপ্ত সুবিধা:</label>
-                                        <input type="number" name="agro_dept_facility" placeholder="যেমন বীজ/সার গ্রহন"  class=" form-control form-control-new rounded">
+                                        <input type="number" name="agro_dept_facility" value="{{ $farmer_info->agro_dept_facility }}" placeholder="যেমন বীজ/সার গ্রহন"  class=" form-control form-control-new rounded">
                                     </div>
                                 </div>
                                 <div class="my-5 w-100 col-lg-12 col-sm-6 col-12 text-center">
@@ -691,26 +685,6 @@
                                 </div>
                                 {{-- কৃষকের তথ্য end--}}
 
-                                {{-- <div class="row mb-3">
-                                    <div class="col-12 col-sm-6 col-lg-3">
-                                        <label for="main_crop" >প্রধান ফসলের নাম:</label>
-                                        <input type="text" name="main_crop" placeholder="ধান/গম িইত্যাদি" class=" form-control form-control-new rounded">
-                                    </div>
-
-                                    <div class="col-12 col-sm-6 col-lg-3">
-                                        <label for="farmer_status">কৃষকের অবস্থা:</label>
-                                        <select name="farmer_status" class=" form-control form-control-new rounded">
-                                            <option value="0">নিম্ন</option>
-                                            <option value="1">উত্তম</option>
-                                            <option value="2">মধ্যম</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-lg-3">
-                                        <label for="agro_dept_facility" >কৃষি দপ্তরের প্রাপ্ত সুবিধা:</label>
-                                        <input type="number" name="agro_dept_facility" placeholder="যেমন বীজ/সার গ্রহন"  class=" form-control form-control-new rounded">
-                                    </div>
-                                </div> --}}
-                                {{-- কৃষকের তথ্য end--}}
 
                             </div>
                         </div>

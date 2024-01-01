@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Tax_holding extends Model
 {
     use HasFactory;
+
+    protected $guarded = ['id'];
 }

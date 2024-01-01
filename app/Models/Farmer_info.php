@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Farmer_info extends Model
 {
     use HasFactory;
+    protected $guarded = ['id'];
 }
