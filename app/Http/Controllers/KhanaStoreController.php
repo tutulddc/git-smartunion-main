@@ -28,9 +28,6 @@ class KhanaStoreController extends Controller
         $union_id = Auth::user()->union_id;
         $khana_id = $division_id.$district_id.$upazila_id.$union_id.$request->ward_number.$request->holding_number;
         $khana_person_unique_id = $request->khana_person_type.$request->ward_number.$request->holding_number."-".random_int(100000, 900000);
-        // $khana_person_img_unique_no = $khana_person_unique_id;
-        // $khana_house_img_unique_no = $khana_person_unique_id;
-
         $benefit_info_unique_id = $request->khana_person_type.$request->ward_number.$request->holding_number."-".random_int(1000, 9000)."-".$request->benefit_type;
         $oth_benefit_unique_id = $request->khana_person_type.$request->ward_number.$request->holding_number."-".random_int(10000, 90000);
         $loan_unique_id = $request->loan_type.$request->loan_conf.$request->khana_person_type.$request->ward_number.$request->holding_number."-".random_int(10000, 90000);
@@ -377,7 +374,13 @@ class KhanaStoreController extends Controller
         $khana_id = $person_info->khana_id;
 
         $khana_benefit_infos = Benefit_info::where('khana_person_unique_id', $unique_id)->get();
+        $benefit_info =  Benefit_info::where('khana_person_unique_id', $unique_id)->first();
+
+        $khana_loan_infos = Loan_info::where('khana_person_unique_id', $unique_id)->get();
+        $loan_info =  Loan_info::where('khana_person_unique_id', $unique_id)->first();
+
         $khana_oth_benefit_infos = Other_benefit::where('khana_person_unique_id', $unique_id)->get();
+        $oth_benefit_info = Other_benefit::where('khana_person_unique_id', $unique_id)->first();
         $khana_farmer_infos = Farmer_info::where('khana_person_unique_id', $unique_id)->get();
         $khana_family_infos = Family_info::where('khana_id', $khana_id)->get();
         $khana_holding_tax_infos = Tax_holding::where('khana_id', $khana_id)->get();
@@ -387,7 +390,14 @@ class KhanaStoreController extends Controller
             'khana_per_infos' =>$khana_per_infos,
             'person_info' =>$person_info,
             'khana_benefit_infos' =>$khana_benefit_infos,
+            'benefit_info' =>$benefit_info,
+
             'khana_oth_benefit_infos' =>$khana_oth_benefit_infos,
+            'oth_benefit_info' =>$oth_benefit_info,
+
+            'khana_loan_infos' =>$khana_loan_infos,
+            'loan_info' =>$loan_info,
+
             'khana_farmer_infos' =>$khana_farmer_infos,
             'khana_family_infos' =>$khana_family_infos,
             'khana_holding_tax_infos' =>$khana_holding_tax_infos,
