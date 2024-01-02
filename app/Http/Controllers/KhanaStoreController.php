@@ -461,7 +461,10 @@ class KhanaStoreController extends Controller
         $farmer_info = Farmer_info::where('khana_person_unique_id', $unique_id)->first();
 
         $khana_family_infos = Family_info::where('khana_id', $khana_id)->get();
+        $family_info = Family_info::where('khana_id', $khana_id)->first();
+
         $khana_holding_tax_infos = Tax_holding::where('khana_id', $khana_id)->get();
+        $tax_info = Tax_holding::where('khana_id', $khana_id)->first();
 
 
         return view('admin.khana.khana_person_edit',[
@@ -481,6 +484,11 @@ class KhanaStoreController extends Controller
 
             'khana_family_infos' =>$khana_family_infos,
             'khana_holding_tax_infos' =>$khana_holding_tax_infos,
+
+            'family_info' =>$family_info,
+            'tax_info' =>$tax_info,
+
+
         ]);
 
         // return $khana_holding_tax_infos;
