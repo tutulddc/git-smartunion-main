@@ -418,14 +418,20 @@
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="benefit_type">ভাতার ধরণ:</label>
                                         <select name="benefit_type" class=" form-control form-control-new rounded">
-                                            <option value="1" {{ old('benefit_type', $benefit_info->benefit_type) == 1 ? 'selected' : '' }}>মুক্তিযোদ্ধা</option>
-                                            <option value="2" {{ old('benefit_type', $benefit_info->benefit_type) == 2 ? 'selected' : '' }}>প্রতিবন্ধী</option>
-                                            <option value="3" {{ old('benefit_type', $benefit_info->benefit_type) == 3 ? 'selected' : '' }}>বিধবা</option>
-                                            <option value="4" {{ old('benefit_type', $benefit_info->benefit_type) == 4 ? 'selected' : '' }}>বয়স্ক</option>
-                                            <option value="5" {{ old('benefit_type', $benefit_info->benefit_type) == 5 ? 'selected' : '' }}>ভি ডব্লিউ ডি</option>
-                                            <option value="6" {{ old('benefit_type', $benefit_info->benefit_type) == 6 ? 'selected' : '' }}>মাতৃত্বকালীন</option>
-                                            <option value="7" {{ old('benefit_type', $benefit_info->benefit_type) == 7 ? 'selected' : '' }}>ভিক্ষুখ</option>
-                                            <option value="0" {{ old('benefit_type', $benefit_info->benefit_type) == 0 ? 'selected' : '' }}>অন্যান্য</option>
+                                            @if($benefit_info)
+                                                <option value="1" {{ old('benefit_type', $benefit_info->benefit_type) == 1 ? 'selected' : '' }}>মুক্তিযোদ্ধা</option>
+                                                <option value="2" {{ old('benefit_type', $benefit_info->benefit_type) == 2 ? 'selected' : '' }}>প্রতিবন্ধী</option>
+                                                <option value="3" {{ old('benefit_type', $benefit_info->benefit_type) == 3 ? 'selected' : '' }}>বিধবা</option>
+                                                <option value="4" {{ old('benefit_type', $benefit_info->benefit_type) == 4 ? 'selected' : '' }}>বয়স্ক</option>
+                                                <option value="5" {{ old('benefit_type', $benefit_info->benefit_type) == 5 ? 'selected' : '' }}>ভি ডব্লিউ ডি</option>
+                                                <option value="6" {{ old('benefit_type', $benefit_info->benefit_type) == 6 ? 'selected' : '' }}>মাতৃত্বকালীন</option>
+                                                <option value="7" {{ old('benefit_type', $benefit_info->benefit_type) == 7 ? 'selected' : '' }}>ভিক্ষুখ</option>
+                                                <option value="0" {{ old('benefit_type', $benefit_info->benefit_type) == 0 ? 'selected' : '' }}>অন্যান্য</option>
+                                            @else
+                                            <!-- Handle the case when $benefit_info is null -->
+                                                <option value="" disabled selected>Select Benefit Type</option>
+                                            @endif
+
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
@@ -703,125 +709,129 @@
                               <div class="row mb-3">
                                   <div class="col-12 col-sm-8 col-lg-4">
                                       <label for="per_address">স্থায়ী ঠিকানা (পাড়াসহ গ্রাম / মহল্লা):<span class="input_star"><span class="input_star">*</span></label>
-                                      <input type="text" name="per_address"   class=" form-control form-control-new rounded" >
+                                      <input type="text" name="per_address" value="{{ $family_info->per_address }}"  class=" form-control form-control-new rounded" >
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="religion" >ধর্ম:<span class="input_star">*</span></label>
                                       <select  name="religion" class=" form-control form-control-new rounded" >
-                                          <option value="1">মুসলিম</option>
-                                          <option value="2">হিন্দু</option>
-                                          <option value="3">খ্রিষ্টান</option>
-                                          <option value="4">বৌদ্ধ</option>
-                                          <option value="5">অন্যান্য</option>
+                                        <option value="1" {{ old('religion', $family_info->religion) == 1 ? 'selected' : '' }}>মুসলিম</option>
+                                        <option value="2" {{ old('religion', $family_info->religion) == 2 ? 'selected' : '' }}>হিন্দু</option>
+                                        <option value="3" {{ old('religion', $family_info->religion) == 3 ? 'selected' : '' }}>খ্রিষ্টান</option>
+                                        <option value="4" {{ old('religion', $family_info->religion) == 4 ? 'selected' : '' }}>বৌদ্ধ</option>
+                                        <option value="5" {{ old('religion', $family_info->religion) == 5 ? 'selected' : '' }}>অন্যান্য</option>
                                       </select>
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="poverty_margin">
                                           আর্থ সামাজিক অবস্থা:<span class="input_star">*</span></label>
                                       <select  name="poverty_margin" class=" form-control form-control-new rounded" >
-                                          <option value="1">অতিদরিদ্র</option>
-                                          <option value="2">দরিদ্র</option>
-                                          <option value="3">নিম্ন মধ্যবিত্ত</option>
-                                          <option value="4">মধ্যবিত্ত</option>
-                                          <option value="5">উচ্চ বিত্ত</option>
+                                        <option value="1" {{ old('poverty_margin', $family_info->poverty_margin) == 1 ? 'selected' : '' }}>অতিদরিদ্র</option>
+                                        <option value="2" {{ old('poverty_margin', $family_info->poverty_margin) == 2 ? 'selected' : '' }}>দরিদ্র</option>
+                                        <option value="3" {{ old('poverty_margin', $family_info->poverty_margin) == 3 ? 'selected' : '' }}>নিম্ন মধ্যবিত্ত</option>
+                                        <option value="4" {{ old('poverty_margin', $family_info->poverty_margin) == 4 ? 'selected' : '' }}>মধ্যবিত্ত</option>
+                                        <option value="5" {{ old('poverty_margin', $family_info->poverty_margin) == 5 ? 'selected' : '' }}>উচ্চ বিত্ত</option>
                                       </select>
                                   </div>
                                   <div class="col-12 col-sm-4 col-lg-2">
                                       <label for="yearly_income" >
                                           বার্ষিক আয়(টাকাই):<span class="input_star">*</span></label>
-                                      <input type="number" name="yearly_income"  placeholder="২০০০০ টাকা" class=" form-control form-control-new rounded" >
+                                      <input type="number" name="yearly_income" value="{{ $family_info->yearly_income }}" placeholder="২০০০০ টাকা" class=" form-control form-control-new rounded" >
                                   </div>
                               </div>
                               <div class="row mb-3">
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="sanitation" >ল্যাট্রিন ব্যবস্থা:<span class="input_star">*</span></label>
-                                      <select name="sanitation" class=" form-control form-control-new rounded" >
-                                          <option value="0">ল্যাট্রিন নাই</option>
-                                          <option value="1">পাকা ল্যাট্রিন</option>
-                                          <option value="2">রিং স্লাভ</option>
-                                          <option value="3">কাঁচা ল্যাট্রিন</option>
-                                          </select>
+                                        <select name="sanitation" class=" form-control form-control-new rounded" >
+                                            <option value="0" {{ old('sanitation', $family_info->sanitation) == 0 ? 'selected' : '' }}>ল্যাট্রিন নাই</option>
+                                            <option value="1" {{ old('sanitation', $family_info->sanitation) == 1 ? 'selected' : '' }}>পাকা ল্যাট্রিন</option>
+                                            <option value="2" {{ old('sanitation', $family_info->sanitation) == 2 ? 'selected' : '' }}>রিং স্লাভ</option>
+                                            <option value="3" {{ old('sanitation', $family_info->sanitation) == 3 ? 'selected' : '' }}>কাঁচা ল্যাট্রিন</option>
+                                        </select>
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="drinking_water">সুপেয় পানির ব্যবস্থা:</label>
                                       <select  name="drinking_water" class=" form-control form-control-new rounded">
-                                          <option value="1">নলকূপ সরকারী</option>
-                                          <option value="2">সুপেয় পানির ট্যাংক</option>
-                                          <option value="3">নলকূপ ব্যক্তিগত</option>
-                                          <option value="4">পানির ব্যবস্থা নাই</option>
+                                        <option value="1" {{ old('drinking_water', $family_info->drinking_water) == 1 ? 'selected' : '' }}>নলকূপ সরকারী</option>
+                                        <option value="2" {{ old('drinking_water', $family_info->drinking_water) == 2 ? 'selected' : '' }}>সুপেয় পানির ট্যাংক</option>
+                                        <option value="3" {{ old('drinking_water', $family_info->drinking_water) == 3 ? 'selected' : '' }}>নলকূপ ব্যক্তিগত</option>
+                                        <option value="4" {{ old('drinking_water', $family_info->drinking_water) == 4 ? 'selected' : '' }}>পানির ব্যবস্থা নাই</option>
                                       </select>
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="fish_pond" >মৎস ঘেরের সংখ্যা:</label>
-                                      <input type="number" name="fish_pond" placeholder="0"   class=" form-control form-control-new rounded">
+                                      <input type="number" name="fish_pond" placeholder="0" value="{{ $family_info->fish_pond }}"  class=" form-control form-control-new rounded">
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="fish_pond_area">মৎস ঘেরের আয়তন (শতাংশ):</label>
-                                      <input type="number" name="fish_pond_area" placeholder="১৬ শতাংশ"  class=" form-control form-control-new rounded">
+                                      <input type="number" name="fish_pond_area" placeholder="১৬ শতাংশ" value="{{ $family_info->fish_pond_area }}" class=" form-control form-control-new rounded">
                                   </div>
                               </div>
                               <div class="row mb-3">
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="domestic_animal" >গৃহ পালিত পশুর সংখ্যা:</label>
-                                      <input type="number" name="domestic_animal"   placeholder="0" class=" form-control form-control-new rounded">
+                                      <input type="number" name="domestic_animal" value="{{ $family_info->domestic_animal }}"  placeholder="0" class=" form-control form-control-new rounded">
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="electricity">বিদ্যুৎ ব্যবস্থা আছে কি/না?</label>
                                       <select  name="electricity" class=" form-control form-control-new rounded">
-                                          <option value="0">না</option>
-                                          <option value="1">হ্যাঁ</option>
+                                        <option value="0" {{ old('electricity', $family_info->electricity) == 0 ? 'selected' : '' }}>না</option>
+                                        <option value="1" {{ old('electricity', $family_info->electricity) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
                                       </select>
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="race" >ক্ষুদ্র নৃ-গোষ্ঠী কি/না?</label>
                                       <select  name="race" class=" form-control form-control-new rounded">
-                                          <option value="0">না</option>
-                                          <option value="1">হ্যাঁ</option>
+                                        <option value="0" {{ old('race', $family_info->race) == 0 ? 'selected' : '' }}>না</option>
+                                        <option value="1" {{ old('race', $family_info->race) == 1 ? 'selected' : '' }}>হ্যাঁ</option>
                                       </select>
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="immigrant">প্রবাসীর সংখ্যা:</label>
-                                      <input type="number" name="immigrant"  placeholder="0"  class=" form-control form-control-new rounded">
+                                      <input type="number" name="immigrant" value="{{ $family_info->immigrant }}"  placeholder="0"  class=" form-control form-control-new rounded">
                                   </div>
                               </div>
 
                               <div class="row mb-3">
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="total_tenant" >ভাড়াটিয়ার সংখ্যা:</label>
-                                      <input type="number" name="total_tenant"   placeholder="0" class=" form-control form-control-new rounded">
+                                      <input type="number" name="total_tenant" value="{{ $family_info->total_tenant }}"  placeholder="0" class=" form-control form-control-new rounded">
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="motor_cycle">মটর বাইকের সংখ্যা:</label>
-                                      <input type="number" name="motor_cycle"   placeholder="0" class=" form-control form-control-new rounded">
+                                      <input type="number" name="motor_cycle" value="{{ $family_info->motor_cycle }}"  placeholder="0" class=" form-control form-control-new rounded">
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="rickshaw_van" >ভ্যান / রিক্সার সংখ্যা:</label>
-                                      <input type="number" name="rickshaw_van"   placeholder="0" class=" form-control form-control-new rounded">
+                                      <input type="number" name="rickshaw_van" value="{{ $family_info->rickshaw_van }}"  placeholder="0" class=" form-control form-control-new rounded">
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="auto_van">অটো ভ্যান / রিক্সার সংখ্যা:</label>
-                                      <input type="number" name="auto_van"   placeholder="0" class=" form-control form-control-new rounded">
+                                      <input type="number" name="auto_van" value="{{ $family_info->auto_van }}"  placeholder="0" class=" form-control form-control-new rounded">
                                   </div>
                               </div>
 
                               <div class="row mb-3">
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="cng_mahindra" >সিএনজি / মাহেন্দ্রের সংখ্যা:</label>
-                                      <input type="number" name="cng_mahindra"   placeholder="0" class=" form-control form-control-new rounded">
+                                      <input type="number" name="cng_mahindra" value="{{ $family_info->cng_mahindra }}"  placeholder="0" class=" form-control form-control-new rounded">
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="easy_bike">ইজিবাইকের সংখ্যা:</label>
-                                      <input type="number" name="easy_bike"   placeholder="0" class=" form-control form-control-new rounded">
+                                      <input type="number" name="easy_bike" value="{{ $family_info->easy_bike }}"  placeholder="0" class=" form-control form-control-new rounded">
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="boat" >ট্রলারের সংখ্যা:</label>
-                                      <input type="number" name="boat"   placeholder="0" class=" form-control form-control-new rounded">
+                                      <input type="number" name="boat" value="{{ $family_info->boat }}"  placeholder="0" class=" form-control form-control-new rounded">
                                   </div>
                                   <div class="col-12 col-sm-6 col-lg-3">
                                       <label for="bus_three_wheeler">বাস/মিনিবাস/ট্রাক/থ্রি হুইলার</label>
-                                      <input type="number" name="bus_three_wheeler"   placeholder="0" class=" form-control form-control-new rounded">
+                                      <input type="number" name="bus_three_wheeler" value="{{ $family_info->bus_three_wheeler }}"  placeholder="0" class=" form-control form-control-new rounded">
+                                  </div>
+                                  <div class="my-5 w-100 col-lg-12 col-sm-6 col-12 text-center">
+                                    <button type="submit"  class="btn btn-secondary w-60" formaction="{{ route('khana.family.info.update', $family_info->khana_id) }}">হালনাগাদ করুন (পারিবারিক তথ্য)</button>
                                   </div>
                               </div>
+
                           </div>
                         </div>
                       </div>
@@ -841,50 +851,53 @@
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="house_category" >বাড়ির ধরন:<span class="input_star">*</span></label>
                                         <select class=" form-control form-control-new rounded" name="house_category">
-                                            <option value="1">পাকা ১তলা</option>
-                                            <option value="2">পাকা ২তলা</option>
-                                            <option value="3">পাকা ৩তলা</option>
-                                            <option value="4">পাকা ৪তলা</option>
-                                            <option value="5">পাকা ৫তলা</option>
-                                            <option value="6">আধা পাকা- রুম ১টি</option>
-                                            <option value="7">আধা পাকা- রুম ২টি</option>
-                                            <option value="8">আধা পাকা- রুম ৩টি</option>
-                                            <option value="9">কাচা- ঘর ১টি</option>
-                                            <option value="10">কাচা- ঘর ২টি</option>
-                                            <option value="11">কাচা- ঘর ৩টি</option>
-                                            <option value="12">চৌচালা/কাঠের</option>
-                                            <option value="13">অন্যান্য</option>
-                                            </select>
+                                            <option value="1" {{ old('house_category', $tax_info->house_category) == 1 ? 'selected' : '' }}>পাকা ১তলা</option>
+                                            <option value="2" {{ old('house_category', $tax_info->house_category) == 2 ? 'selected' : '' }}>পাকা ২তলা</option>
+                                            <option value="3" {{ old('house_category', $tax_info->house_category) == 3 ? 'selected' : '' }}>পাকা ৩তলা</option>
+                                            <option value="4" {{ old('house_category', $tax_info->house_category) == 4 ? 'selected' : '' }}>পাকা ৪তলা</option>
+                                            <option value="5" {{ old('house_category', $tax_info->house_category) == 5 ? 'selected' : '' }}>পাকা ৫তলা</option>
+                                            <option value="6" {{ old('house_category', $tax_info->house_category) == 6 ? 'selected' : '' }}>আধা পাকা- রুম ১টি</option>
+                                            <option value="7" {{ old('house_category', $tax_info->house_category) == 7 ? 'selected' : '' }}>আধা পাকা- রুম ২টি</option>
+                                            <option value="8" {{ old('house_category', $tax_info->house_category) == 8 ? 'selected' : '' }}>আধা পাকা- রুম ৩টি</option>
+                                            <option value="9" {{ old('house_category', $tax_info->house_category) == 9 ? 'selected' : '' }}>কাচা- ঘর ১টি</option>
+                                            <option value="10" {{ old('house_category', $tax_info->house_category) == 10 ? 'selected' : '' }}>কাচা- ঘর ২টি</option>
+                                            <option value="11" {{ old('house_category', $tax_info->house_category) == 11 ? 'selected' : '' }}>কাচা- ঘর ৩টি</option>
+                                            <option value="12" {{ old('house_category', $tax_info->house_category) == 12 ? 'selected' : '' }}>চৌচালা/কাঠের</option>
+                                            <option value="13" {{ old('house_category', $tax_info->house_category) == 13 ? 'selected' : '' }}>অন্যান্য</option>
+                                        </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="number_of_rooms">মোট কক্ষের সংখ্যা</label>
-                                        <input type="number" name="number_of_rooms"   placeholder="0" class=" form-control form-control-new rounded">
+                                        <input type="number" name="number_of_rooms" value="{{ $tax_info->number_of_rooms }}"  placeholder="0" class=" form-control form-control-new rounded">
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="house_use_type" >বাড়ীর ব্যবহারের ধরন:</label>
                                         <select class=" form-control form-control-new rounded" name="house_use_type">
-                                            <option value="1">মালিক নিজে থাকেন</option>
-                                            <option value="2">ভাড়া দেওয়া</option>
-                                            <option value="3">উভয়</option>
-                                            </select>
+                                            <option value="1" {{ old('house_use_type', $tax_info->house_use_type) == 1 ? 'selected' : '' }}>মালিক নিজে থাকেন</option>
+                                            <option value="2" {{ old('house_use_type', $tax_info->house_use_type) == 2 ? 'selected' : '' }}>ভাড়া দেওয়া</option>
+                                            <option value="3" {{ old('house_use_type', $tax_info->house_use_type) == 3 ? 'selected' : '' }}>উভয়</option>
+                                        </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <label for="house_yearly_value">গৃহের বার্ষিক মূল্য:<span class="input_star">*</span></label>
-                                        <input type="number" name="house_yearly_value"   placeholder="0" class=" form-control form-control-new rounded">
+                                        <input type="number" name="house_yearly_value" value="{{ $tax_info->house_yearly_value }}"  placeholder="0" class=" form-control form-control-new rounded">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-12 col-12 col-sm-6 col-lg-3">
                                         <label for="land_yearly_value">ভুমির বার্ষিক ভাড়া মূল্য:<span class="land_yearly_rent"><span class="input_star">*</span></span></label>
-                                        <input type="number" name="land_yearly_value"   placeholder="0" class=" form-control form-control-new rounded">
+                                        <input type="number" name="land_yearly_value" value="{{ $tax_info->land_yearly_value }}"  placeholder="0" class=" form-control form-control-new rounded">
                                     </div>
                                     <div class="col-12 col-12 col-sm-6 col-lg-3">
                                         <label for="yearly_tax">বার্ষিক কর (টাকা):<span class="land_yearly_rent"><span class="input_star">*</span></span></label>
-                                        <input type="number" name="yearly_tax"   placeholder="0" class=" form-control form-control-new rounded">
+                                        <input type="number" name="yearly_tax" value="{{ $tax_info->yearly_tax }}"  placeholder="0" class=" form-control form-control-new rounded">
                                     </div>
                                     <div class="col-12 col-12 col-sm-6 col-lg-3">
                                         <label for="final_tax">ফাইনাল ট্যাক্স:<span class="land_yearly_rent"><span class="input_star">*</span></span></label>
-                                        <input type="number" name="final_tax"   placeholder="0" class=" form-control form-control-new rounded">
+                                        <input type="number" name="final_tax" value="{{ $tax_info->final_tax }}"  placeholder="0" class=" form-control form-control-new rounded">
+                                    </div>
+                                    <div class="my-5 w-100 col-lg-12 col-sm-6 col-12 text-center">
+                                        <button type="submit"  class="btn btn-secondary w-60" formaction="{{ route('khana.tax.info.update', $tax_info->khana_id) }}">হালনাগাদ করুন (কর তথ্য)</button>
                                     </div>
                                 </div>
                             </div>

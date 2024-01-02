@@ -73,6 +73,8 @@ Route::get('/khana/person/edit/{unique_id}', [KhanaStoreController::class, 'khan
 // খানা ফরম / তথ্য হালনাগাদ / update
 Route::post('/khana/personal/info/update/{unique_id}', [KhanaUpdateController::class, 'khana_personal_info_update'])->name('khana.personal.info.update');
 Route::post('/khana/benefit/info/update/{unique_id}', [KhanaUpdateController::class, 'khana_benefit_info_update'])->name('khana.benefit.info.update');
+Route::post('/khana/family/info/update/{khana_id}', [KhanaUpdateController::class, 'khana_family_info_update'])->name('khana.family.info.update');
+Route::post('/khana/tax/info/update/{khana_id}', [KhanaUpdateController::class, 'khana_tax_info_update'])->name('khana.tax.info.update');
 
 
 

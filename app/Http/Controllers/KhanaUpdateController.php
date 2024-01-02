@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Benefit_info;
+use App\Models\Family_info;
 use App\Models\Farmer_info;
 use App\Models\Khana_personal_info;
 use App\Models\Loan_info;
 use App\Models\Other_benefit;
+use App\Models\Tax_holding;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
@@ -186,5 +188,47 @@ class KhanaUpdateController extends Controller
           ]);
           return back()->with('khanaSuccess','Data Updated Successfully');
 
+    }
+
+    function khana_family_info_update(Request $request, $khana_id){
+
+        Family_info::where('khana_id', $khana_id)->first()->update([
+            'per_address'=>$request->per_address,
+            'religion'=>$request->religion,
+            'poverty_margin'=>$request->poverty_margin,
+            'yearly_income'=>$request->yearly_income,
+            'sanitation'=>$request->sanitation,
+            'drinking_water'=>$request->drinking_water,
+            'fish_pond'=>$request->fish_pond,
+            'fish_pond_area'=>$request->fish_pond_area,
+            'domestic_animal'=>$request->domestic_animal,
+            'electricity'=>$request->electricity,
+            'race'=>$request->race,
+            'total_tenant'=>$request->total_tenant,
+            'immigrant'=>$request->immigrant,
+            'motor_cycle'=>$request->motor_cycle,
+            'rickshaw_van'=>$request->rickshaw_van,
+            'auto_van'=>$request->auto_van,
+            'cng_mahindra'=>$request->cng_mahindra,
+            'easy_bike'=>$request->easy_bike,
+            'boat'=>$request->boat,
+            'bus_three_wheeler'=>$request->bus_three_wheeler,
+            'updated_at'=>Carbon::Now(),
+            ]);
+            return back()->with('khanaSuccess','Data Updated Successfully');
+    }
+
+    function khana_tax_info_update(Request $request, $khana_id){
+        Tax_holding::where('khana_id', $khana_id)->first()->update([
+            'house_category'=>$request->house_category,
+            'number_of_rooms'=>$request->number_of_rooms,
+            'house_use_type'=>$request->house_use_type,
+            'house_yearly_value'=>$request->house_yearly_value,
+            'land_yearly_value'=>$request->land_yearly_value,
+            'yearly_tax'=>$request->yearly_tax,
+            'final_tax'=>$request->final_tax,
+            'updated_at'=>Carbon::Now(),
+            ]);
+            return back()->with('khanaSuccess','Data Updated Successfully');
     }
 }
