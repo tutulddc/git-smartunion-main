@@ -419,13 +419,23 @@ class KhanaStoreController extends Controller
 
     //---------------------------khan prodhan list-----------------------------------------
     function khana_prodhan_list(){
-        $khana_per_infos = Khana_personal_info::where('khana_person_type', 2)->get();
-        return view('admin.khana.khana_prodhan_list',[
-            'khana_per_infos' => $khana_per_infos,
-        ]);
+        if(Auth::user()->union_id==''){
+            $khana_per_infos = Khana_personal_info::where('khana_person_type', 2)->get();
+            // $khana_per_infos = Khana_personal_info::where('khana_person_type', 2)->where('union_id', 1681)->get();
+            return view('admin.khana.khana_prodhan_list',[
+                'khana_per_infos' => $khana_per_infos,
+            ]);
+        }else{
+            $khana_per_infos = Khana_personal_info::where('khana_person_type', 2)->where('union_id', Auth::user()->union_id)->get();
+            // $khana_per_infos = Khana_personal_info::where('khana_person_type', 2)->where('union_id', 1681)->get();
+            return view('admin.khana.khana_prodhan_list',[
+                'khana_per_infos' => $khana_per_infos,
+            ]);
+        }
     }
     function khana_persons_list($khana_id){
         $khana_per_infos = Khana_personal_info::where('khana_id', $khana_id)->get();
+        // $khana_per_infos = Khana_personal_info::where('khana_id', $khana_id)->where('union_id', Auth::user()->union_id)->get();
         // $khana_per_infos = Khana_personal_info::where('khana_id', $khana_id)->paginate(2);
             return view('admin.khana.khana_person_list',[
             'khana_per_infos' => $khana_per_infos,

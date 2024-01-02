@@ -44,6 +44,7 @@
                     <li><a href="{{ asset('backend') }}/ecom-product-grid.html">পেশা ভিত্তিক প্রতিবেদন</a></li>
                     <li><a href="{{ asset('backend') }}/ecom-product-list.html">ভাতার প্রতিবেদন</a></li>
                     <li><a href="{{ asset('backend') }}/ecom-product-detail.html">আর্থসামাজিক প্রতিবেদন</a></li>
+                    <li><a href="{{ route('misc') }}">MISC</a></li>
                 </ul>
             </li>
             {{-- <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">

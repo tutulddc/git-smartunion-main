@@ -1,6 +1,15 @@
 @extends("layouts.admin")
 
 @section("content")
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap.min.css">
+
+    {{-- <!-- Include DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap.min.css"> --}}
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- DataTables JavaScript -->
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
 <div class="col-lg-12 m-auto">
     <div class="card">
         <div class="card-header">
@@ -8,9 +17,10 @@
         </div>
         <div class="card-body">
             {{-- <table class="table table-bordered"> --}}
-            <table id="dataTables" class="table table-striped table-bordered dataTables" style="width:100%">
-                <tr><td class="text-center" colspan="12">ই-খানা তথ্য - হোল্ডিং (ওয়াড নং -১)</td></tr>
-                <tr>
+                <table id="dataTables" class="dataTables table table-striped table-bordered " style="width:100%">
+            {{-- <table id="dataTables" class="table table-striped table-bordered dataTables" style="width:100%"> --}}
+                {{-- <tr><td class="text-center" colspan="12">ই-খানা তথ্য - হোল্ডিং (ওয়াড নং -১)</td></tr> --}}
+                <thead>
                     <td>sl</td>
                     <td>হোল্ডিং নং</td>
                     <td>নাম</td>
@@ -19,11 +29,11 @@
                     <td>মোবাইল নং</td>
                     <td>ছবি</td>
                     <td>Action</td>
-                </tr>
+                </thead>
                 @foreach ( $khana_per_infos as $key=>$khana_per_info )
 
-                <tr>
-                    <td>{{ $key++ }}</td>
+                <tbody>
+                    <td>{{ $key+1 }}</td>
                     <td>{{ $khana_per_info->holding_number }}</td>
                     <td>{{ $khana_per_info->khana_person_name }}</td>
                     <td>{{ $khana_per_info->father_name }}</td>
@@ -52,7 +62,7 @@
 
                     </td>
 
-                </tr>
+                </tbody>
 
                 @endforeach
             </table>
@@ -60,13 +70,26 @@
     </div>
 </div>
 
+
+
+
+    <script>
+        $(document).ready(function() {
+            $('.dataTables').DataTable({
+                "paging": true,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+            });
+        });
+    </script>
 @endsection
-
-
 
 @section('footer_script')
 
-    <script>
+    {{-- <script>
         // $(document).ready(function() {
         //     $('.dataTables').DataTable({
         //         "paging": true // Enable pagination
@@ -79,7 +102,7 @@
             $('.dataTables').DataTable();
         });
 
-    </script>
+    </script> --}}
     {{-- <script>
         $('.del_btn').click(function(){
 
