@@ -82,6 +82,8 @@ Route::post('/khana/tax/info/update/{khana_id}', [KhanaUpdateController::class, 
 //misc
 Route::get('/misc', [KhanaUpdateController::class, 'misc'])->name('misc');
 
-
+//tax
+Route::get('/holding/tax', [TaxController::class, 'holding_tax'])->name('holding.tax');
+Route::post('/seach/khana', [TaxController::class, 'search_khana'])->name('search.khana');
 
 
