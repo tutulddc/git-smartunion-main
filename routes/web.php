@@ -77,10 +77,11 @@ Route::post('/khana/benefit/info/update/{unique_id}', [KhanaUpdateController::cl
 Route::post('/khana/family/info/update/{khana_id}', [KhanaUpdateController::class, 'khana_family_info_update'])->name('khana.family.info.update');
 Route::post('/khana/tax/info/update/{khana_id}', [KhanaUpdateController::class, 'khana_tax_info_update'])->name('khana.tax.info.update');
 
-// বিভিন্ন ধরনের কর আদায় 
 
-Route::get('/holding/tax', [TaxController::class, 'holding_tax'])->name('holding.tax');
-Route::post('/seach/khana', [TaxController::class, 'search_khana'])->name('search.khana');
+
+//misc
+Route::get('/misc', [KhanaUpdateController::class, 'misc'])->name('misc');
+
 
 
 

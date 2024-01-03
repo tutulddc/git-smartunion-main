@@ -231,4 +231,8 @@ class KhanaUpdateController extends Controller
             ]);
             return back()->with('khanaSuccess','Data Updated Successfully');
     }
+
+    function misc(){
+        return view('misc');
+    }
 }
