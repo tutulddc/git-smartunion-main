@@ -420,12 +420,34 @@ class KhanaStoreController extends Controller
     //---------------------------khan prodhan list-----------------------------------------
     function khana_prodhan_list(){
         if(Auth::user()->union_id==''){
-            $khana_per_infos = Khana_personal_info::where('khana_person_type', 2)->get();
-            // $khana_per_infos = Khana_personal_info::where('khana_person_type', 2)->where('union_id', 1681)->get();
-            return view('admin.khana.khana_prodhan_list',[
-                'khana_per_infos' => $khana_per_infos,
-            ]);
-        }else{
+            if(Auth::user()->department=='Doptor'){
+                $khana_per_infos = Khana_personal_info::where('khana_person_type', 2)->paginate(2);
+                // $khana_per_infos = Khana_personal_info::where('khana_person_type', 2)->where('union_id', 1681)->get();
+                return view('admin.khana.khana_prodhan_list',[
+                    'khana_per_infos' => $khana_per_infos,
+                ]);
+            }
+            elseif (Auth::user()->department=='Upazila_Parishad') {
+                $khana_per_infos = Khana_personal_info::where('khana_person_type', 2)->where('upazila_id', Auth::user()->upazila_id)->paginate(3);
+                // $khana_per_infos = Khana_personal_info::where('khana_person_type', 2)->where('union_id', 1681)->get();
+                return view('admin.khana.khana_prodhan_list',[
+                    'khana_per_infos' => $khana_per_infos,
+                ]);
+            }
+
+            else{
+
+                $khana_per_infos = Khana_personal_info::where('khana_person_type', 2)->paginate(2);
+                // $khana_per_infos = Khana_personal_info::where('khana_person_type', 2)->where('union_id', 1681)->get();
+                return view('admin.khana.khana_prodhan_list',[
+                    'khana_per_infos' => $khana_per_infos,
+                ]);
+            }
+        }
+        // elseif (Auth::user()->department=='Doptor') {
+        //     echo "hi";
+        // }
+        else{
             $khana_per_infos = Khana_personal_info::where('khana_person_type', 2)->where('union_id', Auth::user()->union_id)->get();
             // $khana_per_infos = Khana_personal_info::where('khana_person_type', 2)->where('union_id', 1681)->get();
             return view('admin.khana.khana_prodhan_list',[
@@ -434,7 +456,7 @@ class KhanaStoreController extends Controller
         }
     }
     function khana_persons_list($khana_id){
-        $khana_per_infos = Khana_personal_info::where('khana_id', $khana_id)->get();
+        $khana_per_infos = Khana_personal_info::where('khana_id', $khana_id)->paginate(5);
         // $khana_per_infos = Khana_personal_info::where('khana_id', $khana_id)->where('union_id', Auth::user()->union_id)->get();
         // $khana_per_infos = Khana_personal_info::where('khana_id', $khana_id)->paginate(2);
             return view('admin.khana.khana_person_list',[
