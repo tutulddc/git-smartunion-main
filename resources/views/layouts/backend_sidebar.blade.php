@@ -17,7 +17,17 @@
                     <li><a href="{{ route('khana.prodhan.list') }}">খানা প্রধানের তালিকা</a></li>
                 </ul>
             </li>
-
+            <li>
+                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-381-television"></i>
+                    <span class="nav-text">কর আদায়</span>
+                </a>
+                <ul aria-expanded="false">
+                    {{-- <li><a href="{{ route('khana') }}">খানার তথ্য সংগ্রহ</a></li> --}}
+                    <li><a href="{{ route('holding.tax') }}">হোল্ডিং কর আদায়</a></li>
+                    {{-- <li><a href="{{ route('business_tax') }}">ব্যবসা প্রতিষ্ঠানের কর আদায়</a></li> --}}
+                </ul>
+            </li>
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                 <i class="flaticon-381-internet"></i>
                     <span class="nav-text">দপ্তরসমূহ</span>

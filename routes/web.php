@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KhanaStoreController;
 use App\Http\Controllers\KhanaUpdateController;
 use App\Http\Controllers\reports;
+use App\Http\Controllers\TaxController;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,8 +78,10 @@ Route::post('/khana/family/info/update/{khana_id}', [KhanaUpdateController::clas
 Route::post('/khana/tax/info/update/{khana_id}', [KhanaUpdateController::class, 'khana_tax_info_update'])->name('khana.tax.info.update');
 
 
+
 //misc
 Route::get('/misc', [KhanaUpdateController::class, 'misc'])->name('misc');
+
 
 
 
