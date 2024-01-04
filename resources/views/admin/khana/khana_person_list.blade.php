@@ -65,17 +65,17 @@
 @endsection
 @section('footer_script')
 <script src="//cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-    {{-- <script>
-        $(document).ready(function() {
-            $('.dataTables').DataTable({
-                "paging": true,
-                "lengthChange": true,
-                "searching": true,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-            });
+<script>
+    $(document).ready(function() {
+        $('.dataTables').DataTable({
+            "paging": true,
+            "lengthChange": true,
+            "searching": true,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
         });
-    </script> --}}
+    });
+</script>
 
 @endsection
